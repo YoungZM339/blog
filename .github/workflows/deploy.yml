@@ -19,9 +19,11 @@ jobs:
           hugo-version: 'latest'
           # extended: true
 
-      - name: Build
+      - name: Clone
         run: git clone https://github.com/olOwOlo/hugo-theme-even themes/even
-        run: hugo -D
+
+      - name: Build
+        run: hugo -D      
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

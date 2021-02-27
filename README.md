@@ -1,6 +1,5 @@
 [![hugo](https://img.shields.io/badge/powered%20by-hugo-orange)](https://gohugo.io/)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lavacup2233/hexoblog_sourcecode/deploy)](https://github.com/lavacup2233/hexoblog_sourcecode/actions)
-[![Website](https://img.shields.io/website?url=https://blog.youngzm.com/](https://blog.youngzm.com/)
 
 这里是 lavacup2233 的博客的源码，访问地址：<https://lavacup2233.github.io>
 

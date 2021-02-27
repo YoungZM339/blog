@@ -20,6 +20,7 @@ jobs:
           # extended: true
 
       - name: Build
+        run: git clone https://github.com/olOwOlo/hugo-theme-even themes/even
         run: hugo -D
 
       - name: Deploy

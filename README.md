@@ -1,7 +1,11 @@
 [![hugo](https://img.shields.io/badge/powered%20by-hugo-orange)](https://gohugo.io/)
-[![GitHub Workflow Status](https://github.com/lavacup2233/hugoblog-sourcecode/workflows/Greet%20Everyone/badge.svg?branch=master)]
+![Server is stopped if you can't see the right png](https://lavacup2233.github.io/imgs/running.png)
 
-这里是 lavacup2233 的博客的源码，访问地址：<https://lavacup2233.github.io>
+这里是 lavacup2233 的博客的源码，访问地址：
+
+<https://lavacup2233.github.io>
+
+<https://blog.youngzm.com>
 
 LICENSE
 ---

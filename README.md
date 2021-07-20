@@ -1,5 +1,5 @@
 [![hugo](https://img.shields.io/badge/powered%20by-hugo-orange)](https://gohugo.io/)
-![Server is stopped if you can't see the right png](https://lavacup2233.github.io/imgs/running.png)
+![Server is stopped if you can't see the right png](https://blog.youngzm.com/imgs/running.png)
 
 这里是 lavacup2233 的博客的源码，访问地址：
 

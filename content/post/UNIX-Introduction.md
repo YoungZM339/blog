@@ -1,7 +1,7 @@
 ---
-title: "UNIX 介绍 | 由YoungZM翻译 | 源自 UNIX Introduction (University of Surrey)"
+title: "UNIX 介绍 | 由YoungZM翻译 | 源自 UNIX Introduction"
 date: 2021-07-20T11:23:25+08:00
-draft: true
+draft: false
 ---
 
 ## 译者前言

@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://blog.youngzm.com/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "LavaCup2233's Blog"

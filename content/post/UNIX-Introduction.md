@@ -69,7 +69,7 @@ UNIX 中的一切都是文件或进程。
 
 所有文件都在目录结构中组合在一起。 文件系统以分层结构排列，就像一棵倒置的树。 层次结构的顶部传统上称为根（写为斜杠 / ）
 
-![unix-tree](https://lavacup2233.github.io/imgs/unix-tree.png)
+![unix-tree](https://blog.youngzm.com/imgs/unix-tree.png)
 
 在上图中，我们看到本科生“`ee51vn`”的主目录包含两个子目录（docs 和 pics）和一个名为 `report.doc` 的文件。
 
@@ -81,8 +81,8 @@ UNIX 中的一切都是文件或进程。
 _(终端)_
 图标。
 
-![侏儒菜单](https://lavacup2233.github.io/imgs/gnome-window.gif)
+![侏儒菜单](https://blog.youngzm.com/imgs/gnome-window.gif)
 
 然后将出现一个带有 `%` 提示的 UNIX 终端窗口，等待您开始输入命令。
 
-![Unix 终端窗口](https://lavacup2233.github.io/imgs/unix-xterm0.gif)
+![Unix 终端窗口](https://blog.youngzm.com/imgs/unix-xterm0.gif)

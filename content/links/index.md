@@ -10,7 +10,7 @@ draft: false
 
 站名:LavaCup2233的博客
 
-图标:https://cdn.youngzm.com/favicon.ico
+图标:https://blog.youngzm.com/imgs/favicon.ico
 
 |  朋友   | 站点地址  |
 |  ----  | ----  |

@@ -44,12 +44,11 @@ draft: false
 八年级尝试学习Lua语言（制作 Mods for&nbsp;<a rel="noreferrer noopener" href="https://store.steampowered.com/app/219740/Dont_Starve/" target="_blank">Don't Starve</a>&nbsp;），看打印下来的资料看不懂........
 
 
-
 八年级学会了刷机（卡刷与Fastboot线刷）
 
 
+九年级接触Debian与Ubuntu，有了自己第一个VPS（在Google Cloud Platform，现在已经到期），在Debian与Ubuntu环境下搭建了<a rel="noreferrer noopener" href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank">Dont_Starve_Together&nbsp;</a>&nbsp;Dedicated&nbsp;Server与Bukkit for Minecraft（Bukkit开服失败，不知道为什么windows下和linux都不行），有了自己第一个网站，有了自己第一个博客。
 
-九年级接触Debian与Ubuntu，有了自己第一个VPS（在Google Cloud Platform，现在已经到期），在Debian与Ubuntu环境下搭建了<a rel="noreferrer noopener" href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank">Dont_Starve_Together&nbsp;</a>&nbsp;Dedicated&nbsp;Server与Bukkit for Minecraft（Bukkit开服失败，不知道为什么windows下和linux都不行），有了自己第一个网站，有了自己第一个博客。博客搭建经历：<a href="https://blog.youngzm.com/blog">https://blog.youngzm.com/blog</a>
 
 ## 学业生涯
 
@@ -100,6 +99,7 @@ draft: false
 
 2018年年末，更换MDx主题（目前所用的，比较喜欢）
 
+
 2019年某月某日，更换博客系统为Typecho
 
 
@@ -108,6 +108,8 @@ draft: false
 
 2020年5月，更换博客系统为Typecho
 
+
 2021年某月，更换博客为Hexo
+
 
 2021年某月，更换博客为Hugo

@@ -6,21 +6,7 @@
     <description>Recent content in Posts on LavaCup2233&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 20 Jul 2021 11:23:25 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>UNIX 介绍 | 由YoungZM翻译 | 源自 UNIX Introduction</title>
-      <link>/post/unix-introduction/</link>
-      <pubDate>Tue, 20 Jul 2021 11:23:25 +0800</pubDate>
-      
-      <guid>/post/unix-introduction/</guid>
-      <description>&lt;h2 id=&#34;译者前言&#34;&gt;译者前言&lt;/h2&gt;
-&lt;p&gt;UNIX是什么？这个问题一直令我困惑。近期在&lt;a href=&#34;https://www.ruanyifeng.com/blog/archives.html&#34;&gt;阮一峰的网络日志&lt;/a&gt;的推荐中找到&lt;a href=&#34;https://www.surrey.ac.uk/&#34;&gt;University of Surrey&lt;/a&gt;的&lt;a href=&#34;http://www.ee.surrey.ac.uk/Teaching/Unix/unixintro.html&#34;&gt;UNIX Introduction&lt;/a&gt;，现借助Google Translate在本人的修正与优化后做出本译本，供大家参考。&lt;/p&gt;
-&lt;p&gt;为方便大家阅读本文，本文将使用
-&lt;em&gt;（斜体加括号）&lt;/em&gt;
-的方式对部分概念增加一定的注释，如对您的阅读产生不适，敬请见谅。&lt;/p&gt;
-&lt;p&gt;请注意：对于本译本，译者&lt;a href=&#34;https://blog.youngzm.com/&#34;&gt;YoungZM@lavacup2233&lt;/a&gt;保留翻译权利，其余权利归作者&lt;a href=&#34;https://www.surrey.ac.uk/&#34;&gt;University of Surrey&lt;/a&gt;所有。&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 07 Jul 2021 23:57:47 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021暑假笔记（一）：恍惚的一个月</title>
       <link>/post/2021summer-note-1/</link>

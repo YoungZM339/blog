@@ -151,7 +151,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.utterances]       # https://utteranc.es/
     owner = "lavacup2233"              # Your GitHub ID
-    repo = "hugoblog-sourcecode"               # The repo to store comments
+    repo = "hugo-deploy"               # The repo to store comments
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID

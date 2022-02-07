@@ -8,13 +8,13 @@ draft: false
 
 ## 自述
 
-大家好，我是YoungZM，英文名字是Zimin Yang，常用用户名是lavacup2233，是一个普普通通的中学生。
+大家好，我是YoungZM，英文名字是Tzemin Young ，常用用户名是五月逸兴（lavacup2233），是一个普普通通的中学生。
 
 
 联系我：<a href="mailto:lavacup2233@outlook.com">lavacup2233@outlook.com</a>
 
 
-爱好：编程 ，动漫 ，摄影，艺术
+爱好：编程 ，动漫 ，摄影，插画
 
 
 <!-- wp:heading {"level":3} -->
@@ -60,7 +60,7 @@ draft: false
 初级中学 毕业
 
 
-普通高级中学 毕业
+普通高中 在读
 
 ## 博客维护日志
 

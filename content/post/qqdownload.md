@@ -29,13 +29,13 @@ draft: false
 <p>比如洛谷用户群 <a href="http://qun.qzone.qq.com/group#!/515055655/share">http://qun.qzone.qq.com/group#!/515055655/share</a> </p>
 
 <p>如果你打开的是第一个链接，你将会看到</p>
-<img src="https://blog.youngzm.com/wp-content/uploads/2019/12/HHOOLXDJV902UO2M-1024x270.png" alt="" class="wp-image-70"/>悬浮在标题栏“我的群”上，选择你需要得到群组，我这里选择了 Hello Luogu群作为演示
+<img src="https://cdn.youngzm.com/wp-content/uploads/2019/12/HHOOLXDJV902UO2M-1024x270.png" alt="" class="wp-image-70"/>悬浮在标题栏“我的群”上，选择你需要得到群组，我这里选择了 Hello Luogu群作为演示
 
-<img src="https://blog.youngzm.com/wp-content/uploads/2019/12/S5BM5G6QB939BVL4.png" alt="" class="wp-image-71"/>
+<img src="https://cdn.youngzm.com/wp-content/uploads/2019/12/S5BM5G6QB939BVL4.png" alt="" class="wp-image-71"/>
 
 进入一个新的页面后，你将会看到这样的div区块，点击第二个按钮“群文件”
 <p>如果你已经点击了那个按钮或者你打开是的是第二个链接，你将会看到：</p>
-<img src="https://blog.youngzm.com/wp-content/uploads/2019/12/54LGTXPY6OIW_OLO_WH.png" alt="" class="wp-image-72"/><figcaption>点击白色方块，即“下载”
+<img src="https://cdn.youngzm.com/wp-content/uploads/2019/12/54LGTXPY6OIW_OLO_WH.png" alt="" class="wp-image-72"/><figcaption>点击白色方块，即“下载”
 <p>然后通过下载链接调用你的多线程下载工具。</p>
 <h2>关于多线程下载工具</h2>
 <p>关于多线程下载工具，我这里推荐</p>

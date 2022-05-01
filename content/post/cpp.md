@@ -223,15 +223,3 @@ end.
 <!-- wp:paragraph -->
 <p>本文转载自BYVoid（郭家宝），转载请注明作者。</p>
 <!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>郭家宝在OIerDB中的资料：</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:table -->
-<figure class="wp-block-table"><table class=""><thead><tr><th>获奖</th><th>分数</th><th>全国排名</th><th>就读学校</th><th>获奖年级</th></tr></thead><tbody><tr><th>NOI2009金牌</th><td>370</td><td>17</td><td>河南省实验中学</td><td>高二</td></tr></tbody></table></figure>
-<!-- /wp:table -->
-
-<!-- wp:paragraph -->
-<p>他目前就职于Google Inc.</p>
-<!-- /wp:paragraph -->

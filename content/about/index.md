@@ -8,7 +8,7 @@ draft: false
 
 ## 自述
 
-大家好，我是YoungZM，英文名字是Tzemin Young ，常用用户名是五月逸兴（lavacup2233），是一个普普通通的中学生。
+大家好，我是YoungZM，英文名字是Brain Yang ，常用用户名是五月逸兴（lavacup2233），是一个普普通通的中学生。
 
 
 联系我：<a href="mailto:lavacup2233@outlook.com">lavacup2233@outlook.com</a>
@@ -52,15 +52,10 @@ draft: false
 
 ## 学业生涯
 
-### 基础教育
-
-小学 毕业
-
-
-初级中学 毕业
-
-
-普通高中 在读
+| 基础教育 | 状态 |
+| -------- | ---- |
+| 初级中学 | 毕业 |
+| 普通高中 | 在读 |
 
 ## 博客维护日志
 

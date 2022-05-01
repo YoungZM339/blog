@@ -20,35 +20,7 @@ draft: false
 <!-- wp:heading {"level":3} -->
 ## 我与计算机
 
-
-目前擅长&amp;爱好的编程语言：Python,C with STL（算法竞赛）,HTML,CSS
-
-
-
---曾经尝试过但没学会的编程语言：Lua,Java
-
-
-
-更小的时候：花式ROOT自己的Android手机（手动滑稽）
-
-
-
-小学学习Minecraft服务器搭建，从一开始虚拟局域网（Hamachi）到家用机开服（端口映射与DDNS），熟练Windows下Bukkit和（？）搭建服务器与forge，配置Mods和Plugins。
-
-
-
-八年级学习<a href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank" rel="noreferrer noopener">Dont_Starve_Together&nbsp;</a>&nbsp;Dedicated&nbsp;Server在Windows平台上的搭建（家用网络状况糟糕）
-
-
-
-八年级尝试学习Lua语言（制作 Mods for&nbsp;<a rel="noreferrer noopener" href="https://store.steampowered.com/app/219740/Dont_Starve/" target="_blank">Don't Starve</a>&nbsp;），看打印下来的资料看不懂........
-
-
-八年级学会了刷机（卡刷与Fastboot线刷）
-
-
-九年级接触Debian与Ubuntu，有了自己第一个VPS（在Google Cloud Platform，现在已经到期），在Debian与Ubuntu环境下搭建了<a rel="noreferrer noopener" href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank">Dont_Starve_Together&nbsp;</a>&nbsp;Dedicated&nbsp;Server与Bukkit for Minecraft（Bukkit开服失败，不知道为什么windows下和linux都不行），有了自己第一个网站，有了自己第一个博客。
-
+常用编程语言：Python,C with STL（算法竞赛）。标记语言：HTML
 
 ## 学业生涯
 

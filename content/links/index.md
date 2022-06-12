@@ -8,7 +8,7 @@ draft: false
 
 网站https://blog.youngzm.com
 
-站名:LavaCup2233的博客
+站名:YoungZM339的博客
 
 图标:https://blog.youngzm.com/imgs/favicon.ico
 

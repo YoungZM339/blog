@@ -8,10 +8,10 @@ draft: false
 
 ## 自述
 
-大家好，我是YoungZM，英文名字是Brain Yang ，常用用户名是五月逸兴（lavacup2233），是一个普普通通的中学生。
+大家好，我是YoungZM，英文名字是Brain Yang ，常用用户名是五月逸兴（YoungZM339），是一个普普通通的中学生。
 
 
-联系我：<a href="mailto:lavacup2233@outlook.com">lavacup2233@outlook.com</a>
+联系我：<a href="mailto:YoungZM339@outlook.com">YoungZM339@outlook.com</a>
 
 
 爱好：编程 ，动漫 ，摄影，插画

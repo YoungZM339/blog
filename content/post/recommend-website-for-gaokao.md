@@ -4,8 +4,9 @@ date: 2022-06-11T22:53:51+08:00
 draft: true
 ---
 
-> “卧槽，你咋不早点发”“学校里连个p都没有"--一位21届高考的朋友对我的分享的评论。
-![](cdn.youngzm.com/imgs/recommend-website-for-gaokao-0.png)
+> “卧槽，你咋不早点发”“学校里连个p都没有"——一位21届高考的朋友对我的分享的评论。
+
+![](https://cdn.youngzm.com/imgs/recommend-website-for-gaokao-0.png)
 
 <!--more-->
 
@@ -19,3 +20,7 @@ draft: true
 今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。
 
 网址是[https://colleges.chat/](https://colleges.chat/)
+
+![](https://cdn.youngzm.com/blogfiles/recommend-website-for-gaokao-1.png)
+
+![](https://cdn.youngzm.com/blogfiles/recommend-website-for-gaokao-2.png)

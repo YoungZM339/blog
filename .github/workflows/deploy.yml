@@ -19,9 +19,6 @@ jobs:
           hugo-version: 'latest'
           # extended: true
 
-      - name: Clone
-        run: git clone https://github.com/olOwOlo/hugo-theme-even themes/even
-
       - name: Build
         run: hugo -D      
 

@@ -1,11 +1,8 @@
 [![hugo](https://img.shields.io/badge/powered%20by-hugo-orange)](https://gohugo.io/)
-![Server is stopped if you can't see the right png](https://blog.youngzm.com/imgs/running.png)
 
-There is the source code for @lavacup2233 's blog,follow link:
+![Server is stopped if you can't see the png](https://blog.youngzm.com/imgs/running.png)
 
-<https://lavacup2233.github.io>
-
-<https://blog.youngzm.com>
+There is the source code for @[YoungZM](https://youngzm.com)'Blog:<https://blog.youngzm.com>
 
 LICENSE
 ---

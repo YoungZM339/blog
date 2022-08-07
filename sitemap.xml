@@ -1,84 +1,39 @@
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/post/</loc>
+    <loc>https://blog.youngzm.com/posts/</loc>
     <lastmod>2022-06-11T22:53:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/</loc>
     <lastmod>2022-06-11T22:53:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/recommend-website-for-gaokao/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/posts/recommend-website-for-gaokao/</loc>
     <lastmod>2022-06-11T22:53:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/plan-and-promise/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/posts/plan-and-promise/</loc>
     <lastmod>2021-03-14T19:32:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/about/</loc>
     <lastmod>2021-02-27T23:14:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/links/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/links/</loc>
     <lastmod>2021-02-27T23:12:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/tiezi/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/posts/tiezi/</loc>
     <lastmod>2019-07-31T19:32:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/cpp/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/posts/cpp/</loc>
     <lastmod>2019-07-31T10:32:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/qqdownload/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/posts/qqdownload/</loc>
     <lastmod>2018-08-04T19:32:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/</loc>
     <priority>0</priority>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/</loc>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/</loc>
   </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
 </urlset>

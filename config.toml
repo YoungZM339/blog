@@ -43,19 +43,33 @@ term="[ENTER TERM HERE]"
 label="your label"
 theme="github-light"
 
+[[menu.main]]             # config your menu              # 配置目录
+  name = "主页"
+  weight = 10
+  identifier = "home"
+  url = "/"
 [[menu.main]]
-url = "/categories"
-name = "Categories"
-weight = 2
+  name = "归档"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
 [[menu.main]]
-url = "/tags"
-name = "Tags"
-weight = 3
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
 [[menu.main]]
-url = "/posts"
-name = "Archive"
-weight = 1
+  name = "分类目录"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
 [[menu.main]]
-url = "/index.xml"
-name = "RSS Feed"
-weight = 4
+  name = "友情链接"
+  weight = 40
+  identifier = "links"
+  url = "/links/"
+[[menu.main]]
+  name = "关于"
+  weight = 40
+  identifier = "about"
+  url = "/about/"

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on YoungZM&#39;s Blog</title>
-    <link>https://blog.youngzm.com/posts/</link>
+    <link>https://blog.youngzm.com/post/</link>
     <description>Recent content in Posts on YoungZM&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2022@YoungZM</copyright>
-    <lastBuildDate>Sat, 11 Jun 2022 22:53:51 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 22:53:51 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>大学生活质量指北 | 一个帮助你在择校阶段提升大学生活质量的网站</title>
-      <link>https://blog.youngzm.com/posts/recommend-website-for-gaokao/</link>
+      <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
       <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
       
-      <guid>https://blog.youngzm.com/posts/recommend-website-for-gaokao/</guid>
+      <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;“卧槽，你咋不早点发”“学校里连个p都没有&amp;quot;——一位21届高考的朋友对我的分享的评论。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -22,30 +22,30 @@
     
     <item>
       <title>在2021年回顾自己的博客</title>
-      <link>https://blog.youngzm.com/posts/plan-and-promise/</link>
+      <link>https://blog.youngzm.com/post/plan-and-promise/</link>
       <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
       
-      <guid>https://blog.youngzm.com/posts/plan-and-promise/</guid>
+      <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>帖子与贴子，孰对孰错？</title>
-      <link>https://blog.youngzm.com/posts/tiezi/</link>
+      <link>https://blog.youngzm.com/post/tiezi/</link>
       <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
       
-      <guid>https://blog.youngzm.com/posts/tiezi/</guid>
+      <guid>https://blog.youngzm.com/post/tiezi/</guid>
       <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
 &lt;p&gt;“帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>探寻C&#43;&#43;最快的读取文件的方案[转载]</title>
-      <link>https://blog.youngzm.com/posts/cpp/</link>
+      <link>https://blog.youngzm.com/post/cpp/</link>
       <pubDate>Wed, 31 Jul 2019 10:32:18 +0800</pubDate>
       
-      <guid>https://blog.youngzm.com/posts/cpp/</guid>
+      <guid>https://blog.youngzm.com/post/cpp/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -54,10 +54,10 @@
     
     <item>
       <title>如何加速下载QQ群文件里的大文件？</title>
-      <link>https://blog.youngzm.com/posts/qqdownload/</link>
+      <link>https://blog.youngzm.com/post/qqdownload/</link>
       <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
       
-      <guid>https://blog.youngzm.com/posts/qqdownload/</guid>
+      <guid>https://blog.youngzm.com/post/qqdownload/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     

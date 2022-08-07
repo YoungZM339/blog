@@ -1,6 +1,8 @@
 ---
 title: "帖子与贴子，孰对孰错？"
 date: 2019-07-31T19:32:18+08:00
+description: "“帖子”与“贴子”，谁是对的？近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。"
+featured_image: "https://cdn.youngzm.com/blogfiles/06-17-202000.08.15_1.jpg"
 draft: false
 ---
 ## 引言

@@ -1,6 +1,8 @@
 ---
 title: "如何加速下载QQ群文件里的大文件？"
 date: 2018-08-04T19:32:18+08:00
+description: "众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。"
+featured_image: "https://cdn.youngzm.com/wp-content/uploads/2019/12/54LGTXPY6OIW_OLO_WH.png"
 draft: false
 ---
 <h2>引言</h2>

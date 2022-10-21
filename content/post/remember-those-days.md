@@ -2,7 +2,7 @@
 title: "与其说是尾声，不如说是下一段的序幕吧"
 date: 2022-10-22T04:15:51+08:00
 description: "无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。"
-featured_image: "imgs\remember-those-days\book+room2.jpg"
+featured_image: "https://blog.youngzm.com/imgs/remember-those-days/book+room2.jpg"
 draft: false
 ---
 
@@ -27,4 +27,4 @@ draft: false
 
 2022年10月22日04时15分写毕
 
-![book+room2.jpg](\imgs\remember-those-days\book+room2.jpg)
+![book+room2.jpg](https://blog.youngzm.com/imgs/remember-those-days/book+room2.jpg))

@@ -2,7 +2,8 @@
 title: "大学生活质量指北 | 一个帮助你在择校阶段提升大学生活质量的网站"
 date: 2022-06-11T22:53:51+08:00
 description: "大家在高考后择校时可能更加看重学校综合实力，却忽视了最影响大学生活质量的一些问题，而这个网站的出现恰好补充了这一点。"
-featured_image: "https://cdn.youngzm.com/imgs/recommend-website-for-gaokao-0.png"
+categories: [稷下学宫]
+tags: [高考,大学,择校]
 draft: false
 ---
 
@@ -17,6 +18,6 @@ draft: false
 
 网址是[https://colleges.chat/](https://colleges.chat/)
 
-![](https://cdn.youngzm.com/blogfiles/recommend-website-for-gaokao-1.png)
+![](https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-1.png)
 
-![](https://cdn.youngzm.com/blogfiles/recommend-website-for-gaokao-2.png)
+![](https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-2.png)

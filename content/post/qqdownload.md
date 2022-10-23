@@ -2,7 +2,8 @@
 title: "如何加速下载QQ群文件里的大文件？"
 date: 2018-08-04T19:32:18+08:00
 description: "众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。"
-featured_image: "https://cdn.youngzm.com/wp-content/uploads/2019/12/54LGTXPY6OIW_OLO_WH.png"
+categories: [上网冲浪]
+tags: [QQ,群文件,加速下载]
 draft: false
 ---
 ## 引言
@@ -32,16 +33,16 @@ http://qun.qzone.qq.com/group#!/群号/share
 
 如果你打开的是第一个链接，你将会看到
 
-![](https://cdn.youngzm.com/wp-content/uploads/2019/12/HHOOLXDJV902UO2M-1024x270.png)
+![](https://blog.youngzm.com/imgs/qqdownload/HHOOLXDJV902UO2M-1024x270.png)
 
 悬浮在标题栏“我的群”上，选择你需要得到群组，我这里选择了 Hello Luogu群作为演示。
 
-![](https://cdn.youngzm.com/wp-content/uploads/2019/12/S5BM5G6QB939BVL4.png)
+![](https://blog.youngzm.com/imgs/qqdownload/S5BM5G6QB939BVL4.png)
 
 进入一个新的页面后，你将会看到这样的div区块，点击第二个按钮“群文件”
 如果你已经点击了那个按钮或者你打开是的是第二个链接，你将会看到：
 
-![](https://cdn.youngzm.com/wp-content/uploads/2019/12/54LGTXPY6OIW_OLO_WH.png)
+![](https://blog.youngzm.com/imgs/qqdownload/54LGTXPY6OIW_OLO_WH.png)
 
 点击白色方块，即“下载”
 然后通过下载链接调用你的多线程下载工具。

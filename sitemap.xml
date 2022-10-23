@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.youngzm.com/categories/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
     <loc>https://blog.youngzm.com/post/</loc>
     <lastmod>2022-10-22T04:15:51+08:00</lastmod>
   </url><url>
+    <loc>https://blog.youngzm.com/tags/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
     <loc>https://blog.youngzm.com/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E5%A4%A7%E5%AD%A6/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E5%A4%A7%E4%B8%80/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2022-10-22T04:15:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2022-10-22T04:15:51+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/remember-those-days/</loc>
@@ -14,13 +32,46 @@
     <loc>https://blog.youngzm.com/post/recommend-website-for-gaokao/</loc>
     <lastmod>2022-06-11T22:53:51+08:00</lastmod>
   </url><url>
+    <loc>https://blog.youngzm.com/tags/%E9%AB%98%E8%80%83/</loc>
+    <lastmod>2022-06-11T22:53:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/</loc>
+    <lastmod>2022-06-11T22:53:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E6%8B%A9%E6%A0%A1/</loc>
+    <lastmod>2022-06-11T22:53:51+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/</loc>
+    <lastmod>2021-03-14T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/</loc>
+    <lastmod>2021-03-14T19:32:18+08:00</lastmod>
+  </url><url>
     <loc>https://blog.youngzm.com/post/plan-and-promise/</loc>
     <lastmod>2021-03-14T19:32:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/tiezi/</loc>
     <lastmod>2019-07-31T19:32:18+08:00</lastmod>
   </url><url>
+    <loc>https://blog.youngzm.com/tags/%E8%B4%B4%E5%90%A7/</loc>
+    <lastmod>2019-07-31T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E6%96%87%E5%AD%97/</loc>
+    <lastmod>2019-07-31T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/qq/</loc>
+    <lastmod>2018-08-04T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E5%8A%A0%E9%80%9F%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2018-08-04T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E7%BE%A4%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-08-04T19:32:18+08:00</lastmod>
+  </url><url>
     <loc>https://blog.youngzm.com/post/qqdownload/</loc>
+    <lastmod>2018-08-04T19:32:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/%E4%B8%8A%E7%BD%91%E5%86%B2%E6%B5%AA/</loc>
     <lastmod>2018-08-04T19:32:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/about/</loc>
@@ -31,9 +82,5 @@
   </url><url>
     <loc>https://blog.youngzm.com/tags/</loc>
     <priority>0</priority>
-  </url><url>
-    <loc>https://blog.youngzm.com/categories/</loc>
-  </url><url>
-    <loc>https://blog.youngzm.com/tags/</loc>
   </url>
 </urlset>

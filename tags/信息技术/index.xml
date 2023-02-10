@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>稷下学宫 on YoungZM&#39;s Blog</title>
-    <link>https://blog.youngzm.com/categories/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/</link>
-    <description>Recent content in 稷下学宫 on YoungZM&#39;s Blog</description>
+    <title>信息技术 on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/tags/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 信息技术 on YoungZM&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sat, 11 Jun 2022 22:53:51 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/categories/%E7%A8%B7%E4%B8%8B%E5%AD%A6%E5%AE%AB/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
-      <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
-      <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-      
-      <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
-      <description>前言 大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——大学生活质量指北的出现恰好补充了这一点。
-正文 去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。
-今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。
-网址是https://colleges.chat/</description>
-    </item>
-    
+    <lastBuildDate>Mon, 16 Dec 2019 19:32:18 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>河南省普通高中学业水平考试信息技术模拟考试复盘</title>
       <link>https://blog.youngzm.com/post/high-school-exam/</link>
@@ -70,21 +58,6 @@ PDU:packet/数据包；
 ============================================
 传输层：
 作用：提供可靠和尽力而为的传输；</description>
-    </item>
-    
-    <item>
-      <title>帖子与贴子，孰对孰错？</title>
-      <link>https://blog.youngzm.com/post/tiezi/</link>
-      <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
-      
-      <guid>https://blog.youngzm.com/post/tiezi/</guid>
-      <description>引言 “帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。
-正文 首先我查阅了中国社会科学院语言研究所的《现代汉语词典》（第6版），其中文字解释如下：
-tiē 帖 tie 1 服从;顺从:服 ~。 2 妥当;稳当: 妥 ~。 3(Tie)名姓。 另见 1296 页 tie;1298 页 tiè。 tiě 帖 tie 1 邀请客人的通知:请 ~。 2 旧时 写着生辰八字等的纸片:庚~|换 ~。 3 (~儿)写着字的小纸片:字~儿(便条)。4 帖 子2:发~|跟~|热 ~。 6〈方〉量 用于配合 起来的若干味汤药:一~药。 另见 1295 页 tie;1298 页 tiè。 【帖子】 tie·zi 名1 帖123。2 在网络论坛 上发表议论、参与讨论的话语或短文:网上的 一则~引起了大家的关注。 tie tiè 名 学习写字或绘画时临摹用的样 本:碑~|习字~|画~|临 ~。 另见 1295 页 tie;1296 页 tiě。
-查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？
-但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？
-我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：
-“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2, 期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。” 应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎</description>
     </item>
     
   </channel>

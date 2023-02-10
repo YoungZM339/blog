@@ -1,4 +1,4 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YoungZM&#39;s Blog</title>
@@ -6,390 +6,122 @@
     <description>Recent content on YoungZM&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>Copyright 2022@YoungZM</copyright>
-    <lastBuildDate>Sat, 22 Oct 2022 04:15:51 +0800</lastBuildDate>
+    <copyright>Copyright 2023@YoungZM</copyright>
+    <lastBuildDate>Sat, 22 Oct 2022 04:15:51 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>与其说是尾声，不如说是下一段的序幕吧</title>
+      <link>https://blog.youngzm.com/post/remember-those-days/</link>
+      <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/remember-those-days/</guid>
+      <description>&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;现在是凌晨2点30分，我重新坐到书桌前开始写这篇随笔。对我而言，凌晨这段的安静是我不多的能让我“逃离”这个世界的时间。好像是因为初三的暑假看了些游记和博客随笔，自那时起我总喜欢隔些日子写写东西（可惜，多数已经不见了踪影）。那时是近乎疯狂与魔幻的生活的序幕，而现在是2022年10月22日，我彻底脱离过往几年那种的生活已经四个多月了。时至今日，我思想中的大学生活依旧是缺乏实感的；未来的生活依旧是缺乏想象的。面对繁琐的作业与任务，仿佛可及的目标与梦想，这几个月算是稳稳地度过了。&lt;/p&gt;</description>
+    </item>
     
-        <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
+      <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
+      <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
+      <description>前言 大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——大学生活质量指北的出现恰好补充了这一点。
+正文 去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。
+今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。
+网址是https://colleges.chat/</description>
+    </item>
     
+    <item>
+      <title>2021年11月26日随笔一篇</title>
+      <link>https://blog.youngzm.com/post/20211226essay/</link>
+      <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/20211226essay/</guid>
+      <description>正文 隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。
+我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。
+这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。
+其实事情总会朝着好的方向发展的。</description>
+    </item>
     
+    <item>
+      <title>在2021年回顾自己的博客</title>
+      <link>https://blog.youngzm.com/post/plan-and-promise/</link>
+      <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
+    </item>
     
-        <item>
-        <title>与其说是尾声，不如说是下一段的序幕吧</title>
-        <link>https://blog.youngzm.com/post/remember-those-days/</link>
-        <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/remember-those-days/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/remember-those-days/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;现在是凌晨2点30分，我重新坐到书桌前开始写这篇随笔。对我而言，凌晨这段的安静是我不多的能让我“逃离”这个世界的时间。好像是因为初三的暑假看了些游记和博客随笔，自那时起我总喜欢隔些日子写写东西（可惜，多数已经不见了踪影）。那时是近乎疯狂与魔幻的生活的序幕，而现在是2022年10月22日，我彻底脱离过往几年那种的生活已经四个多月了。时至今日，我思想中的大学生活依旧是缺乏实感的；未来的生活依旧是缺乏想象的。面对繁琐的作业与任务，仿佛可及的目标与梦想，这几个月算是稳稳地度过了。&lt;/p&gt;
-&lt;p&gt;坐在寂静的宿舍里时，我时常回想起以前自己总喜欢站在窗边向远方眺望的场景&amp;ndash;初三傍晚趴在学校自习教室外的栏杆上接受晚风的洗礼，高考备考时一个个难眠的夜晚依在窗台仰望无际的夜空。我似乎是一个难以割舍离的人，总还是会在面拂熟悉的晚风与仰望熟悉的夜空时，在陌生的人潮人涌中时，想起以前的朋友和同学们的说笑。每当想起这些，心中总有种说不出的感觉，也常常会讲：“啊，要是能回到那时候就好了。”记忆这种东西真是奇妙，明明本是当时日复一日的常态，现在看来却像宝石一样闪耀。&lt;/p&gt;
-&lt;p&gt;我不止一次地在脑海中问我自己，“你后悔过去的选择吗？”我告诉自己，“有遗憾，但是不后悔。”这句话不知是否发自真心？可能还是有一丝后悔吧，不过我可能已经做了在当时的眼界与能力下能做的一切，也不该有后悔罢。过往的事情已经发生了，无论如何，现在只剩下自己回味啦。
-&lt;em&gt;“我们所可以自慰的，想来想去，也还是所谓对于将来的希望。”&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;我如愿在大学学到了可能是曾经热爱的学科。在经济下行的大环境下，“本硕985找不到工作；微软挂掉所有日常实习生”的新闻每每让人心生焦虑。不过好在不是陷入所谓“不转专业就没出路”的境况，更何况大一也还不至于太过紧张。目前希望能多坐会儿冷板凳，看看自己究竟有没有这方面的科研或开发能力，再来讲这些未来规划也不迟罢。&lt;/p&gt;
-&lt;p&gt;近些日子不是很太平，又是一轮大潮席卷全国，蜷居在噪杂的寝室里常常有所事但也无所获。虽然在看到苗头的时候已经做了些心理和物质上的准备，可是现状还是引得心里发慌。不幸的是，视目前发展情况，短期内似乎是无法恢复正常了。“COVID夺走了我的青春”，真的不是闹着玩的。&lt;/p&gt;
-&lt;p&gt;一瞬间，还太多东西要讲，不如先点一个逗号，以后再慢慢讲吧。毕竟这段故事，还在纸上书写呢。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2022年10月22日04时15分写毕&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/remember-those-days/book+room2.jpg&#34; alt=&#34;book+room2.jpg&#34;&gt;)&lt;/p&gt;- https://blog.youngzm.com/post/remember-those-days/ - Copyright 2022@YoungZM</description>
-        </item>
+    <item>
+      <title>帖子与贴子，孰对孰错？</title>
+      <link>https://blog.youngzm.com/post/tiezi/</link>
+      <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/tiezi/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;“帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>如何加速下载QQ群文件里的大文件？</title>
+      <link>https://blog.youngzm.com/post/qqdownload/</link>
+      <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/qqdownload/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>About</title>
+      <link>https://blog.youngzm.com/about/</link>
+      <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/about/</guid>
+      <description>关于我 自述 大家好，我是YoungZM，英文名字是Brain Yang ，常用用户名是五月逸兴（YoungZM339），是一个普普通通的本科生。
+联系我：YoungZM339@outlook.com
+爱好：编程 ，动漫 ，摄影，插画
+我与计算机 常用编程语言：Python,C with STL（算法竞赛）。
+学业生涯 基础教育 状态 初级中学 毕业 普通高中 毕业 高等教育 状态 大学本科 在读 博客维护日志 2017年9月最后一周，我从谷歌云免费申请到了一年的300美元赠金的账号，从此踏上不归路。
+2017年，创建了一个HTML页面，除了&amp;quot;helloworld&amp;quot;什么也没有。
+2018年1月6日，在腾讯云用1元购入域名la****.club一年，后因发现.club域名续费略贵，随即弃用。
+2018年2月6日，在阿里云购入域名la****.top。
+2018年上半年，初创博客并开始使用Wordpress。之后不断折腾网站，更换主题，加CSS代码，更换主题&amp;hellip;&amp;hellip;..（省去无数个更换主题）
+2018年6月末购买了腾讯云学生机一年（没有经过学生认证，所以不能续费）。
+2018年7月，博客迁移至腾讯云。
+2018年7月，经历了无数次被拒，备案初审终于通过。
+2018年7月31日接到工信部通知，备案通过，获得了网站备案号。
+2018年8月，网站加入了CDN加速，网站速度大幅度提升。
+2018年下半年，网站图像全部转入COS储存。
+2018年年末，更换MDx主题。
+2019年某月某日，博客应用转为Typecho。
+2019年11月04日,博客应用转为Wordpress。
+2020年5月，博客应用转为Typecho。
+2021年某月，博客应用转为Hexo。
+2021年某月，博客应用转为Hugo。</description>
+    </item>
     
-        <item>
-        <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
-        <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
-        <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/recommend-website-for-gaokao/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——&lt;a href=&#34;https://colleges.chat/&#34;&gt;大学生活质量指北&lt;/a&gt;的出现恰好补充了这一点。&lt;/p&gt;
-&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。&lt;/p&gt;
-&lt;p&gt;今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。&lt;/p&gt;
-&lt;p&gt;网址是&lt;a href=&#34;https://colleges.chat/&#34;&gt;https://colleges.chat/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-- https://blog.youngzm.com/post/recommend-website-for-gaokao/ - Copyright 2022@YoungZM</description>
-        </item>
+    <item>
+      <title>Links</title>
+      <link>https://blog.youngzm.com/links/</link>
+      <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/links/</guid>
+      <description>欢迎交换友链~：
+网站https://blog.youngzm.com
+站名:YoungZM339的博客
+图标:https://blog.youngzm.com/imgs/favicon.ico
+朋友 站点地址 FlyingSky&amp;rsquo;s Blog https://blog.fsky7.com/ Lzy Blog https://www.lzy20021010.com/ XSY https://www.xsy.fun/ YangTY’s Blog https://imyangty.com/ 学霸时光机 https://www.syf.ink/ Fachep https://blog.Fachep.com/ Miaow233 https://nekohouse.cafe/ 大佬 站点地址 BYVoid https://www.byvoid.com/ 无垠 https://flyhigher.top/ stdcall https://www.cnblogs.com/mlystdcall/ menci https://oi.men.ci/#blog rqy https://rqy.moe/ </description>
+    </item>
     
-    
-    
-        <item>
-        <title>2021年11月26日随笔一篇</title>
-        <link>https://blog.youngzm.com/post/20211226essay/</link>
-        <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/20211226essay/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/20211226essay/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。&lt;/p&gt;
-&lt;p&gt;我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。&lt;/p&gt;
-&lt;p&gt;这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。&lt;/p&gt;
-&lt;p&gt;其实事情总会朝着好的方向发展的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/20211226essay/psc.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-- https://blog.youngzm.com/post/20211226essay/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>在2021年回顾自己的博客</title>
-        <link>https://blog.youngzm.com/post/plan-and-promise/</link>
-        <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/plan-and-promise/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;
-&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;h3 id=&#34;回眸&#34;&gt;回眸&lt;/h3&gt;
-&lt;p&gt;由于互联网中的开发者们的写博客的传统，我在2018年创建了本博客。然而三年多过去了，竟没有一篇值得我留下的文章，探究原因，可能是因为我过分注重博客的“外在”而忽略了“内核”。&lt;/p&gt;
-&lt;p&gt;创建博客之初，我把主要工作放在了站点优化上，先将博客内静态内容转移到国内云厂商的静态储存桶，后给站点安排备案并部署了国内CDN，站点访问速度大幅度提升，至此半年过去但没有任何内容产出。&lt;/p&gt;
-&lt;p&gt;此后的三年不断更换博客系统、重构博客，原因各不相同（详见文后重建记录），如今看来却都是微不足道。&lt;/p&gt;
-&lt;p&gt;另外，以后题解报告会专门在另一个站点维护，将在暑假发布。&lt;/p&gt;
-&lt;h2 id=&#34;博客重建记录截止于2021年3月14日&#34;&gt;博客重建记录（截止于2021年3月14日）&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;时间&lt;/th&gt;
-&lt;th&gt;事件&lt;/th&gt;
-&lt;th&gt;原因&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;2018年&lt;/td&gt;
-&lt;td&gt;使用wordpress构建本网站&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2019年&lt;/td&gt;
-&lt;td&gt;转用为typecho&lt;/td&gt;
-&lt;td&gt;不满意wordpress的速度&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2019年&lt;/td&gt;
-&lt;td&gt;转回使用wordpress&lt;/td&gt;
-&lt;td&gt;在手机设备再编辑困难&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2019年&lt;/td&gt;
-&lt;td&gt;转用typecho&lt;/td&gt;
-&lt;td&gt;对富文本编辑器不满意&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2021年&lt;/td&gt;
-&lt;td&gt;转用hexo&lt;/td&gt;
-&lt;td&gt;更加追求站点稳定性能，并为将来不再计划拥有VPS做准备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2021年&lt;/td&gt;
-&lt;td&gt;转用hugo&lt;/td&gt;
-&lt;td&gt;构建迅速，易于上手&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;- https://blog.youngzm.com/post/plan-and-promise/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>帖子与贴子，孰对孰错？</title>
-        <link>https://blog.youngzm.com/post/tiezi/</link>
-        <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/tiezi/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/tiezi/ -&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;p&gt;“帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。&lt;/p&gt;
-&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;首先我查阅了中国社会科学院语言研究所的《现代汉语词典》（第6版），其中文字解释如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;tiē
-帖
-tie 1 服从;顺从:服 ~。 2 妥当;稳当:
-妥 ~。 3(Tie)名姓。
-另见 1296 页 tie;1298 页 tiè。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;tiě
-帖
-tie 1 邀请客人的通知:请 ~。 2 旧时
-写着生辰八字等的纸片:庚~|换 ~。 3
-(~儿)写着字的小纸片:字~儿(便条)。4 帖
-子2:发~|跟~|热 ~。 6〈方〉量 用于配合
-起来的若干味汤药:一~药。
-另见 1295 页 tie;1298 页 tiè。
-【帖子】 tie·zi 名1 帖123。2 在网络论坛
-上发表议论、参与讨论的话语或短文:网上的
-一则~引起了大家的关注。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;tie
-tiè 名 学习写字或绘画时临摹用的样
-本:碑~|习字~|画~|临 ~。
-另见 1295 页 tie;1296 页 tiě。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？&lt;/p&gt;
-&lt;p&gt;但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？&lt;/p&gt;
-&lt;p&gt;我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2,  期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。”
-&lt;a href=&#34;https://www.zhihu.com/question/19678782/answer/12925529&#34;&gt;应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这是否证明了我的观点？
-然而我又使用搜索引擎设置时间段功能搜索后却发现早在百度贴吧问世（2003年11月25日）以前，CSDN论坛就已经有“贴子”一词出现：
-&lt;img src=&#34;https://blog.youngzm.com/imgs/tiezi/2020-06-17%20012303.png&#34; alt=&#34;&#34;&gt;
-&lt;img src=&#34;https://blog.youngzm.com/imgs/tiezi/2020-06-17%20012342.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;原本以为的明朗的天空却又浮现出了几朵乌云。
-研究至此，我的观点是：
-“帖子”毫无疑问是正确的。“贴子”是伴随着互联网发展而发展的词语（但不知从何时何处诞生），现在看来这不算错误，但正式场合中最好避免使用“贴子”。&lt;/p&gt;
-&lt;p&gt;希望此文能对大家有所启发，欢迎与我继续讨论。&lt;/p&gt;
-&lt;h2 id=&#34;版权说明&#34;&gt;版权说明&lt;/h2&gt;
-&lt;p&gt;本文作者是&lt;a href=&#34;https://blog.youngzm.com/&#34;&gt;YoungZM（@YoungZM339）&lt;/a&gt;，转载请保留作者名称及原文链接。&lt;/p&gt;- https://blog.youngzm.com/post/tiezi/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>如何加速下载QQ群文件里的大文件？</title>
-        <link>https://blog.youngzm.com/post/qqdownload/</link>
-        <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/qqdownload/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/qqdownload/ -&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;p&gt;众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;
-&lt;p&gt;原始事件发生在2018年8月4日，笔者的同学制作了一个毕业短片并且将其上传到了班级的QQ群文件里面 ，群主十分激动。文件体积虽然只有200MB，但是下载速度真的是很慢，令笔者非常难受，于是就有了这篇文章。
-&lt;strong&gt;关于多线程如何快速下载&lt;/strong&gt;群文件的文章其实我已经写过了，但是在网站数据迁移的过程中&lt;em&gt;不小心&lt;/em&gt;把备份文件全部删除了。&lt;em&gt;虽然我有经常备份的习惯&lt;/em&gt;，但还是只恢复了一部分，所以写这篇文章简单复述一下流程&lt;/p&gt;
-&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
-&lt;p&gt;1.获取QQ群文件的下载直链
-2.使用现有的多线程下载工具进行多线程下载&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;当然，本思路也普遍适用于提升 仅限制单个线程下载速度的下载 的下载速度（经测试下载百度云盘文件用此方法开太多线程会导致404，不过少一些速度也很快）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;实现过程&#34;&gt;实现过程&lt;/h2&gt;
-&lt;p&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;经过一番搜索，我发现QQ群群文件是有页面版的，我们不妨登入页面：
-&lt;a href=&#34;http://qun.qzone.qq.com/group&#34;&gt;http://qun.qzone.qq.com/group&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;当然，你也可以使用链接&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://qun.qzone.qq.com/group#!/&#34;&gt;http://qun.qzone.qq.com/group#!/&lt;/a&gt;群号/share&lt;/p&gt;
-&lt;p&gt;比如洛谷用户群 &lt;a href=&#34;http://qun.qzone.qq.com/group#!/515055655/share&#34;&gt;http://qun.qzone.qq.com/group#!/515055655/share&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;如果你打开的是第一个链接，你将会看到&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/qqdownload/HHOOLXDJV902UO2M-1024x270.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;悬浮在标题栏“我的群”上，选择你需要得到群组，我这里选择了 Hello Luogu群作为演示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/qqdownload/S5BM5G6QB939BVL4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;进入一个新的页面后，你将会看到这样的div区块，点击第二个按钮“群文件”
-如果你已经点击了那个按钮或者你打开是的是第二个链接，你将会看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.youngzm.com/imgs/qqdownload/54LGTXPY6OIW_OLO_WH.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;点击白色方块，即“下载”
-然后通过下载链接调用你的多线程下载工具。&lt;/p&gt;
-&lt;h2 id=&#34;关于多线程下载工具&#34;&gt;关于多线程下载工具&lt;/h2&gt;
-&lt;p&gt;关于多线程下载工具，我这里推荐&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ADM （即 Advanced Download Manager ）&lt;/li&gt;
-&lt;li&gt;IDM（即Internet Download Manager）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;详细的使用方法我不在赘述，可以自行翻阅官方文档。&lt;/p&gt;
-&lt;p&gt;这样，你就学会了如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;
-&lt;h2 id=&#34;本方法已经失效&#34;&gt;本方法已经失效&lt;/h2&gt;
-&lt;p&gt;原因是腾讯已经关闭了QQ群空间&lt;/p&gt;- https://blog.youngzm.com/post/qqdownload/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>About</title>
-        <link>https://blog.youngzm.com/about/</link>
-        <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/about/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/about/ -&lt;h1 id=&#34;关于我&#34;&gt;关于我&lt;/h1&gt;
-&lt;h2 id=&#34;自述&#34;&gt;自述&lt;/h2&gt;
-&lt;p&gt;大家好，我是YoungZM，英文名字是Brain Yang ，常用用户名是五月逸兴（YoungZM339），是一个普普通通的本科生。&lt;/p&gt;
-&lt;p&gt;联系我：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;mailto:YoungZM339@outlook.com&#34;&gt;YoungZM339@outlook.com&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;爱好：编程 ，动漫 ，摄影，插画&lt;/p&gt;
-&lt;h2 id=&#34;我与计算机&#34;&gt;我与计算机&lt;/h2&gt;
-&lt;p&gt;常用编程语言：Python,C with STL（算法竞赛）。&lt;/p&gt;
-&lt;h2 id=&#34;学业生涯&#34;&gt;学业生涯&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;基础教育&lt;/th&gt;
-&lt;th&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;初级中学&lt;/td&gt;
-&lt;td&gt;毕业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;普通高中&lt;/td&gt;
-&lt;td&gt;毕业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;高等教育&lt;/th&gt;
-&lt;th&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;大学本科&lt;/td&gt;
-&lt;td&gt;在读&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;博客维护日志&#34;&gt;博客维护日志&lt;/h2&gt;
-&lt;p&gt;2017年9月最后一周，我从谷歌云免费申请到了一年的300美元赠金的账号，从此踏上不归路。&lt;/p&gt;
-&lt;p&gt;2017年，创建了一个HTML页面，除了&amp;quot;helloworld&amp;quot;什么也没有。&lt;/p&gt;
-&lt;p&gt;2018年1月6日，在腾讯云用1元购入域名la****.club一年，后因发现.club域名续费略贵，随即弃用。&lt;/p&gt;
-&lt;p&gt;2018年2月6日，在阿里云购入域名la****.top。&lt;/p&gt;
-&lt;p&gt;2018年上半年，初创博客并开始使用Wordpress。之后不断折腾网站，更换主题，加CSS代码，更换主题&amp;hellip;&amp;hellip;..（省去无数个更换主题）&lt;/p&gt;
-&lt;p&gt;2018年6月末购买了腾讯云学生机一年（没有经过学生认证，所以不能续费）。&lt;/p&gt;
-&lt;p&gt;2018年7月，博客迁移至腾讯云。&lt;/p&gt;
-&lt;p&gt;2018年7月，经历了无数次被拒，备案初审终于通过。&lt;/p&gt;
-&lt;p&gt;2018年7月31日接到工信部通知，备案通过，获得了网站备案号。&lt;/p&gt;
-&lt;p&gt;2018年8月，网站加入了CDN加速，网站速度大幅度提升。&lt;/p&gt;
-&lt;p&gt;2018年下半年，网站图像全部转入COS储存。&lt;/p&gt;
-&lt;p&gt;2018年年末，更换MDx主题。&lt;/p&gt;
-&lt;p&gt;2019年某月某日，博客应用转为Typecho。&lt;/p&gt;
-&lt;p&gt;2019年11月04日,博客应用转为Wordpress。&lt;/p&gt;
-&lt;p&gt;2020年5月，博客应用转为Typecho。&lt;/p&gt;
-&lt;p&gt;2021年某月，博客应用转为Hexo。&lt;/p&gt;
-&lt;p&gt;2021年某月，博客应用转为Hugo。&lt;/p&gt;
-- https://blog.youngzm.com/about/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Links</title>
-        <link>https://blog.youngzm.com/links/</link>
-        <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/links/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/links/ -&lt;p&gt;欢迎交换友链~：&lt;/p&gt;
-&lt;p&gt;网站https://blog.youngzm.com&lt;/p&gt;
-&lt;p&gt;站名:YoungZM339的博客&lt;/p&gt;
-&lt;p&gt;图标:https://blog.youngzm.com/imgs/favicon.ico&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;朋友&lt;/th&gt;
-&lt;th&gt;站点地址&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;FlyingSky&amp;rsquo;s Blog&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://blog.fsky7.com/&#34;&gt;https://blog.fsky7.com/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Lzy Blog&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.lzy20021010.com/&#34;&gt;https://www.lzy20021010.com/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;XSY&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.xsy.fun/&#34;&gt;https://www.xsy.fun/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;YangTY’s Blog&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://imyangty.com/&#34;&gt;https://imyangty.com/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;学霸时光机&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.syf.ink/&#34;&gt;https://www.syf.ink/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Fachep&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://blog.Fachep.com/&#34;&gt;https://blog.Fachep.com/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Miaow233&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://nekohouse.cafe/&#34;&gt;https://nekohouse.cafe/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;大佬&lt;/th&gt;
-&lt;th&gt;站点地址&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;BYVoid&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.byvoid.com/&#34;&gt;https://www.byvoid.com/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;无垠&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://flyhigher.top/&#34;&gt;https://flyhigher.top/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stdcall&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.cnblogs.com/mlystdcall/&#34;&gt;https://www.cnblogs.com/mlystdcall/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;menci&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://oi.men.ci/#blog&#34;&gt;https://oi.men.ci/#blog&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;rqy&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://rqy.moe/&#34;&gt;https://rqy.moe/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-- https://blog.youngzm.com/links/ - Copyright 2022@YoungZM</description>
-        </item>
-    
-    
-    
+    <item>
+      <title></title>
+      <link>https://blog.youngzm.com/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.youngzm.com/tags/</guid>
+      <description>title: tags layout: tags</description>
+    </item>
     
   </channel>
-</rss> 
+</rss>

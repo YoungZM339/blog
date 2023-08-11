@@ -1,7 +1,7 @@
 ---
-title: "CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS3)"
+title: "CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)"
 date: 2023-08-11T19:32:18+08:00
-description: "CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。"
+description: "CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：回调函数（Callback Function）,fetch,slice,concat,some,every,reduce,扩展运算符（Spread Operator）"
 categories: [前端学习]
 tags: [JavaScript, CS571, 前端]
 draft: false
@@ -9,7 +9,7 @@ draft: false
 
 ## 引言
 
-> CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。
+> CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：回调函数（Callback Function）,fetch,slice,concat,some,every,reduce,扩展运算符（Spread Operator）
 
 <!--more-->
 

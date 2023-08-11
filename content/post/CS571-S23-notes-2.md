@@ -1,7 +1,7 @@
 ---
 title: "CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&JS2)"
 date: 2023-08-10T19:32:18+08:00
-description: "CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。"
+description: "CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter"
 categories: [前端学习]
 tags: [JavaScript, CS571, 前端]
 draft: false
@@ -9,11 +9,11 @@ draft: false
 
 ## 引言
 
-> CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。
+> CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter
 
 <!--more-->
 
-## Type Conversion
+## 类型转换（Type Conversion）
 
 JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。
 

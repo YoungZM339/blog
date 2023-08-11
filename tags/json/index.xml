@@ -7,16 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Wed, 09 Aug 2023 19:32:18 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CS571-S23 学习笔记(一) : JSON</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-1/</link>
-      <pubDate>Wed, 09 Aug 2023 19:32:18 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
       
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-1/</guid>
       <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。&lt;/p&gt;
+&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

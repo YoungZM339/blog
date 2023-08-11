@@ -70,15 +70,15 @@ theme="github-light"
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
-  name = "标签"
+  name = "分类"
   weight = 30
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "分类目录"
-  weight = 40
   identifier = "categories"
   url = "/categories/"
+[[menu.main]]
+  name = "标签"
+  weight = 40
+  identifier = "tags"
+  url = "/tags/"
 [[menu.main]]
   name = "友链"
   weight = 50

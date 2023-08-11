@@ -19,7 +19,7 @@ googleAnalytics = "UA-170465513-1"
     tabWidth = 4
 
 [params]
-subtitle = "This is a boy's world"
+subtitle = "苔花如米小，也学牡丹开"
 enableGitalk = false
 enableGiscus = true
 

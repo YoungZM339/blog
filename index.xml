@@ -7,7 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sat, 22 Oct 2022 04:15:51 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Aug 2023 19:32:18 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-2/</link>
+      <pubDate>Thu, 10 Aug 2023 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-2/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>CS571-S23 学习笔记(一) : JSON</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-1/</link>
+      <pubDate>Wed, 09 Aug 2023 19:32:18 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-1/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>与其说是尾声，不如说是下一段的序幕吧</title>
       <link>https://blog.youngzm.com/post/remember-those-days/</link>

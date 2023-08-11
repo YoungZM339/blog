@@ -80,12 +80,12 @@ theme="github-light"
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "友情链接"
-  weight = 40
+  name = "友链"
+  weight = 50
   identifier = "links"
   url = "/links/"
 [[menu.main]]
   name = "关于"
-  weight = 40
+  weight = 60
   identifier = "about"
   url = "/about/"

@@ -1,5 +1,5 @@
 ---
-title: "CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)"
+title: "CS571-S23 学习笔记(五) : React 2"
 date: 2023-08-28T00:00:01+08:00
 description: "CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：框架（Framework）,库（Library）
 ,useRef"

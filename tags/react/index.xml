@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript on YoungZM&#39;s Blog</title>
-    <link>https://blog.youngzm.com/tags/javascript/</link>
-    <description>Recent content in JavaScript on YoungZM&#39;s Blog</description>
+    <title>React on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/tags/react/</link>
+    <description>Recent content in React on YoungZM&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Wed, 30 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-6/</link>
@@ -54,42 +54,6 @@ React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM�
 组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。
 虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。
 虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</description>
-    </item>
-    
-    <item>
-      <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes-3/</link>
-      <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
-      
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes-3/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：回调函数（Callback Function）,fetch,slice,concat,some,every,reduce,扩展运算符（Spread Operator）&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes-2/</link>
-      <pubDate>Thu, 10 Aug 2023 00:00:01 +0800</pubDate>
-      
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes-2/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>CS571-S23 学习笔记(一) : JSON</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes-1/</link>
-      <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
-      
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes-1/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

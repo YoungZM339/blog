@@ -7,7 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Fri, 11 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-6/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-6/</guid>
+      <description>React Fragments（React 片段）： React 片段是一个用于包装多个子元素的特殊组件。它们允许我们在不引入额外 DOM 节点的情况下，将多个元素组合在一起。使用 React 片段，我们可以在组件中返回多个子元素而无需使用额外的包装元素。
+import React from &amp;#34;react&amp;#34;; function App() { return ( &amp;lt;&amp;gt; &amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;React Fragments&amp;lt;/p&amp;gt; &amp;lt;/&amp;gt; ); } 组件和片段有什么区别？ 组件是可重用的、独立的、有状态或无状态的代码单元，用于构建用户界面的一部分。组件接收输入（称为 props）并返回用于描述该组件在屏幕上显示的元素树。组件可以包含其他组件，形成组件层次结构。它们具有自己的生命周期、状态和方法，并且可以通过 props 传递数据和回调函数。
+片段是一种特殊的组件，用于在不引入额外 DOM 节点的情况下包装多个子元素。它允许我们将多个元素组合在一起，而不需要使用额外的包装元素。片段不会创建新的 DOM 节点，而是在渲染时直接返回其子元素。片段通常用于在组件中返回多个子元素，并且对于需要在组件中返回多个元素而不引入额外层级的情况非常有用。
+下面是组件和片段之间的区别总结：
+组件：
+可重用的、独立的代码单元。 可以包含其他组件，形成组件层次结构。 具有自己的生命周期、状态和方法。 通过 props 传递数据和回调函数。 片段：
+用于包装多个子元素。 允许在不引入额外 DOM 节点的情况下组合元素。 不会创建新的 DOM 节点，而是直接返回其子元素。 在 React 中共享状态（Share State）： 在 React 中，组件之间的状态共享是通过 props 和上下文（context）来实现的。通过将状态作为属性传递给子组件，我们可以在整个应用程序中共享数据。另外，React 还引入了状态管理库（如 Redux 和 MobX），以简化大型应用程序中的状态共享和管理。
+props 在父组件中，我们可以通过在子组件的标签上添加属性来传递数据。这些属性会作为一个名为 props 的对象被子组件接收
+import React, { useState } from &amp;#34;react&amp;#34;; function Parent() { const [count, setCount] = useState(0); return ( &amp;lt;div&amp;gt; &amp;lt;Child count={count} /&amp;gt; &amp;lt;button onClick={() =&amp;gt; setCount(count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } function Child({ count }) { return &amp;lt;p&amp;gt;Count: {count}&amp;lt;/p&amp;gt;; } 上下文（Context） 在 React 中，上下文（Context）是一种用于在组件树中共享数据的机制。它允许我们在组件之间传递数据，而无需手动通过 props 将数据逐层传递。</description>
+    </item>
+    
+    <item>
+      <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-5/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-5/</guid>
+      <description>框架和库的区别 框架（Framework） 框架是一个完整的解决方案，它提供了一整套工具、库和规范，用于简化应用程序的开发过程。框架通常具有一定的结构 和约束，开发者需要按照框架的规则进行开发。框架通常涵盖了应用程序的架构、数据流管理、路由、状态管理、UI 组件等核心功能。流行的 JavaScript 框架有 React、Angular 和 Vue.js。
+库（Library） 库是一组可复用的代码集合，用于实现特定的功能，开发者可以根据需要选择性地使用库中的功能。库通常提供了一些函数、类或模块，以便开发者可以在自己的代码中调用它们。库通常不限制应用程序的整体结构，开发者可以根据自己的需求进行自由组织。常见的 JavaScript 库有 jQuery、Lodash 和 Moment.js。
+简而言之，框架更像是一个完整的开发工具包，提供了一种开发应用程序的方式，而库则是提供了一些特定功能的代码集合，可以根据需要选择性地使用。使用框架可以加快开发速度，但需要遵循框架的规则和约束；而使用库可以灵活地选择需要的功能，但需要自己组织代码结构。
+useRef 在 React 中，useRef 是一个用于创建可变引用的 Hook。它可以用来引用组件中的 DOM 元素、保存可变值以及在组件生命周期之间共享数据。
+使用 useRef，你可以在函数组件中创建一个引用，并且该引用在组件重新渲染时保持不变。这使得你可以在函数组件中访问和操作 DOM 元素。
+下面是一个使用 useRef 引用 DOM 元素的示例：
+import React, { useRef, useEffect } from &amp;#34;react&amp;#34;; function MyComponent() { const myRef = useRef(null); useEffect(() =&amp;gt; { // 在组件挂载后，访问和操作 DOM 元素 console.log(myRef.current); // 输出 DOM 元素 myRef.current.focus(); // 聚焦到 DOM 元素 }, []); return ( &amp;lt;div&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; ref={myRef} /&amp;gt; &amp;lt;/div&amp;gt; ); } 在上面的代码中，我们使用 useRef(null) 创建了一个引用 myRef，并将其赋值给 &amp;lt;input&amp;gt; 元素的 ref 属性。然后，通过 myRef.</description>
+    </item>
+    
+    <item>
+      <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-4/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-4/</guid>
+      <description>DOM DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。
+尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。
+React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。
+使用 React 的好处包括：
+性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。
+组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。
+虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。
+虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</description>
+    </item>
+    
     <item>
       <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-3/</link>

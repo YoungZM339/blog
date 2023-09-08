@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Wed, 30 Aug 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS571-S23 学习笔记(七) : React 4</title>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes-7/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes-7/</guid>
+      <description>Memoization（记忆化） 在 React 中，memoization 是一种优化技术，可以通过存储昂贵函数的结果并在相同输入的情况下重新使用这些结果，从而减少计算的次数。
+useCallback useCallback 是一个 React Hook，它返回一个记忆化版本的回调函数。只有当依赖项变化时，才会更新这个回调函数。它可以阻止不必要的渲染，因为它可以阻止在每次渲染时都创建新的函数。
+import React, { useState, useCallback } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const increment = useCallback(() =&amp;gt; { setCount((count) =&amp;gt; count + 1); }, []); return ( &amp;lt;div&amp;gt; Count: {count} &amp;lt;button onClick={increment}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; useMemo useMemo 是另一个 React Hook，它返回一个记忆化的值。这个值只有在依赖项变化时才会重新计算。
+import React, { useState, useMemo } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const expensiveComputation = useMemo(() =&amp;gt; { return count * 2; }, [count]); return ( &amp;lt;div&amp;gt; Double Count: {expensiveComputation} &amp;lt;button onClick={() =&amp;gt; setCount((count) =&amp;gt; count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; React.</description>
+    </item>
+    
     <item>
       <title>CS571-S23 学习笔记(六) : React 3</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-6/</link>

@@ -6,72 +6,10 @@ tags: [博客公告]
 draft: false
 ---
 
-# 关于我
+# About
 
-## 自述
+I am Brian Yang, an software engineering undergraduate in School of Artificial intelligence and Big Data, Henan University of Technology. Here is my resume: [中文](/resume/zh-cn)
 
-我是 YoungZM（YoungZM339）, Brain Yang, 一个普普通通的本科生。
+Contact: <a href="mailto:YoungZM339@outlook.com">YoungZM339@outlook.com</a>
 
-联系我：<a href="mailto:YoungZM339@outlook.com">YoungZM339@outlook.com</a>
-
-爱好：编程 ，动漫 ，摄影，插画
-
-## Skills
-
-Human language:
-
-- Chinese (zh-CN)
-- English (en-US)
-
-Programming language:
-
-- Python
-- ECMAScript (JavaScript)
-- C++
-
-## 学业生涯
-
-| 基础教育 | 状态 |
-| -------- | ---- |
-| 初级中学 | 毕业 |
-| 普通高中 | 毕业 |
-
-| 高等教育 | 状态 |
-| -------- | ---- |
-| 大学本科 | 在读 |
-
-## 博客维护日志
-
-2017 年 9 月最后一周，我从谷歌云免费申请到了一年的 300 美元赠金的账号，从此踏上不归路。
-
-2017 年，创建了一个 HTML 页面，除了"helloworld"什么也没有。
-
-2018 年 1 月 6 日，在腾讯云用 1 元购入域名 la\*\*\*\*.club 一年，后因发现.club 域名续费略贵，随即弃用。
-
-2018 年 2 月 6 日，在阿里云购入域名 la\*\*\*\*.top。
-
-2018 年上半年，初创博客并开始使用 Wordpress。之后不断折腾网站，更换主题，加 CSS 代码，更换主题........（省去无数个更换主题）
-
-2018 年 6 月末购买了腾讯云学生机一年（没有经过学生认证，所以不能续费）。
-
-2018 年 7 月，博客迁移至腾讯云。
-
-2018 年 7 月，经历了无数次被拒，备案初审终于通过。
-
-2018 年 7 月 31 日接到工信部通知，备案通过，获得了网站备案号。
-
-2018 年 8 月，网站加入了 CDN 加速，网站速度大幅度提升。
-
-2018 年下半年，网站图像全部转入 COS 储存。
-
-2018 年年末，更换 MDx 主题。
-
-2019 年某月某日，博客应用转为 Typecho。
-
-2019 年 11 月 04 日,博客应用转为 Wordpress。
-
-2020 年 5 月，博客应用转为 Typecho。
-
-2021 年某月，博客应用转为 Hexo。
-
-2021 年某月，博客应用转为 Hugo。
+关于博客：[about/blog](/about/blog)

@@ -1,18 +1,12 @@
 ---
 title: "Links"
-date: 1970-01-01T11:11:11+08:00
+date: 1970-01-01T11:11:10+08:00
 categories: [博客公告]
 tags: [博客公告]
 draft: false
 ---
 
 欢迎交换友链~：
-
-网站:[https://blog.youngzm.com](https://blog.youngzm.com)
-
-站名:YoungZM339 的博客
-
-图标:[https://blog.youngzm.com/imgs/favicon.ico](https://blog.youngzm.com/imgs/favicon.ico)
 
 | 我的朋友         | 站点地址                       |
 | ---------------- | ------------------------------ |

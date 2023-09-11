@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://blog.youngzm.com/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>STL</title>
+      <link>https://blog.youngzm.com/tags/stl/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/tags/stl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CS571</title>
       <link>https://blog.youngzm.com/tags/cs571/</link>

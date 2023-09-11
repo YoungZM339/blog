@@ -7,7 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; STL学习笔记(一) : algorithm 算法</title>
+      <link>https://blog.youngzm.com/post/cpp-stl-notes-2/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cpp-stl-notes-2/</guid>
+      <description>迭代器无效 在使用算法时，有时候会遇到迭代器失效的问题。迭代器失效指的是在对容器进行修改后，之前获取的迭代器可能会变得无效，不能再使用。
+迭代器失效的情况有多种，例如在插入元素后，原来的迭代器可能会失效；在删除元素后，指向删除元素的迭代器也会失效。
+algorithm fill, fill_n, generate, generate_n fill(first, last, value)：将[first, last)范围内的所有元素都设置为指定的值 value。 fill_n(first, n, value)：将从 first 开始的 n 个元素都设置为指定的值 value。 generate(first, last, generator)：使用指定的生成器 generator 生成[first, last)范围内的元素。 generate_n(first, n, generator)：使用指定的生成器 generator 生成从 first 开始的 n 个元素。 示例代码：
+#include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; int main() { std::vector&amp;lt;int&amp;gt; nums(5); // 使用 fill 将元素设置为 10 std::fill(nums.begin(), nums.end(), 10); // 输出结果：10 10 10 10 10 for (int num : nums) { std::cout &amp;lt;&amp;lt; num &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } std::cout &amp;lt;&amp;lt; std::endl; // 使用 fill_n 将前3个元素设置为 5 std::fill_n(nums.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; STL学习笔记(一) : container 容器</title>
+      <link>https://blog.youngzm.com/post/cpp-stl-notes-1/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:01 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/post/cpp-stl-notes-1/</guid>
+      <description>sequence container array std::array 是一个固定大小的数组容器，它在编译时就确定了大小，并且提供了类似于 C 数组的访问方式。 #include &amp;lt;array&amp;gt; std::array&amp;lt;int, 5&amp;gt; myArray = {1, 2, 3, 4, 5}; for (const auto&amp;amp; element : myArray) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } deque std::deque 是一个双端队列容器，支持在两端进行快速插入和删除操作。 #include &amp;lt;deque&amp;gt; std::deque&amp;lt;int&amp;gt; myDeque = {1, 2, 3}; myDeque.push_front(0); // 在前面插入元素 myDeque.push_back(4); // 在后面插入元素 for (const auto&amp;amp; element : myDeque) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } forward_list std::forward_list 是一个单向链表容器，只能从前往后遍历，没有提供反向遍历的功能。 #include &amp;lt;forward_list&amp;gt; std::forward_list&amp;lt;int&amp;gt; myList = {1, 2, 3}; myList.</description>
+    </item>
+    
     <item>
       <title>CS571-S23 学习笔记(七) : React 4</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-7/</link>
@@ -74,10 +95,11 @@ React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM�
       <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
       
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-3/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：回调函数（Callback Function）,fetch,slice,concat,some,every,reduce,扩展运算符（Spread Operator）&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>回调函数（Callback Function） 回调函数 回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。
+fetch fetch函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。fetch函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用fetch的示例：
+fetch(&amp;#34;https://api.example.com/data&amp;#34;) .then((response) =&amp;gt; response.json()) .then((data) =&amp;gt; { // 处理检索到的数据 }) .catch((error) =&amp;gt; { // 处理请求过程中发生的任何错误 }); slice(begl, endl) 和 concat(arr) slice方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：begl指定起始索引，endl（可选）指定结束索引（不包含在内）。原始数组不会被修改。
+concat方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用slice和concat的示例：
+const fruits = [&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;grape&amp;#34;, &amp;#34;kiwi&amp;#34;]; const slicedFruits = fruits.slice(1, 4); console.log(slicedFruits); // 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;] const moreFruits = [&amp;#34;pineapple&amp;#34;, &amp;#34;mango&amp;#34;]; const mergedArray = fruits.concat(moreFruits); console.log(mergedArray); // 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;] some(cb) 和 every(cb) some方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回true，否则返回false。</description>
     </item>
     
     <item>
@@ -86,10 +108,12 @@ React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM�
       <pubDate>Thu, 10 Aug 2023 00:00:01 +0800</pubDate>
       
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-2/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>类型转换（Type Conversion） JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。
+显式类型转换（Explicit Type Conversion）： 使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如Number()、String()、Boolean()等，可以将其他类型转换为数字、字符串或布尔值。例如：
+var num = Number(&amp;#34;42&amp;#34;); // 将字符串转换为数字 var str = String(123); // 将数字转换为字符串 var bool = Boolean(0); // 将数字转换为布尔值 使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：
+var num = +&amp;#34;42&amp;#34;; // 将字符串转换为数字 隐式类型转换（Implicit Type Conversion）： 字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：
+var result = &amp;#34;3&amp;#34; + 4; // 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接 var total = &amp;#34;10&amp;#34; - 5; // 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算 布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：
+var num = true + 1; // 结果为数字2，因为true会被转换为数字1 var str = false + &amp;#34;hello&amp;#34;; // 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34; forEach forEach 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。</description>
     </item>
     
     <item>
@@ -98,10 +122,11 @@ React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM�
       <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
       
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-1/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS571 S23 旨在向计算机科学本科生介绍用户体验 (UX) 开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>JSON JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：
+数据类型：JSON 支持以下数据类型：
+字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo; 数字：42 布尔值：true 或 false 数组（用方括号括起来）：[1, 2, 3] 对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30} 键值对：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：
+{ &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false } 数组：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例： [1, 2, 3, 4, 5] 嵌套：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例： { &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;hobbies&amp;#34;: [&amp;#34;reading&amp;#34;, &amp;#34;traveling&amp;#34;], &amp;#34;address&amp;#34;: { &amp;#34;street&amp;#34;: &amp;#34;123 Main St&amp;#34;, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34; } } 注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。
+JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 JSON.parse() 将 JSON 字符串解析为 JavaScript 对象，使用 JSON.</description>
     </item>
     
     <item>
@@ -255,7 +280,7 @@ Contact: YoungZM339@outlook.com</description>
     </item>
     
     <item>
-      <title>resume（Simplified Chinese）</title>
+      <title>Resume（Simplified Chinese）</title>
       <link>https://blog.youngzm.com/resume/zh-cn/</link>
       <pubDate>Thu, 01 Jan 1970 11:11:09 +0800</pubDate>
       

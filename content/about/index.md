@@ -11,5 +11,3 @@ draft: false
 I am Brian Yang, an software engineering undergraduate in School of Artificial intelligence and Big Data, Henan University of Technology. Here is my resume: [中文](/resume/zh-cn)
 
 Contact: <a href="mailto:YoungZM339@outlook.com">YoungZM339@outlook.com</a>
-
-关于博客：[about/blog](/about/blog)

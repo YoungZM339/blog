@@ -1,0 +1,320 @@
+---
+title: "C++ STL学习笔记(一) : container 容器"
+date: 2023-09-10T00:00:01+08:00
+description: "一个自用的C++ 参考手册，学习方向参考C++ 大学教程第九版"
+categories: [C++]
+tags: [C++, STL]
+draft: false
+---
+
+## sequence container
+
+### array
+
+- `std::array` 是一个固定大小的数组容器，它在编译时就确定了大小，并且提供了类似于 C 数组的访问方式。
+
+```cpp
+#include <array>
+
+std::array<int, 5> myArray = {1, 2, 3, 4, 5};
+
+for (const auto& element : myArray) {
+    std::cout << element << " ";
+}
+```
+
+### deque
+
+- `std::deque` 是一个双端队列容器，支持在两端进行快速插入和删除操作。
+
+```cpp
+#include <deque>
+
+std::deque<int> myDeque = {1, 2, 3};
+
+myDeque.push_front(0); // 在前面插入元素
+myDeque.push_back(4);  // 在后面插入元素
+
+for (const auto& element : myDeque) {
+    std::cout << element << " ";
+}
+```
+
+### forward_list
+
+- `std::forward_list` 是一个单向链表容器，只能从前往后遍历，没有提供反向遍历的功能。
+
+```cpp
+#include <forward_list>
+
+std::forward_list<int> myList = {1, 2, 3};
+
+myList.push_front(0); // 在前面插入元素
+
+for (const auto& element : myList) {
+    std::cout << element << " ";
+}
+```
+
+### list
+
+- `std::list` 是一个双向链表容器，支持在任意位置进行快速插入和删除操作。
+
+```cpp
+#include <list>
+
+std::list<int> myList = {1, 2, 3};
+
+myList.push_front(0); // 在前面插入元素
+myList.push_back(4);  // 在后面插入元素
+
+for (const auto& element : myList) {
+    std::cout << element << " ";
+}
+```
+
+### vector
+
+- `std::vector` 是一个动态数组容器，支持在尾部进行快速插入和删除操作，并且可以通过索引进行随机访问。
+
+```cpp
+#include <vector>
+
+std::vector<int> myVector = {1, 2, 3};
+
+myVector.push_back(4); // 在后面插入元素
+
+for (const auto& element : myVector) {
+    std::cout << element << " ";
+}
+```
+
+## ordered associative container
+
+### set
+
+- `std::set` 是一个有序集合容器，其中的元素按照升序进行排序，并且不允许重复元素的存在。
+
+```cpp
+#include <set>
+
+std::set<int> mySet = {3, 1, 4, 1, 5};
+
+for (const auto& element : mySet) {
+    std::cout << element << " ";
+}
+```
+
+### multiset
+
+- `std::multiset` 是一个有序多重集合容器，其中的元素按照升序进行排序，允许重复元素的存在。
+
+```cpp
+#include <set>
+
+std::multiset<int> myMultiset = {3, 1, 4, 1, 5};
+
+for (const auto& element : myMultiset) {
+    std::cout << element << " ";
+}
+```
+
+### map
+
+- `std::map` 是一个有序键值对容器，其中的元素按照键的升序进行排序，并且不允许重复的键。
+
+```cpp
+#include <map>
+
+std::map<std::string, int> myMap = {{"apple", 3}, {"banana", 2}, {"cherry", 5}};
+
+for (const auto& pair : myMap) {
+    std::cout << pair.first << ": " << pair.second << std::endl;
+}
+```
+
+### multimap
+
+- `std::multimap` 是一个有序多重键值对容器，其中的元素按照键的升序进行排序，允许重复的键的存在。
+
+```cpp
+#include <map>
+
+std::multimap<std::string, int> myMultimap = {{"apple", 3}, {"banana", 2}, {"apple", 5}};
+
+for (const auto& pair : myMultimap) {
+    std::cout << pair.first << ": " << pair.second << std::endl;
+}
+```
+
+## unordered associative container
+
+### unordered_set
+
+- `std::unordered_set` 是一个无序集合容器，其中的元素存储无序，并且不允许重复元素的存在。它使用哈希表实现，因此插入、删除和查找操作的平均时间复杂度是常数时间。
+
+```cpp
+#include <unordered_set>
+
+std::unordered_set<int> myUnorderedSet = {3, 1, 4, 1, 5};
+
+for (const auto& element : myUnorderedSet) {
+    std::cout << element << " ";
+}
+```
+
+### unordered_multiset
+
+- `std::unordered_multiset` 是一个无序多重集合容器，其中的元素存储无序，允许重复元素的存在。它使用哈希表实现，因此插入、删除和查找操作的平均时间复杂度是常数时间。
+
+```cpp
+#include <unordered_set>
+
+std::unordered_multiset<int> myUnorderedMultiset = {3, 1, 4, 1, 5};
+
+for (const auto& element : myUnorderedMultiset) {
+    std::cout << element << " ";
+}
+```
+
+### unordered_map
+
+- `std::unordered_map` 是一个无序键值对容器，其中的元素存储无序，并且不允许重复的键。它使用哈希表实现，因此插入、删除和查找操作的平均时间复杂度是常数时间。
+
+```cpp
+#include <unordered_map>
+
+std::unordered_map<std::string, int> myUnorderedMap = {{"apple", 3}, {"banana", 2}, {"cherry", 5}};
+
+for (const auto& pair : myUnorderedMap) {
+    std::cout << pair.first << ": " << pair.second << std::endl;
+}
+```
+
+### unordered_multimap
+
+- `std::unordered_multimap` 是一个无序多重键值对容器，其中的元素存储无序，允许重复的键的存在。它使用哈希表实现，因此插入、删除和查找操作的平均时间复杂度是常数时间。
+
+```cpp
+#include <unordered_map>
+
+std::unordered_multimap<std::string, int> myUnorderedMultimap = {{"apple", 3}, {"banana", 2}, {"apple", 5}};
+
+for (const auto& pair : myUnorderedMultimap) {
+    std::cout << pair.first << ": " << pair.second << std::endl;
+}
+```
+
+## container adapter
+
+### stack
+
+- `std::stack` 是一个容器适配器，它提供了栈（后进先出）的功能。它基于某个底层容器实现，默认使用 `std::deque` 作为底层容器。
+
+```cpp
+#include <stack>
+
+std::stack<int> myStack;
+
+myStack.push(1);  // 入栈
+myStack.push(2);
+myStack.push(3);
+
+while (!myStack.empty()) {
+    std::cout << myStack.top() << " ";  // 访问栈顶元素
+    myStack.pop();  // 出栈
+}
+```
+
+### queue
+
+- `std::queue` 是一个容器适配器，它提供了队列（先进先出）的功能。它基于某个底层容器实现，默认使用 `std::deque` 作为底层容器。
+
+```cpp
+#include <queue>
+
+std::queue<int> myQueue;
+
+myQueue.push(1);  // 入队
+myQueue.push(2);
+myQueue.push(3);
+
+while (!myQueue.empty()) {
+    std::cout << myQueue.front() << " ";  // 访问队头元素
+    myQueue.pop();  // 出队
+}
+```
+
+### priority_queue
+
+- `std::priority_queue` 是一个容器适配器，它提供了优先队列的功能，其中的元素按照一定的优先级进行排序。默认情况下，它使用 `std::vector` 作为底层容器，并且使用元素的比较运算符来确定优先级。
+
+```cpp
+#include <queue>
+
+std::priority_queue<int> myPriorityQueue;
+
+myPriorityQueue.push(3); // 入队
+myPriorityQueue.push(1);
+myPriorityQueue.push(4);
+myPriorityQueue.push(1);
+myPriorityQueue.push(5);
+
+while (!myPriorityQueue.empty()) {
+    std::cout << myPriorityQueue.top() << " "; // 访问队头元素
+    myPriorityQueue.pop(); // 出队
+}
+```
+
+## bitset
+
+`std::bitset` 是 C++ 标准库提供的一个位集容器。它用于表示固定大小的二进制位序列，并提供了一系列操作函数来对位进行设置、清除、翻转和查询等操作。
+
+```cpp
+#include <bitset>
+#include <iostream>
+
+int main() {
+    // 创建一个包含8个位的 bitset，初始值为0
+    std::bitset<8> bits;
+
+    // 设置位
+    bits.set(1);      // 将第2位设置为1
+    bits.set(3, true); // 将第4位设置为1
+
+    // 清除位
+    bits.reset(2);      // 将第3位设置为0
+    bits.reset(4, true); // 将第5位设置为0
+
+    // 翻转位
+    bits.flip(5); // 将第6位翻转（0变为1，1变为0）
+
+    // 查询位
+    bool value1 = bits.test(2);  // 检查第3位的值
+    bool value2 = bits[4];       // 通过下标运算符检查第5位的值
+
+    // 输出位集的值
+    std::cout << bits << std::endl;
+
+    // 输出每个位的值
+    for (size_t i = 0; i < bits.size(); ++i) {
+        std::cout << "Bit at position " << i << ": " << bits[i] << std::endl;
+    }
+
+    return 0;
+}
+```
+
+在这个示例中，我们首先创建了一个包含 8 个位的 `std::bitset` 对象 `bits`，初始值为 0。然后，我们使用 `set()` 函数将第 2 位和第 4 位设置为 1，使用 `reset()` 函数将第 3 位和第 5 位设置为 0，使用 `flip()` 函数翻转第 6 位。接着，我们使用 `test()` 函数和下标运算符 `[]` 查询特定位的值，并使用 `std::cout` 输出整个位集的值。最后，我们使用一个循环遍历每个位，并输出它们的值。输出结果如下：
+
+```
+01101101
+Bit at position 0: 0
+Bit at position 1: 1
+Bit at position 2: 1
+Bit at position 3: 0
+Bit at position 4: 1
+Bit at position 5: 1
+Bit at position 6: 0
+Bit at position 7: 1
+```

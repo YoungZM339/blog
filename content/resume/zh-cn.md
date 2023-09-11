@@ -1,5 +1,5 @@
 ---
-title: "resume（Simplified Chinese）"
+title: "Resume（Simplified Chinese）"
 date: 1970-01-01T11:11:09+08:00
 categories: []
 tags: []
@@ -53,7 +53,7 @@ draft: false
 
 ### 团队项目
 
-- **政策知识图谱系统**：使用 Django 和 Neo4j 编写的政策知识图谱系统，负责 Web 应用和 Neo4j 的开发，个人贡献代码开放于[GitHub](https://github.com/youngzm339/government-policy-knowledge-graph)。
+- **政策知识图谱系统**：使用 Django 和 Neo4j 编写的政策知识图谱系统，负责 Web 应用和 Neo4j 的开发。个人贡献代码开放于[GitHub](https://github.com/youngzm339/government-policy-knowledge-graph)。
 
 ### 社区项目
 

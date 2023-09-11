@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resumes on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/resume/</link>
+    <description>Recent content in Resumes on YoungZM&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright 2023@YoungZM</copyright>
+    <lastBuildDate>Thu, 01 Jan 1970 11:11:09 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/resume/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>resume（Simplified Chinese）</title>
+      <link>https://blog.youngzm.com/resume/zh-cn/</link>
+      <pubDate>Thu, 01 Jan 1970 11:11:09 +0800</pubDate>
+      
+      <guid>https://blog.youngzm.com/resume/zh-cn/</guid>
+      <description>杨子民（Brian Yang） Email：YoungZM339@outlook.com Address：No. 100 Lianhua Street, Zhengzhou Github：YoungZM 教育经历 2022 年 9 月-（待定）：河南工业大学，人工智能与大数据学院，软件工程 技能 外国语言：CET4 编程语言：C, C++, Python, ECMAScript(JavaScript) 平台/框架：Django(Python), React(JS/TS) 其它：Linux 系统运行维护 曾获奖励 科创竞赛 （2022 年 11 月）第二十一届 微软“创新杯”大赛河南赛区 基于 Azure 的老年人智能指南 APP 未来之星奖（队长） （2023 年 4 月）河南工业大学第一届“讯飞杯”人工智能创意挑战赛 基于 Unity 的智慧校园系统 三等奖（队员） 其它荣誉 （2022 年 11 月）河南工业大学优秀志愿者 （2023 年 5 月）河南工业大学图书馆优秀诵读者 服务经历 学生组织 （2023 年 4 月- 至今）河南工业大学 AI 开发社（HAUT-AI）, 社长 项目开发 个人项目 YoungPastebin：使用 Django Rest Framework 和 React 编写的在线剪切板平台。代码开放于GitHub。</description>
+    </item>
+    
+  </channel>
+</rss>

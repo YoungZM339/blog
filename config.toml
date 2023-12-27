@@ -4,7 +4,7 @@ languageCode = "zh"
 title = "YoungZM's Blog"
 copyright = "Copyright 2023@YoungZM"
 theme = "diary"
-googleAnalytics = "UA-170465513-1"
+googleAnalytics = "421082505"
 
 [markup]
   [markup.highlight]

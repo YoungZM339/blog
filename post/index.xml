@@ -7,248 +7,119 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; STL学习笔记(二) : algorithm 算法</title>
       <link>https://blog.youngzm.com/post/cpp-stl-notes-2/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cpp-stl-notes-2/</guid>
-      <description>迭代器无效 在使用算法时，有时候会遇到迭代器失效的问题。迭代器失效指的是在对容器进行修改后，之前获取的迭代器可能会变得无效，不能再使用。
-迭代器失效的情况有多种，例如在插入元素后，原来的迭代器可能会失效；在删除元素后，指向删除元素的迭代器也会失效。
-algorithm fill, fill_n, generate, generate_n fill(first, last, value)：将[first, last)范围内的所有元素都设置为指定的值 value。 fill_n(first, n, value)：将从 first 开始的 n 个元素都设置为指定的值 value。 generate(first, last, generator)：使用指定的生成器 generator 生成[first, last)范围内的元素。 generate_n(first, n, generator)：使用指定的生成器 generator 生成从 first 开始的 n 个元素。 示例代码：
-#include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; int main() { std::vector&amp;lt;int&amp;gt; nums(5); // 使用 fill 将元素设置为 10 std::fill(nums.begin(), nums.end(), 10); // 输出结果：10 10 10 10 10 for (int num : nums) { std::cout &amp;lt;&amp;lt; num &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } std::cout &amp;lt;&amp;lt; std::endl; // 使用 fill_n 将前3个元素设置为 5 std::fill_n(nums.</description>
+      <description>迭代器无效 在使用算法时，有时候会遇到迭代器失效的问题。迭代器失效指的是在对容器进行修改后，之前获取的迭代器可能会变得无效，不能再使用。&#xA;迭代器失效的情况有多种，例如在插入元素后，原来的迭代器可能会失效；在删除元素后，指向删除元素的迭代器也会失效。&#xA;algorithm fill, fill_n, generate, generate_n fill(first, last, value)：将[first, last)范围内的所有元素都设置为指定的值 value。 fill_n(first, n, value)：将从 first 开始的 n 个元素都设置为指定的值 value。 generate(first, last, generator)：使用指定的生成器 generator 生成[first, last)范围内的元素。 generate_n(first, n, generator)：使用指定的生成器 generator 生成从 first 开始的 n 个元素。 示例代码：&#xA;#include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; int main() { std::vector&amp;lt;int&amp;gt; nums(5); // 使用 fill 将元素设置为 10 std::fill(nums.begin(), nums.end(), 10); // 输出结果：10 10 10 10 10 for (int num : nums) { std::cout &amp;lt;&amp;lt; num &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } std::cout &amp;lt;&amp;lt; std::endl; // 使用 fill_n 将前3个元素设置为 5 std::fill_n(nums.</description>
     </item>
-    
     <item>
       <title>C&#43;&#43; STL学习笔记(一) : container 容器</title>
       <link>https://blog.youngzm.com/post/cpp-stl-notes-1/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cpp-stl-notes-1/</guid>
       <description>sequence container array std::array 是一个固定大小的数组容器，它在编译时就确定了大小，并且提供了类似于 C 数组的访问方式。 #include &amp;lt;array&amp;gt; std::array&amp;lt;int, 5&amp;gt; myArray = {1, 2, 3, 4, 5}; for (const auto&amp;amp; element : myArray) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } deque std::deque 是一个双端队列容器，支持在两端进行快速插入和删除操作。 #include &amp;lt;deque&amp;gt; std::deque&amp;lt;int&amp;gt; myDeque = {1, 2, 3}; myDeque.push_front(0); // 在前面插入元素 myDeque.push_back(4); // 在后面插入元素 for (const auto&amp;amp; element : myDeque) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } forward_list std::forward_list 是一个单向链表容器，只能从前往后遍历，没有提供反向遍历的功能。 #include &amp;lt;forward_list&amp;gt; std::forward_list&amp;lt;int&amp;gt; myList = {1, 2, 3}; myList.</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(七) : React 4</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-7/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-7/</guid>
-      <description>Memoization（记忆化） 在 React 中，memoization 是一种优化技术，可以通过存储昂贵函数的结果并在相同输入的情况下重新使用这些结果，从而减少计算的次数。
-useCallback useCallback 是一个 React Hook，它返回一个记忆化版本的回调函数。只有当依赖项变化时，才会更新这个回调函数。它可以阻止不必要的渲染，因为它可以阻止在每次渲染时都创建新的函数。
-import React, { useState, useCallback } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const increment = useCallback(() =&amp;gt; { setCount((count) =&amp;gt; count + 1); }, []); return ( &amp;lt;div&amp;gt; Count: {count} &amp;lt;button onClick={increment}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; useMemo useMemo 是另一个 React Hook，它返回一个记忆化的值。这个值只有在依赖项变化时才会重新计算。
-import React, { useState, useMemo } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const expensiveComputation = useMemo(() =&amp;gt; { return count * 2; }, [count]); return ( &amp;lt;div&amp;gt; Double Count: {expensiveComputation} &amp;lt;button onClick={() =&amp;gt; setCount((count) =&amp;gt; count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; React.</description>
+      <description>Memoization（记忆化） 在 React 中，memoization 是一种优化技术，可以通过存储昂贵函数的结果并在相同输入的情况下重新使用这些结果，从而减少计算的次数。&#xA;useCallback useCallback 是一个 React Hook，它返回一个记忆化版本的回调函数。只有当依赖项变化时，才会更新这个回调函数。它可以阻止不必要的渲染，因为它可以阻止在每次渲染时都创建新的函数。&#xA;import React, { useState, useCallback } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const increment = useCallback(() =&amp;gt; { setCount((count) =&amp;gt; count + 1); }, []); return ( &amp;lt;div&amp;gt; Count: {count} &amp;lt;button onClick={increment}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; useMemo useMemo 是另一个 React Hook，它返回一个记忆化的值。这个值只有在依赖项变化时才会重新计算。&#xA;import React, { useState, useMemo } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const expensiveComputation = useMemo(() =&amp;gt; { return count * 2; }, [count]); return ( &amp;lt;div&amp;gt; Double Count: {expensiveComputation} &amp;lt;button onClick={() =&amp;gt; setCount((count) =&amp;gt; count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; React.</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(六) : React 3</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-6/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-6/</guid>
-      <description>React Fragments（React 片段）： React 片段是一个用于包装多个子元素的特殊组件。它们允许我们在不引入额外 DOM 节点的情况下，将多个元素组合在一起。使用 React 片段，我们可以在组件中返回多个子元素而无需使用额外的包装元素。
-import React from &amp;#34;react&amp;#34;; function App() { return ( &amp;lt;&amp;gt; &amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;React Fragments&amp;lt;/p&amp;gt; &amp;lt;/&amp;gt; ); } 组件和片段有什么区别？ 组件是可重用的、独立的、有状态或无状态的代码单元，用于构建用户界面的一部分。组件接收输入（称为 props）并返回用于描述该组件在屏幕上显示的元素树。组件可以包含其他组件，形成组件层次结构。它们具有自己的生命周期、状态和方法，并且可以通过 props 传递数据和回调函数。
-片段是一种特殊的组件，用于在不引入额外 DOM 节点的情况下包装多个子元素。它允许我们将多个元素组合在一起，而不需要使用额外的包装元素。片段不会创建新的 DOM 节点，而是在渲染时直接返回其子元素。片段通常用于在组件中返回多个子元素，并且对于需要在组件中返回多个元素而不引入额外层级的情况非常有用。
-下面是组件和片段之间的区别总结：
-组件：
-可重用的、独立的代码单元。 可以包含其他组件，形成组件层次结构。 具有自己的生命周期、状态和方法。 通过 props 传递数据和回调函数。 片段：
-用于包装多个子元素。 允许在不引入额外 DOM 节点的情况下组合元素。 不会创建新的 DOM 节点，而是直接返回其子元素。 在 React 中共享状态（Share State）： 在 React 中，组件之间的状态共享是通过 props 和上下文（context）来实现的。通过将状态作为属性传递给子组件，我们可以在整个应用程序中共享数据。另外，React 还引入了状态管理库（如 Redux 和 MobX），以简化大型应用程序中的状态共享和管理。
-props 在父组件中，我们可以通过在子组件的标签上添加属性来传递数据。这些属性会作为一个名为 props 的对象被子组件接收
-import React, { useState } from &amp;#34;react&amp;#34;; function Parent() { const [count, setCount] = useState(0); return ( &amp;lt;div&amp;gt; &amp;lt;Child count={count} /&amp;gt; &amp;lt;button onClick={() =&amp;gt; setCount(count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } function Child({ count }) { return &amp;lt;p&amp;gt;Count: {count}&amp;lt;/p&amp;gt;; } 上下文（Context） 在 React 中，上下文（Context）是一种用于在组件树中共享数据的机制。它允许我们在组件之间传递数据，而无需手动通过 props 将数据逐层传递。</description>
+      <description>React Fragments（React 片段）： React 片段是一个用于包装多个子元素的特殊组件。它们允许我们在不引入额外 DOM 节点的情况下，将多个元素组合在一起。使用 React 片段，我们可以在组件中返回多个子元素而无需使用额外的包装元素。&#xA;import React from &amp;#34;react&amp;#34;; function App() { return ( &amp;lt;&amp;gt; &amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;React Fragments&amp;lt;/p&amp;gt; &amp;lt;/&amp;gt; ); } 组件和片段有什么区别？ 组件是可重用的、独立的、有状态或无状态的代码单元，用于构建用户界面的一部分。组件接收输入（称为 props）并返回用于描述该组件在屏幕上显示的元素树。组件可以包含其他组件，形成组件层次结构。它们具有自己的生命周期、状态和方法，并且可以通过 props 传递数据和回调函数。&#xA;片段是一种特殊的组件，用于在不引入额外 DOM 节点的情况下包装多个子元素。它允许我们将多个元素组合在一起，而不需要使用额外的包装元素。片段不会创建新的 DOM 节点，而是在渲染时直接返回其子元素。片段通常用于在组件中返回多个子元素，并且对于需要在组件中返回多个元素而不引入额外层级的情况非常有用。&#xA;下面是组件和片段之间的区别总结：&#xA;组件：&#xA;可重用的、独立的代码单元。 可以包含其他组件，形成组件层次结构。 具有自己的生命周期、状态和方法。 通过 props 传递数据和回调函数。 片段：&#xA;用于包装多个子元素。 允许在不引入额外 DOM 节点的情况下组合元素。 不会创建新的 DOM 节点，而是直接返回其子元素。 在 React 中共享状态（Share State）： 在 React 中，组件之间的状态共享是通过 props 和上下文（context）来实现的。通过将状态作为属性传递给子组件，我们可以在整个应用程序中共享数据。另外，React 还引入了状态管理库（如 Redux 和 MobX），以简化大型应用程序中的状态共享和管理。&#xA;props 在父组件中，我们可以通过在子组件的标签上添加属性来传递数据。这些属性会作为一个名为 props 的对象被子组件接收&#xA;import React, { useState } from &amp;#34;react&amp;#34;; function Parent() { const [count, setCount] = useState(0); return ( &amp;lt;div&amp;gt; &amp;lt;Child count={count} /&amp;gt; &amp;lt;button onClick={() =&amp;gt; setCount(count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } function Child({ count }) { return &amp;lt;p&amp;gt;Count: {count}&amp;lt;/p&amp;gt;; } 上下文（Context） 在 React 中，上下文（Context）是一种用于在组件树中共享数据的机制。它允许我们在组件之间传递数据，而无需手动通过 props 将数据逐层传递。</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(五) : React 2</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-5/</link>
       <pubDate>Mon, 28 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-5/</guid>
-      <description>框架和库的区别 框架（Framework） 框架是一个完整的解决方案，它提供了一整套工具、库和规范，用于简化应用程序的开发过程。框架通常具有一定的结构 和约束，开发者需要按照框架的规则进行开发。框架通常涵盖了应用程序的架构、数据流管理、路由、状态管理、UI 组件等核心功能。流行的 JavaScript 框架有 React、Angular 和 Vue.js。
-库（Library） 库是一组可复用的代码集合，用于实现特定的功能，开发者可以根据需要选择性地使用库中的功能。库通常提供了一些函数、类或模块，以便开发者可以在自己的代码中调用它们。库通常不限制应用程序的整体结构，开发者可以根据自己的需求进行自由组织。常见的 JavaScript 库有 jQuery、Lodash 和 Moment.js。
-简而言之，框架更像是一个完整的开发工具包，提供了一种开发应用程序的方式，而库则是提供了一些特定功能的代码集合，可以根据需要选择性地使用。使用框架可以加快开发速度，但需要遵循框架的规则和约束；而使用库可以灵活地选择需要的功能，但需要自己组织代码结构。
-useRef 在 React 中，useRef 是一个用于创建可变引用的 Hook。它可以用来引用组件中的 DOM 元素、保存可变值以及在组件生命周期之间共享数据。
-使用 useRef，你可以在函数组件中创建一个引用，并且该引用在组件重新渲染时保持不变。这使得你可以在函数组件中访问和操作 DOM 元素。
-下面是一个使用 useRef 引用 DOM 元素的示例：
-import React, { useRef, useEffect } from &amp;#34;react&amp;#34;; function MyComponent() { const myRef = useRef(null); useEffect(() =&amp;gt; { // 在组件挂载后，访问和操作 DOM 元素 console.log(myRef.current); // 输出 DOM 元素 myRef.current.focus(); // 聚焦到 DOM 元素 }, []); return ( &amp;lt;div&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; ref={myRef} /&amp;gt; &amp;lt;/div&amp;gt; ); } 在上面的代码中，我们使用 useRef(null) 创建了一个引用 myRef，并将其赋值给 &amp;lt;input&amp;gt; 元素的 ref 属性。然后，通过 myRef.</description>
+      <description>框架和库的区别 框架（Framework） 框架是一个完整的解决方案，它提供了一整套工具、库和规范，用于简化应用程序的开发过程。框架通常具有一定的结构 和约束，开发者需要按照框架的规则进行开发。框架通常涵盖了应用程序的架构、数据流管理、路由、状态管理、UI 组件等核心功能。流行的 JavaScript 框架有 React、Angular 和 Vue.js。&#xA;库（Library） 库是一组可复用的代码集合，用于实现特定的功能，开发者可以根据需要选择性地使用库中的功能。库通常提供了一些函数、类或模块，以便开发者可以在自己的代码中调用它们。库通常不限制应用程序的整体结构，开发者可以根据自己的需求进行自由组织。常见的 JavaScript 库有 jQuery、Lodash 和 Moment.js。&#xA;简而言之，框架更像是一个完整的开发工具包，提供了一种开发应用程序的方式，而库则是提供了一些特定功能的代码集合，可以根据需要选择性地使用。使用框架可以加快开发速度，但需要遵循框架的规则和约束；而使用库可以灵活地选择需要的功能，但需要自己组织代码结构。&#xA;useRef 在 React 中，useRef 是一个用于创建可变引用的 Hook。它可以用来引用组件中的 DOM 元素、保存可变值以及在组件生命周期之间共享数据。&#xA;使用 useRef，你可以在函数组件中创建一个引用，并且该引用在组件重新渲染时保持不变。这使得你可以在函数组件中访问和操作 DOM 元素。&#xA;下面是一个使用 useRef 引用 DOM 元素的示例：&#xA;import React, { useRef, useEffect } from &amp;#34;react&amp;#34;; function MyComponent() { const myRef = useRef(null); useEffect(() =&amp;gt; { // 在组件挂载后，访问和操作 DOM 元素 console.log(myRef.current); // 输出 DOM 元素 myRef.current.focus(); // 聚焦到 DOM 元素 }, []); return ( &amp;lt;div&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; ref={myRef} /&amp;gt; &amp;lt;/div&amp;gt; ); } 在上面的代码中，我们使用 useRef(null) 创建了一个引用 myRef，并将其赋值给 &amp;lt;input&amp;gt; 元素的 ref 属性。然后，通过 myRef.</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(四) : React 1</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-4/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-4/</guid>
-      <description>DOM DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。
-尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。
-React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。
-使用 React 的好处包括：
-性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。
-组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。
-虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。
-虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</description>
+      <description>DOM DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。&#xA;尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。&#xA;React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。&#xA;使用 React 的好处包括：&#xA;性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。&#xA;组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。&#xA;虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。&#xA;虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-3/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-3/</guid>
-      <description>回调函数（Callback Function） 回调函数 回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。
-fetch fetch函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。fetch函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用fetch的示例：
-fetch(&amp;#34;https://api.example.com/data&amp;#34;) .then((response) =&amp;gt; response.json()) .then((data) =&amp;gt; { // 处理检索到的数据 }) .catch((error) =&amp;gt; { // 处理请求过程中发生的任何错误 }); slice(begl, endl) 和 concat(arr) slice方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：begl指定起始索引，endl（可选）指定结束索引（不包含在内）。原始数组不会被修改。
-concat方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用slice和concat的示例：
-const fruits = [&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;grape&amp;#34;, &amp;#34;kiwi&amp;#34;]; const slicedFruits = fruits.slice(1, 4); console.log(slicedFruits); // 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;] const moreFruits = [&amp;#34;pineapple&amp;#34;, &amp;#34;mango&amp;#34;]; const mergedArray = fruits.concat(moreFruits); console.log(mergedArray); // 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;] some(cb) 和 every(cb) some方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回true，否则返回false。</description>
+      <description>回调函数（Callback Function） 回调函数 回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。&#xA;fetch fetch函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。fetch函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用fetch的示例：&#xA;fetch(&amp;#34;https://api.example.com/data&amp;#34;) .then((response) =&amp;gt; response.json()) .then((data) =&amp;gt; { // 处理检索到的数据 }) .catch((error) =&amp;gt; { // 处理请求过程中发生的任何错误 }); slice(begl, endl) 和 concat(arr) slice方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：begl指定起始索引，endl（可选）指定结束索引（不包含在内）。原始数组不会被修改。&#xA;concat方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用slice和concat的示例：&#xA;const fruits = [&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;grape&amp;#34;, &amp;#34;kiwi&amp;#34;]; const slicedFruits = fruits.slice(1, 4); console.log(slicedFruits); // 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;] const moreFruits = [&amp;#34;pineapple&amp;#34;, &amp;#34;mango&amp;#34;]; const mergedArray = fruits.concat(moreFruits); console.log(mergedArray); // 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;] some(cb) 和 every(cb) some方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回true，否则返回false。</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-2/</link>
       <pubDate>Thu, 10 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-2/</guid>
-      <description>类型转换（Type Conversion） JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。
-显式类型转换（Explicit Type Conversion）： 使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如Number()、String()、Boolean()等，可以将其他类型转换为数字、字符串或布尔值。例如：
-var num = Number(&amp;#34;42&amp;#34;); // 将字符串转换为数字 var str = String(123); // 将数字转换为字符串 var bool = Boolean(0); // 将数字转换为布尔值 使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：
-var num = +&amp;#34;42&amp;#34;; // 将字符串转换为数字 隐式类型转换（Implicit Type Conversion）： 字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：
-var result = &amp;#34;3&amp;#34; + 4; // 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接 var total = &amp;#34;10&amp;#34; - 5; // 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算 布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：
-var num = true + 1; // 结果为数字2，因为true会被转换为数字1 var str = false + &amp;#34;hello&amp;#34;; // 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34; forEach forEach 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。</description>
+      <description>类型转换（Type Conversion） JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。&#xA;显式类型转换（Explicit Type Conversion）： 使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如Number()、String()、Boolean()等，可以将其他类型转换为数字、字符串或布尔值。例如：&#xA;var num = Number(&amp;#34;42&amp;#34;); // 将字符串转换为数字 var str = String(123); // 将数字转换为字符串 var bool = Boolean(0); // 将数字转换为布尔值 使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：&#xA;var num = +&amp;#34;42&amp;#34;; // 将字符串转换为数字 隐式类型转换（Implicit Type Conversion）： 字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：&#xA;var result = &amp;#34;3&amp;#34; + 4; // 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接 var total = &amp;#34;10&amp;#34; - 5; // 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算 布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：&#xA;var num = true + 1; // 结果为数字2，因为true会被转换为数字1 var str = false + &amp;#34;hello&amp;#34;; // 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34; forEach forEach 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。</description>
     </item>
-    
     <item>
       <title>CS571-S23 学习笔记(一) : JSON</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes-1/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/cs571-s23-notes-1/</guid>
-      <description>JSON JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：
-数据类型：JSON 支持以下数据类型：
-字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo; 数字：42 布尔值：true 或 false 数组（用方括号括起来）：[1, 2, 3] 对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30} 键值对：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：
-{ &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false } 数组：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例： [1, 2, 3, 4, 5] 嵌套：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例： { &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;hobbies&amp;#34;: [&amp;#34;reading&amp;#34;, &amp;#34;traveling&amp;#34;], &amp;#34;address&amp;#34;: { &amp;#34;street&amp;#34;: &amp;#34;123 Main St&amp;#34;, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34; } } 注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。
-JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 JSON.parse() 将 JSON 字符串解析为 JavaScript 对象，使用 JSON.</description>
+      <description>JSON JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：&#xA;数据类型：JSON 支持以下数据类型：&#xA;字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo; 数字：42 布尔值：true 或 false 数组（用方括号括起来）：[1, 2, 3] 对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30} 键值对：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：&#xA;{ &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false } 数组：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例： [1, 2, 3, 4, 5] 嵌套：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例： { &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;hobbies&amp;#34;: [&amp;#34;reading&amp;#34;, &amp;#34;traveling&amp;#34;], &amp;#34;address&amp;#34;: { &amp;#34;street&amp;#34;: &amp;#34;123 Main St&amp;#34;, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34; } } 注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。&#xA;JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 JSON.parse() 将 JSON 字符串解析为 JavaScript 对象，使用 JSON.</description>
     </item>
-    
     <item>
       <title>与其说是尾声，不如说是下一段的序幕吧</title>
       <link>https://blog.youngzm.com/post/remember-those-days/</link>
       <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/remember-those-days/</guid>
-      <description>&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;现在是凌晨2点30分，我重新坐到书桌前开始写这篇随笔。对我而言，凌晨这段的安静是我不多的能让我“逃离”这个世界的时间。好像是因为初三的暑假看了些游记和博客随笔，自那时起我总喜欢隔些日子写写东西（可惜，多数已经不见了踪影）。那时是近乎疯狂与魔幻的生活的序幕，而现在是2022年10月22日，我彻底脱离过往几年那种的生活已经四个多月了。时至今日，我思想中的大学生活依旧是缺乏实感的；未来的生活依旧是缺乏想象的。面对繁琐的作业与任务，仿佛可及的目标与梦想，这几个月算是稳稳地度过了。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;&#xA;&lt;p&gt;现在是凌晨2点30分，我重新坐到书桌前开始写这篇随笔。对我而言，凌晨这段的安静是我不多的能让我“逃离”这个世界的时间。好像是因为初三的暑假看了些游记和博客随笔，自那时起我总喜欢隔些日子写写东西（可惜，多数已经不见了踪影）。那时是近乎疯狂与魔幻的生活的序幕，而现在是2022年10月22日，我彻底脱离过往几年那种的生活已经四个多月了。时至今日，我思想中的大学生活依旧是缺乏实感的；未来的生活依旧是缺乏想象的。面对繁琐的作业与任务，仿佛可及的目标与梦想，这几个月算是稳稳地度过了。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
       <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
       <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
-      <description>前言 大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——大学生活质量指北的出现恰好补充了这一点。
-正文 去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。
-今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。
-网址是https://colleges.chat/</description>
+      <description>前言 大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——大学生活质量指北的出现恰好补充了这一点。&#xA;正文 去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。&#xA;今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。&#xA;网址是https://colleges.chat/</description>
     </item>
-    
     <item>
       <title>2021年11月26日随笔一篇</title>
       <link>https://blog.youngzm.com/post/20211226essay/</link>
       <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/20211226essay/</guid>
-      <description>正文 隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。
-我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。
-这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。
-其实事情总会朝着好的方向发展的。</description>
+      <description>正文 隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。&#xA;我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。&#xA;这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。&#xA;其实事情总会朝着好的方向发展的。</description>
     </item>
-    
     <item>
       <title>在2021年回顾自己的博客</title>
       <link>https://blog.youngzm.com/post/plan-and-promise/</link>
       <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>河南省普通高中学业水平考试信息技术模拟考试复盘</title>
       <link>https://blog.youngzm.com/post/high-school-exam/</link>
       <pubDate>Mon, 16 Dec 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/high-school-exam/</guid>
-      <description>引言 根据河南省教育厅《河南省普通高中学业水平考试实施办法（试行）》规定，普通高中在校学生均须参加学业水平考试，其中包括信息技术会考。在此之前，我已经进行过一轮模拟考试，现在我将此次模拟考试复盘，并且将一些心得分享给大家。
-考试范围 依据教育部《普通高中课程方案（实验）》、《河南省普通高中课程设置方案（试行）》和《河南省普通高中学业水平考试方案》等有关文件精神，依据各学科课程标准对必修内容的基本要求进行命题。从知识与技能，过程与方法，情感、态度与价值观等方面考查学生的学习情况，同时考查学生灵活应用知识分析解决实际问题的能力。各学科具体考试范围如下：
-信息技术：《普通高中信息技术课程标准（实验）》中必修学分（4学分）规定的学习内容，即必修模块“信息技术基础”和一个选修模块。考生须从“选修1：算法与程序设计”、“选修2：多媒体技术应用”、“选修3：网络技术应用”和“选修4：数据管理技术”中任意选考一个模块。 http://www.haedu.gov.cn/2019/11/05/1572917323941.html
-粗略看了看学业水平考试考试说明，其实并没有我想象中的那么“低幼”，比如在操作题中：
-“选修1：算法与程序设计”：需要学会利用Visual Basic编程，并掌握一些简单的算法（比如输出九九乘法表）和算法概念的相关知识。
-“选修2：多媒体技术应用”：需要学会利用Photoshop和Flash完成图像或动画的编辑。
-“选修3：网络技术应用”：需要学会利用FrontPage编辑网页。
-“选修4：数据管理技术” ：需要利用Access管理系统建立简单的数据库，操作和设计表。(甚至还需要掌握sql语句！）
-另外，我选择的是 “选修3：网络技术应用” 。
-备考过程 虽然学校开设的有信息技术课程，但是自己总是在下面干写作业之类的事情。在模拟考试前，我算一算近六年来我大概也就上了十几节信息技术课，信息技术相关知识相当匮乏。好吧，临阵磨枪，不利也亮！迅速把考试说明相关试题答案抄了一遍，看了几遍试题和答案，拿着借来的笔记本电脑玩了玩Excel，总共不到24个小时，这就是我的备考。
-模拟考试过程 模拟考试采用完全模拟考试机房环境，对考生来说也有很积极的意义。
-必修部分 必修部分的试题没什么难度，都是一些常识性问题。操作题是一个Excel工作表编辑和Word文档编辑。虽然题目的一些要求的功能我从来没有听说过和实现过，但根据考试题目给的提示，摸索了摸索，还是能把题目做出来。
-选修部分 选修部分的试题难度有所提升，选择题和填空题我几道印象深刻：
-&amp;lt;img src=&amp;#34;file://D:\bg.png&amp;#34;&amp;gt; 中表示的是使用绝对/相对路径的__。（原本是个选择题，这里凭印象写出来的。）答案很显然，这是绝对路径的图像显示方式。
-我看到这道题比较惊讶，这里考察到HTML语句和路径的相关知识。我不知道老师有没有讲，但是我在考试说明中从未见过类似试题。 尽管我在之前已经学习过HTML语言的相关知识， 但我从没想过会考到这种程度。
-还有一道印象深刻的题目：
-网际互联及OSI__模型：物理层、数据链路层、网络层、__、__、表示层、应用层（填空题）
-我内心：？？？？？？这什么鬼？？？
-最后我瞎写了：互联网、传输层、传输层。
-在考后，我搜索了相关资料，这其实是一道 TCP/IP 通信协议 概念的题目：
-答案是：七层、 传输层、会话层 。
-相关资料：
-网际互联及OSI （Open System Interconnection） 七层模型：
-物理层、数据链路层、网络层、传输层、会话层、表示层、应用层 其中： 物理层
-作用：定义一些电器，机械，过程和规范，如集线器；
-PDU(协议数据单元)：bit/比特
-设备：集线器HUB;
-注意：没有寻址的概念；
-==========================================
-数据链路层
-作用：定义如何格式化数据，支持错误检测；
-典型协议：以太网，帧中继（古董级VPN）
-PDU：frame（帧）设备：以太网交换机；
-备注：交换机通过MAC地址转发数据，逻辑链路控制；
-===========================================
-网络层
-作用：定义一个逻辑的寻址，选择最佳路径传输，路由数据包；
-典型协议：IP，IPX，ICMP,ARP(IP-&amp;gt;MAC),IARP;
-PDU:packet/数据包；
-设备：路由器
-备注：实现寻址
-============================================
-传输层：
-作用：提供可靠和尽力而为的传输；</description>
+      <description>引言 根据河南省教育厅《河南省普通高中学业水平考试实施办法（试行）》规定，普通高中在校学生均须参加学业水平考试，其中包括信息技术会考。在此之前，我已经进行过一轮模拟考试，现在我将此次模拟考试复盘，并且将一些心得分享给大家。&#xA;考试范围 依据教育部《普通高中课程方案（实验）》、《河南省普通高中课程设置方案（试行）》和《河南省普通高中学业水平考试方案》等有关文件精神，依据各学科课程标准对必修内容的基本要求进行命题。从知识与技能，过程与方法，情感、态度与价值观等方面考查学生的学习情况，同时考查学生灵活应用知识分析解决实际问题的能力。各学科具体考试范围如下：&#xA;信息技术：《普通高中信息技术课程标准（实验）》中必修学分（4学分）规定的学习内容，即必修模块“信息技术基础”和一个选修模块。考生须从“选修1：算法与程序设计”、“选修2：多媒体技术应用”、“选修3：网络技术应用”和“选修4：数据管理技术”中任意选考一个模块。 http://www.haedu.gov.cn/2019/11/05/1572917323941.html&#xA;粗略看了看学业水平考试考试说明，其实并没有我想象中的那么“低幼”，比如在操作题中：&#xA;“选修1：算法与程序设计”：需要学会利用Visual Basic编程，并掌握一些简单的算法（比如输出九九乘法表）和算法概念的相关知识。&#xA;“选修2：多媒体技术应用”：需要学会利用Photoshop和Flash完成图像或动画的编辑。&#xA;“选修3：网络技术应用”：需要学会利用FrontPage编辑网页。&#xA;“选修4：数据管理技术” ：需要利用Access管理系统建立简单的数据库，操作和设计表。(甚至还需要掌握sql语句！）&#xA;另外，我选择的是 “选修3：网络技术应用” 。&#xA;备考过程 虽然学校开设的有信息技术课程，但是自己总是在下面干写作业之类的事情。在模拟考试前，我算一算近六年来我大概也就上了十几节信息技术课，信息技术相关知识相当匮乏。好吧，临阵磨枪，不利也亮！迅速把考试说明相关试题答案抄了一遍，看了几遍试题和答案，拿着借来的笔记本电脑玩了玩Excel，总共不到24个小时，这就是我的备考。&#xA;模拟考试过程 模拟考试采用完全模拟考试机房环境，对考生来说也有很积极的意义。&#xA;必修部分 必修部分的试题没什么难度，都是一些常识性问题。操作题是一个Excel工作表编辑和Word文档编辑。虽然题目的一些要求的功能我从来没有听说过和实现过，但根据考试题目给的提示，摸索了摸索，还是能把题目做出来。&#xA;选修部分 选修部分的试题难度有所提升，选择题和填空题我几道印象深刻：&#xA;&amp;lt;img src=&amp;#34;file://D:\bg.png&amp;#34;&amp;gt; 中表示的是使用绝对/相对路径的__。（原本是个选择题，这里凭印象写出来的。）答案很显然，这是绝对路径的图像显示方式。&#xA;我看到这道题比较惊讶，这里考察到HTML语句和路径的相关知识。我不知道老师有没有讲，但是我在考试说明中从未见过类似试题。 尽管我在之前已经学习过HTML语言的相关知识， 但我从没想过会考到这种程度。&#xA;还有一道印象深刻的题目：&#xA;网际互联及OSI__模型：物理层、数据链路层、网络层、__、__、表示层、应用层（填空题）&#xA;我内心：？？？？？？这什么鬼？？？&#xA;最后我瞎写了：互联网、传输层、传输层。&#xA;在考后，我搜索了相关资料，这其实是一道 TCP/IP 通信协议 概念的题目：&#xA;答案是：七层、 传输层、会话层 。&#xA;相关资料：&#xA;网际互联及OSI （Open System Interconnection） 七层模型：&#xA;物理层、数据链路层、网络层、传输层、会话层、表示层、应用层 其中： 物理层&#xA;作用：定义一些电器，机械，过程和规范，如集线器；&#xA;PDU(协议数据单元)：bit/比特&#xA;设备：集线器HUB;&#xA;注意：没有寻址的概念；&#xA;==========================================&#xA;数据链路层&#xA;作用：定义如何格式化数据，支持错误检测；&#xA;典型协议：以太网，帧中继（古董级VPN）&#xA;PDU：frame（帧）设备：以太网交换机；&#xA;备注：交换机通过MAC地址转发数据，逻辑链路控制；&#xA;===========================================&#xA;网络层&#xA;作用：定义一个逻辑的寻址，选择最佳路径传输，路由数据包；&#xA;典型协议：IP，IPX，ICMP,ARP(IP-&amp;gt;MAC),IARP;&#xA;PDU:packet/数据包；&#xA;设备：路由器&#xA;备注：实现寻址&#xA;============================================&#xA;传输层：&#xA;作用：提供可靠和尽力而为的传输；</description>
     </item>
-    
     <item>
       <title>帖子与贴子，孰对孰错？</title>
       <link>https://blog.youngzm.com/post/tiezi/</link>
       <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/tiezi/</guid>
-      <description>引言 “帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。
-正文 首先我查阅了中国社会科学院语言研究所的《现代汉语词典》（第6版），其中文字解释如下：
-tiē 帖 tie 1 服从;顺从:服 ~。 2 妥当;稳当: 妥 ~。 3(Tie)名姓。 另见 1296 页 tie;1298 页 tiè。 tiě 帖 tie 1 邀请客人的通知:请 ~。 2 旧时 写着生辰八字等的纸片:庚~|换 ~。 3 (~儿)写着字的小纸片:字~儿(便条)。4 帖 子2:发~|跟~|热 ~。 6〈方〉量 用于配合 起来的若干味汤药:一~药。 另见 1295 页 tie;1298 页 tiè。 【帖子】 tie·zi 名1 帖123。2 在网络论坛 上发表议论、参与讨论的话语或短文:网上的 一则~引起了大家的关注。 tie tiè 名 学习写字或绘画时临摹用的样 本:碑~|习字~|画~|临 ~。 另见 1295 页 tie;1296 页 tiě。
-查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？
-但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？
-我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：
-“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2, 期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。” 应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎</description>
+      <description>引言 “帖子”与“贴子”，谁是对的？最早我是在初中语文课堂上了解这个问题，我的语文老师对于此知识点有过三次课堂公开讲解，但竟是不同的答案：第一次认为“帖子”是正确的，第二次是“贴子”，第三次又回到了“帖子”&amp;ndash;这给我留下了很大的疑问，但我在当时并没找到答案。近期，我意外找到了一些线索，并经过一番资料的查找对此问题形成了观点。&#xA;正文 首先我查阅了中国社会科学院语言研究所的《现代汉语词典》（第6版），其中文字解释如下：&#xA;tiē 帖 tie 1 服从;顺从:服 ~。 2 妥当;稳当: 妥 ~。 3(Tie)名姓。 另见 1296 页 tie;1298 页 tiè。 tiě 帖 tie 1 邀请客人的通知:请 ~。 2 旧时 写着生辰八字等的纸片:庚~|换 ~。 3 (~儿)写着字的小纸片:字~儿(便条)。4 帖 子2:发~|跟~|热 ~。 6〈方〉量 用于配合 起来的若干味汤药:一~药。 另见 1295 页 tie;1298 页 tiè。 【帖子】 tie·zi 名1 帖123。2 在网络论坛 上发表议论、参与讨论的话语或短文:网上的 一则~引起了大家的关注。 tie tiè 名 学习写字或绘画时临摹用的样 本:碑~|习字~|画~|临 ~。 另见 1295 页 tie;1296 页 tiě。&#xA;查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？&#xA;但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？&#xA;我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：&#xA;“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2, 期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。” 应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎</description>
     </item>
-    
     <item>
       <title>如何加速下载QQ群文件里的大文件？</title>
       <link>https://blog.youngzm.com/post/qqdownload/</link>
       <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/qqdownload/</guid>
-      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;p&gt;众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;&#xA;&lt;p&gt;众所周知，用QQ客户端下载QQ群文件的速度实在是缓慢，这里讲一下如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,45 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sun, 14 Mar 2021 19:32:18 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 19:32:18 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/tags/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在2021年回顾自己的博客</title>
       <link>https://blog.youngzm.com/post/plan-and-promise/</link>
       <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://blog.youngzm.com/about/</link>
       <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/about/</guid>
-      <description>About I am Brian Yang, an software engineering undergraduate in School of Artificial intelligence and Big Data, Henan University of Technology. Here is my resume: 中文
-Contact: YoungZM339@outlook.com</description>
+      <description>About I am Brian Yang, an software engineering undergraduate in School of Artificial intelligence and Big Data, Henan University of Technology. Here is my resume: 中文&#xA;Contact: YoungZM339@outlook.com</description>
     </item>
-    
     <item>
       <title>Tags</title>
       <link>https://blog.youngzm.com/tags/</link>
       <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/</guid>
       <description>title: tags layout: tags</description>
     </item>
-    
     <item>
       <title>Links</title>
       <link>https://blog.youngzm.com/links/</link>
       <pubDate>Thu, 01 Jan 1970 11:11:10 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/links/</guid>
-      <description>欢迎交换友链~：
-我的朋友 站点地址 YangTY’s Blog https://imyangty.com/ Fachep https://blog.Fachep.com/ Miaow233 https://nekohouse.cafe/ FlyingSky&amp;rsquo;s Blog https://blog.fsky7.com/ Lzy Blog https://www.lzy20021010.com/ XSY https://www.xsy.fun/ 我的关注 站点地址 BYVoid https://www.byvoid.com/ KSKun https://ksmeow.moe/ menci https://oi.men.ci/#blog stdcall https://www.cnblogs.com/mlystdcall/ rqy https://rqy.moe/ Baoshuo https://baoshuo.ren/ kernel.bin https://kernelbin.cn/ icys https://icys.top/ 无垠 https://flyhigher.top/ nocriz https://bytew.net/ 我的收藏 站点地址 OI Wiki https://oi.wiki/ CS 自学指南 https://csdiy.wiki/ </description>
+      <description>欢迎交换友链~：&#xA;我的朋友 站点地址 YangTY’s Blog https://imyangty.com/ Fachep https://blog.Fachep.com/ Miaow233 https://nekohouse.cafe/ FlyingSky&amp;rsquo;s Blog https://blog.fsky7.com/ Lzy Blog https://www.lzy20021010.com/ XSY https://www.xsy.fun/ 我的关注 站点地址 BYVoid https://www.byvoid.com/ KSKun https://ksmeow.moe/ menci https://oi.men.ci/#blog stdcall https://www.cnblogs.com/mlystdcall/ rqy https://rqy.moe/ Baoshuo https://baoshuo.ren/ kernel.bin https://kernelbin.cn/ icys https://icys.top/ 无垠 https://flyhigher.top/ nocriz https://bytew.net/ 我的收藏 站点地址 OI Wiki https://oi.wiki/ CS 自学指南 https://csdiy.wiki/ </description>
     </item>
-    
   </channel>
 </rss>

@@ -7,177 +7,140 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate><atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:01 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43;</title>
       <link>https://blog.youngzm.com/tags/c&#43;&#43;/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>STL</title>
       <link>https://blog.youngzm.com/tags/stl/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/stl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CS571</title>
       <link>https://blog.youngzm.com/tags/cs571/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/cs571/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>JavaScript</title>
       <link>https://blog.youngzm.com/tags/javascript/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>React</title>
       <link>https://blog.youngzm.com/tags/react/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/react/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>前端</title>
       <link>https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>JSON</title>
       <link>https://blog.youngzm.com/tags/json/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/json/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>大学</title>
       <link>https://blog.youngzm.com/tags/%E5%A4%A7%E5%AD%A6/</link>
       <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E5%A4%A7%E5%AD%A6/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>大一</title>
       <link>https://blog.youngzm.com/tags/%E5%A4%A7%E4%B8%80/</link>
       <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E5%A4%A7%E4%B8%80/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>随笔</title>
       <link>https://blog.youngzm.com/tags/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>择校</title>
       <link>https://blog.youngzm.com/tags/%E6%8B%A9%E6%A0%A1/</link>
       <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E6%8B%A9%E6%A0%A1/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>中学</title>
       <link>https://blog.youngzm.com/tags/%E4%B8%AD%E5%AD%A6/</link>
       <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E4%B8%AD%E5%AD%A6/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>博客公告</title>
       <link>https://blog.youngzm.com/tags/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/</link>
       <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E5%8D%9A%E5%AE%A2%E5%85%AC%E5%91%8A/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>会考</title>
       <link>https://blog.youngzm.com/tags/%E4%BC%9A%E8%80%83/</link>
       <pubDate>Mon, 16 Dec 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E4%BC%9A%E8%80%83/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>信息技术</title>
       <link>https://blog.youngzm.com/tags/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Mon, 16 Dec 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>贴吧</title>
       <link>https://blog.youngzm.com/tags/%E8%B4%B4%E5%90%A7/</link>
       <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E8%B4%B4%E5%90%A7/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>文字</title>
       <link>https://blog.youngzm.com/tags/%E6%96%87%E5%AD%97/</link>
       <pubDate>Wed, 31 Jul 2019 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E6%96%87%E5%AD%97/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>QQ</title>
       <link>https://blog.youngzm.com/tags/qq/</link>
       <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/qq/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>加速下载</title>
       <link>https://blog.youngzm.com/tags/%E5%8A%A0%E9%80%9F%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Sat, 04 Aug 2018 19:32:18 +0800</pubDate>
-      
       <guid>https://blog.youngzm.com/tags/%E5%8A%A0%E9%80%9F%E4%B8%8B%E8%BD%BD/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

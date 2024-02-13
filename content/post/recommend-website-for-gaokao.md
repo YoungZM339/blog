@@ -18,6 +18,6 @@ draft: false
 
 网址是[https://colleges.chat/](https://colleges.chat/)
 
-![](https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-1.png)
+![](./recommend-website-for-gaokao-1.png)
 
-![](https://blog.youngzm.com/imgs/recommend-website-for-gaokao/recommend-website-for-gaokao-2.png)
+![](./recommend-website-for-gaokao-2.png)

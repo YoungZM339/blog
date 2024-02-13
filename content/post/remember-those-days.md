@@ -28,4 +28,4 @@ draft: false
 
 2022年10月22日04时15分写毕
 
-![book+room2.jpg](https://blog.youngzm.com/imgs/remember-those-days/book+room2.jpg))
+![book+room2.jpg](./book+room2.jpg))

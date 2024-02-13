@@ -36,16 +36,16 @@ draft: false
 
 如果你打开的是第一个链接，你将会看到
 
-![png](https://blog.youngzm.com/imgs/qqdownload/HHOOLXDJV902UO2M-1024x270.png)
+![png](./HHOOLXDJV902UO2M-1024x270.png)
 
 悬浮在标题栏“我的群”上，选择你需要得到群组，我这里选择了 Hello Luogu群作为演示。
 
-![png](https://blog.youngzm.com/imgs/qqdownload/S5BM5G6QB939BVL4.png)
+![png](./S5BM5G6QB939BVL4.png)
 
 进入一个新的页面后，你将会看到这样的div区块，点击第二个按钮“群文件”
 如果你已经点击了那个按钮或者你打开是的是第二个链接，你将会看到：
 
-![png](https://blog.youngzm.com/imgs/qqdownload/54LGTXPY6OIW_OLO_WH.png)
+![png](./54LGTXPY6OIW_OLO_WH.png)
 
 点击白色方块，即“下载”
 然后通过下载链接调用你的多线程下载工具。

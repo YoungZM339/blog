@@ -11,51 +11,51 @@
     <atom:link href="https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CS571-S23 学习笔记(七) : React 4</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-7/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/7/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-7/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/7/</guid>
       <description>Memoization（记忆化） 在 React 中，memoization 是一种优化技术，可以通过存储昂贵函数的结果并在相同输入的情况下重新使用这些结果，从而减少计算的次数。&#xA;useCallback useCallback 是一个 React Hook，它返回一个记忆化版本的回调函数。只有当依赖项变化时，才会更新这个回调函数。它可以阻止不必要的渲染，因为它可以阻止在每次渲染时都创建新的函数。&#xA;import React, { useState, useCallback } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const increment = useCallback(() =&amp;gt; { setCount((count) =&amp;gt; count + 1); }, []); return ( &amp;lt;div&amp;gt; Count: {count} &amp;lt;button onClick={increment}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; useMemo useMemo 是另一个 React Hook，它返回一个记忆化的值。这个值只有在依赖项变化时才会重新计算。&#xA;import React, { useState, useMemo } from &amp;#34;react&amp;#34;; function App() { const [count, setCount] = useState(0); const expensiveComputation = useMemo(() =&amp;gt; { return count * 2; }, [count]); return ( &amp;lt;div&amp;gt; Double Count: {expensiveComputation} &amp;lt;button onClick={() =&amp;gt; setCount((count) =&amp;gt; count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } export default App; React.</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(六) : React 3</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-6/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/6/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-6/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/6/</guid>
       <description>React Fragments（React 片段）： React 片段是一个用于包装多个子元素的特殊组件。它们允许我们在不引入额外 DOM 节点的情况下，将多个元素组合在一起。使用 React 片段，我们可以在组件中返回多个子元素而无需使用额外的包装元素。&#xA;import React from &amp;#34;react&amp;#34;; function App() { return ( &amp;lt;&amp;gt; &amp;lt;h1&amp;gt;Hello&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;React Fragments&amp;lt;/p&amp;gt; &amp;lt;/&amp;gt; ); } 组件和片段有什么区别？ 组件是可重用的、独立的、有状态或无状态的代码单元，用于构建用户界面的一部分。组件接收输入（称为 props）并返回用于描述该组件在屏幕上显示的元素树。组件可以包含其他组件，形成组件层次结构。它们具有自己的生命周期、状态和方法，并且可以通过 props 传递数据和回调函数。&#xA;片段是一种特殊的组件，用于在不引入额外 DOM 节点的情况下包装多个子元素。它允许我们将多个元素组合在一起，而不需要使用额外的包装元素。片段不会创建新的 DOM 节点，而是在渲染时直接返回其子元素。片段通常用于在组件中返回多个子元素，并且对于需要在组件中返回多个元素而不引入额外层级的情况非常有用。&#xA;下面是组件和片段之间的区别总结：&#xA;组件：&#xA;可重用的、独立的代码单元。 可以包含其他组件，形成组件层次结构。 具有自己的生命周期、状态和方法。 通过 props 传递数据和回调函数。 片段：&#xA;用于包装多个子元素。 允许在不引入额外 DOM 节点的情况下组合元素。 不会创建新的 DOM 节点，而是直接返回其子元素。 在 React 中共享状态（Share State）： 在 React 中，组件之间的状态共享是通过 props 和上下文（context）来实现的。通过将状态作为属性传递给子组件，我们可以在整个应用程序中共享数据。另外，React 还引入了状态管理库（如 Redux 和 MobX），以简化大型应用程序中的状态共享和管理。&#xA;props 在父组件中，我们可以通过在子组件的标签上添加属性来传递数据。这些属性会作为一个名为 props 的对象被子组件接收&#xA;import React, { useState } from &amp;#34;react&amp;#34;; function Parent() { const [count, setCount] = useState(0); return ( &amp;lt;div&amp;gt; &amp;lt;Child count={count} /&amp;gt; &amp;lt;button onClick={() =&amp;gt; setCount(count + 1)}&amp;gt;Increment&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ); } function Child({ count }) { return &amp;lt;p&amp;gt;Count: {count}&amp;lt;/p&amp;gt;; } 上下文（Context） 在 React 中，上下文（Context）是一种用于在组件树中共享数据的机制。它允许我们在组件之间传递数据，而无需手动通过 props 将数据逐层传递。</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(五) : React 2</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-5/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/5/</link>
       <pubDate>Mon, 28 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-5/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/5/</guid>
       <description>框架和库的区别 框架（Framework） 框架是一个完整的解决方案，它提供了一整套工具、库和规范，用于简化应用程序的开发过程。框架通常具有一定的结构 和约束，开发者需要按照框架的规则进行开发。框架通常涵盖了应用程序的架构、数据流管理、路由、状态管理、UI 组件等核心功能。流行的 JavaScript 框架有 React、Angular 和 Vue.js。&#xA;库（Library） 库是一组可复用的代码集合，用于实现特定的功能，开发者可以根据需要选择性地使用库中的功能。库通常提供了一些函数、类或模块，以便开发者可以在自己的代码中调用它们。库通常不限制应用程序的整体结构，开发者可以根据自己的需求进行自由组织。常见的 JavaScript 库有 jQuery、Lodash 和 Moment.js。&#xA;简而言之，框架更像是一个完整的开发工具包，提供了一种开发应用程序的方式，而库则是提供了一些特定功能的代码集合，可以根据需要选择性地使用。使用框架可以加快开发速度，但需要遵循框架的规则和约束；而使用库可以灵活地选择需要的功能，但需要自己组织代码结构。&#xA;useRef 在 React 中，useRef 是一个用于创建可变引用的 Hook。它可以用来引用组件中的 DOM 元素、保存可变值以及在组件生命周期之间共享数据。&#xA;使用 useRef，你可以在函数组件中创建一个引用，并且该引用在组件重新渲染时保持不变。这使得你可以在函数组件中访问和操作 DOM 元素。&#xA;下面是一个使用 useRef 引用 DOM 元素的示例：&#xA;import React, { useRef, useEffect } from &amp;#34;react&amp;#34;; function MyComponent() { const myRef = useRef(null); useEffect(() =&amp;gt; { // 在组件挂载后，访问和操作 DOM 元素 console.log(myRef.current); // 输出 DOM 元素 myRef.current.focus(); // 聚焦到 DOM 元素 }, []); return ( &amp;lt;div&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; ref={myRef} /&amp;gt; &amp;lt;/div&amp;gt; ); } 在上面的代码中，我们使用 useRef(null) 创建了一个引用 myRef，并将其赋值给 &amp;lt;input&amp;gt; 元素的 ref 属性。然后，通过 myRef.</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(四) : React 1</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-4/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/4/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-4/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/4/</guid>
       <description>DOM DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。&#xA;尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。&#xA;React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。&#xA;使用 React 的好处包括：&#xA;性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。&#xA;组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。&#xA;虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。&#xA;虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-3/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/3/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-3/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/3/</guid>
       <description>回调函数（Callback Function） 回调函数 回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。&#xA;fetch fetch函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。fetch函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用fetch的示例：&#xA;fetch(&amp;#34;https://api.example.com/data&amp;#34;) .then((response) =&amp;gt; response.json()) .then((data) =&amp;gt; { // 处理检索到的数据 }) .catch((error) =&amp;gt; { // 处理请求过程中发生的任何错误 }); slice(begl, endl) 和 concat(arr) slice方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：begl指定起始索引，endl（可选）指定结束索引（不包含在内）。原始数组不会被修改。&#xA;concat方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用slice和concat的示例：&#xA;const fruits = [&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;grape&amp;#34;, &amp;#34;kiwi&amp;#34;]; const slicedFruits = fruits.slice(1, 4); console.log(slicedFruits); // 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;] const moreFruits = [&amp;#34;pineapple&amp;#34;, &amp;#34;mango&amp;#34;]; const mergedArray = fruits.concat(moreFruits); console.log(mergedArray); // 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;] some(cb) 和 every(cb) some方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回true，否则返回false。</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-2/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/2/</link>
       <pubDate>Thu, 10 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-2/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/2/</guid>
       <description>类型转换（Type Conversion） JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。&#xA;显式类型转换（Explicit Type Conversion）： 使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如Number()、String()、Boolean()等，可以将其他类型转换为数字、字符串或布尔值。例如：&#xA;var num = Number(&amp;#34;42&amp;#34;); // 将字符串转换为数字 var str = String(123); // 将数字转换为字符串 var bool = Boolean(0); // 将数字转换为布尔值 使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：&#xA;var num = +&amp;#34;42&amp;#34;; // 将字符串转换为数字 隐式类型转换（Implicit Type Conversion）： 字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：&#xA;var result = &amp;#34;3&amp;#34; + 4; // 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接 var total = &amp;#34;10&amp;#34; - 5; // 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算 布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：&#xA;var num = true + 1; // 结果为数字2，因为true会被转换为数字1 var str = false + &amp;#34;hello&amp;#34;; // 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34; forEach forEach 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。</description>
     </item>
     <item>
       <title>CS571-S23 学习笔记(一) : JSON</title>
-      <link>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-1/</link>
+      <link>https://blog.youngzm.com/post/cs571-s23-notes/1/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cs571-s23-notes/cs571-s23-notes-1/</guid>
+      <guid>https://blog.youngzm.com/post/cs571-s23-notes/1/</guid>
       <description>JSON JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：&#xA;数据类型：JSON 支持以下数据类型：&#xA;字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo; 数字：42 布尔值：true 或 false 数组（用方括号括起来）：[1, 2, 3] 对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30} 键值对：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：&#xA;{ &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false } 数组：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例： [1, 2, 3, 4, 5] 嵌套：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例： { &amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;hobbies&amp;#34;: [&amp;#34;reading&amp;#34;, &amp;#34;traveling&amp;#34;], &amp;#34;address&amp;#34;: { &amp;#34;street&amp;#34;: &amp;#34;123 Main St&amp;#34;, &amp;#34;city&amp;#34;: &amp;#34;New York&amp;#34; } } 注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。&#xA;JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 JSON.parse() 将 JSON 字符串解析为 JavaScript 对象，使用 JSON.</description>
     </item>
   </channel>

@@ -11,16 +11,16 @@
     <atom:link href="https://blog.youngzm.com/categories/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; STL学习笔记(二) : algorithm 算法</title>
-      <link>https://blog.youngzm.com/post/cpp-stl-notes/cpp-stl-notes-2/</link>
+      <link>https://blog.youngzm.com/post/cpp-stl-notes/2/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cpp-stl-notes/cpp-stl-notes-2/</guid>
+      <guid>https://blog.youngzm.com/post/cpp-stl-notes/2/</guid>
       <description>迭代器无效 在使用算法时，有时候会遇到迭代器失效的问题。迭代器失效指的是在对容器进行修改后，之前获取的迭代器可能会变得无效，不能再使用。&#xA;迭代器失效的情况有多种，例如在插入元素后，原来的迭代器可能会失效；在删除元素后，指向删除元素的迭代器也会失效。&#xA;algorithm fill, fill_n, generate, generate_n fill(first, last, value)：将[first, last)范围内的所有元素都设置为指定的值 value。 fill_n(first, n, value)：将从 first 开始的 n 个元素都设置为指定的值 value。 generate(first, last, generator)：使用指定的生成器 generator 生成[first, last)范围内的元素。 generate_n(first, n, generator)：使用指定的生成器 generator 生成从 first 开始的 n 个元素。 示例代码：&#xA;#include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; int main() { std::vector&amp;lt;int&amp;gt; nums(5); // 使用 fill 将元素设置为 10 std::fill(nums.begin(), nums.end(), 10); // 输出结果：10 10 10 10 10 for (int num : nums) { std::cout &amp;lt;&amp;lt; num &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } std::cout &amp;lt;&amp;lt; std::endl; // 使用 fill_n 将前3个元素设置为 5 std::fill_n(nums.</description>
     </item>
     <item>
       <title>C&#43;&#43; STL学习笔记(一) : container 容器</title>
-      <link>https://blog.youngzm.com/post/cpp-stl-notes/cpp-stl-notes-1/</link>
+      <link>https://blog.youngzm.com/post/cpp-stl-notes/1/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/post/cpp-stl-notes/cpp-stl-notes-1/</guid>
+      <guid>https://blog.youngzm.com/post/cpp-stl-notes/1/</guid>
       <description>sequence container array std::array 是一个固定大小的数组容器，它在编译时就确定了大小，并且提供了类似于 C 数组的访问方式。 #include &amp;lt;array&amp;gt; std::array&amp;lt;int, 5&amp;gt; myArray = {1, 2, 3, 4, 5}; for (const auto&amp;amp; element : myArray) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } deque std::deque 是一个双端队列容器，支持在两端进行快速插入和删除操作。 #include &amp;lt;deque&amp;gt; std::deque&amp;lt;int&amp;gt; myDeque = {1, 2, 3}; myDeque.push_front(0); // 在前面插入元素 myDeque.push_back(4); // 在后面插入元素 for (const auto&amp;amp; element : myDeque) { std::cout &amp;lt;&amp;lt; element &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } forward_list std::forward_list 是一个单向链表容器，只能从前往后遍历，没有提供反向遍历的功能。 #include &amp;lt;forward_list&amp;gt; std::forward_list&amp;lt;int&amp;gt; myList = {1, 2, 3}; myList.</description>
     </item>
   </channel>

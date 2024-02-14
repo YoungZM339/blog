@@ -1,4 +1,4 @@
-name: Deploy Hugo Site to Github Pages on Master Branch
+name: Build and Deploy Hugo Site on Master Branch
 
 on:
   push:

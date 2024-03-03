@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.youngzm.com/categories/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/javascript/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/post/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/vue3/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/post/fontend-web-notes/2/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-02-03T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/post/fontend-web-notes/1/</loc>
+    <lastmod>2024-02-02T00:00:01+08:00</lastmod>
+  </url><url>
     <loc>https://blog.youngzm.com/tags/c&#43;&#43;/</loc>
     <lastmod>2023-09-11T00:00:01+08:00</lastmod>
   </url><url>
@@ -11,19 +38,7 @@
     <loc>https://blog.youngzm.com/post/cpp-stl-notes/2/</loc>
     <lastmod>2023-09-11T00:00:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.youngzm.com/categories/</loc>
-    <lastmod>2023-09-11T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/post/</loc>
-    <lastmod>2023-09-11T00:00:01+08:00</lastmod>
-  </url><url>
     <loc>https://blog.youngzm.com/tags/stl/</loc>
-    <lastmod>2023-09-11T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/tags/</loc>
-    <lastmod>2023-09-11T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/</loc>
     <lastmod>2023-09-11T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/cpp-stl-notes/1/</loc>
@@ -35,16 +50,7 @@
     <loc>https://blog.youngzm.com/post/cs571-s23-notes/7/</loc>
     <lastmod>2023-09-02T00:00:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.youngzm.com/tags/javascript/</loc>
-    <lastmod>2023-09-02T00:00:01+08:00</lastmod>
-  </url><url>
     <loc>https://blog.youngzm.com/tags/react/</loc>
-    <lastmod>2023-09-02T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-09-02T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-09-02T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/cs571-s23-notes/6/</loc>

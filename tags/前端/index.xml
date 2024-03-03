@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2023@YoungZM</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2024 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发学习笔记(二) : Vue3 常用指令和功能</title>
+      <link>https://blog.youngzm.com/post/fontend-web-notes/2/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/fontend-web-notes/2/</guid>
+      <description>Vue 提供了许多指令和功能来处理不同的任务和逻辑，使得开发更加高效和便捷。&#xA;v-if 在模板中使用 v-if 指令时，你需要将其绑定到一个布尔表达式上。如果该表达式的值为 true，则元素或组件将被渲染到页面上；如果为 false，则元素或组件将被从 DOM 中移除。&#xA;&amp;lt;div v-if=&amp;#34;isShown&amp;#34;&amp;gt; &amp;lt;!-- 这个元素/组件将在isShown为true时渲染 --&amp;gt; &amp;lt;/div&amp;gt; v-else 和 v-else-if 除了 v-if，Vue 还提供了 v-else 和 v-else-if 来实现条件渲染的分支。&#xA;&amp;lt;div&amp;gt; &amp;lt;p v-if=&amp;#34;condition&amp;#34;&amp;gt;条件为true时显示&amp;lt;/p&amp;gt; &amp;lt;p v-else-if=&amp;#34;otherCondition&amp;#34;&amp;gt;其他条件为true时显示&amp;lt;/p&amp;gt; &amp;lt;p v-else&amp;gt;以上条件都不满足时显示&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; v-else 指令必须紧跟在带有 v-if 或 v-else-if 的元素之后，并且在同一父元素内。&#xA;v-for 用于基于一个数组来渲染一个列表。&#xA;&amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;(item, index) in items&amp;#34; :key=&amp;#34;index&amp;#34;&amp;gt;{{ item.text }}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; v-model 用于在表单输入和应用状态之间创建双向绑定。&#xA;&amp;lt;input v-model=&amp;#34;message&amp;#34; /&amp;gt; v-on 用于监听 DOM 事件，并在触发时执行一些 JavaScript 代码。可以简写为 @。&#xA;&amp;lt;button v-on:click=&amp;#34;doSomething&amp;#34;&amp;gt;Click me&amp;lt;/button&amp;gt; &amp;lt;!-- 简写形式 --&amp;gt; &amp;lt;button @click=&amp;#34;doSomething&amp;#34;&amp;gt;Click me&amp;lt;/button&amp;gt; v-bind 用于动态地绑定一个或多个属性，或者一个组件 prop 到表达式。可以简写为 :。</description>
+    </item>
+    <item>
+      <title>前端开发学习笔记(一) : 闭包,函数抖动</title>
+      <link>https://blog.youngzm.com/post/fontend-web-notes/1/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/fontend-web-notes/1/</guid>
+      <description>闭包 闭包（Closure）是 JavaScript 中一个非常强大的特性，它允许函数访问并操作函数外部的变量。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。闭包的用途非常广泛，主要包括以下几点：&#xA;1. 数据封装和私有化 闭包允许在对象外部创建私有变量，这些变量只能通过特定的函数访问和修改，而不能直接从外部访问。这有助于封装对象的状态，实现数据的私有化和保护。&#xA;function createCounter() { let count = 0; // 私有变量 return { increment: function () { count++; }, decrement: function () { count--; }, getCount: function () { return count; }, }; } const counter = createCounter(); counter.increment(); console.log(counter.getCount()); // 输出：1 console.log(counter.count); // 输出：undefined，因为count是私有的 2. 创建模块 闭包允许模块化代码，可以创建暴露特定功能的公共 API，同时隐藏内部实现的细节。这是一种非常强大的设计模式，广泛用于现代 JavaScript 开发中，以构建可维护和可扩展的应用程序。&#xA;const myModule = (function () { let privateVar = &amp;#34;I&amp;#39;m private&amp;#34;; return { publicMethod: function () { console.</description>
+    </item>
     <item>
       <title>CS571-S23 学习笔记(七) : React 4</title>
       <link>https://blog.youngzm.com/post/cs571-s23-notes/7/</link>

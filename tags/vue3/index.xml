@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue3 on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/tags/vue3/</link>
+    <description>Recent content in Vue3 on YoungZM&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright 2023@YoungZM</copyright>
+    <lastBuildDate>Sat, 03 Feb 2024 00:00:01 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发学习笔记(二) : Vue3 常用指令和功能</title>
+      <link>https://blog.youngzm.com/post/fontend-web-notes/2/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/fontend-web-notes/2/</guid>
+      <description>Vue 提供了许多指令和功能来处理不同的任务和逻辑，使得开发更加高效和便捷。&#xA;v-if 在模板中使用 v-if 指令时，你需要将其绑定到一个布尔表达式上。如果该表达式的值为 true，则元素或组件将被渲染到页面上；如果为 false，则元素或组件将被从 DOM 中移除。&#xA;&amp;lt;div v-if=&amp;#34;isShown&amp;#34;&amp;gt; &amp;lt;!-- 这个元素/组件将在isShown为true时渲染 --&amp;gt; &amp;lt;/div&amp;gt; v-else 和 v-else-if 除了 v-if，Vue 还提供了 v-else 和 v-else-if 来实现条件渲染的分支。&#xA;&amp;lt;div&amp;gt; &amp;lt;p v-if=&amp;#34;condition&amp;#34;&amp;gt;条件为true时显示&amp;lt;/p&amp;gt; &amp;lt;p v-else-if=&amp;#34;otherCondition&amp;#34;&amp;gt;其他条件为true时显示&amp;lt;/p&amp;gt; &amp;lt;p v-else&amp;gt;以上条件都不满足时显示&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; v-else 指令必须紧跟在带有 v-if 或 v-else-if 的元素之后，并且在同一父元素内。&#xA;v-for 用于基于一个数组来渲染一个列表。&#xA;&amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;(item, index) in items&amp;#34; :key=&amp;#34;index&amp;#34;&amp;gt;{{ item.text }}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; v-model 用于在表单输入和应用状态之间创建双向绑定。&#xA;&amp;lt;input v-model=&amp;#34;message&amp;#34; /&amp;gt; v-on 用于监听 DOM 事件，并在触发时执行一些 JavaScript 代码。可以简写为 @。&#xA;&amp;lt;button v-on:click=&amp;#34;doSomething&amp;#34;&amp;gt;Click me&amp;lt;/button&amp;gt; &amp;lt;!-- 简写形式 --&amp;gt; &amp;lt;button @click=&amp;#34;doSomething&amp;#34;&amp;gt;Click me&amp;lt;/button&amp;gt; v-bind 用于动态地绑定一个或多个属性，或者一个组件 prop 到表达式。可以简写为 :。</description>
+    </item>
+  </channel>
+</rss>

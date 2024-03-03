@@ -4,4 +4,4 @@ There is the source code for @[YoungZM](https://youngzm.com)'Blog: <https://blog
 
 ## LICENSE
 
-All components in the `content` folder, `static/post_doc` folder, `static/post_img` folder are distributed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), other components except for third party submodules are distributed under [MIT License](LICENSE).
+All components in the `content` folder and `static` folder are distributed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), other components except for third party submodules are distributed under [MIT License](LICENSE).

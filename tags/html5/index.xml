@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML5 on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/tags/html5/</link>
+    <description>Recent content in HTML5 on YoungZM&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright 2023@YoungZM</copyright>
+    <lastBuildDate>Sat, 03 Feb 2024 00:00:01 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发学习笔记(三) : HTML5的一些[新]标准</title>
+      <link>https://blog.youngzm.com/post/frontend-web-notes/3/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/frontend-web-notes/3/</guid>
+      <description>语义化标签 HTML5 引入了一些新的语义化标签，这些标签有助于更清晰地描述页面结构和内容。它们提供了更具有可读性和可维护性的 HTML 代码，同时也使搜索引擎和辅助技术更好地理解网页。&#xA;&amp;lt;header&amp;gt;：表示页面或节的顶部，通常包含网站的标题、导航栏或其他引导性内容。 &amp;lt;nav&amp;gt;：表示导航区域，通常包含网站的主要导航链接。 &amp;lt;section&amp;gt;：表示文档中的一个独立节或主题，通常包含一组相关的内容。 &amp;lt;article&amp;gt;：表示独立的、完整的、可以独立分配或重用的内容，如博客文章、新闻报道等。 &amp;lt;footer&amp;gt;：表示页面或节的底部，通常包含版权信息、联系方式或其他辅助性内容。 &amp;lt;header&amp;gt; &amp;lt;h1&amp;gt;My Website&amp;lt;/h1&amp;gt; &amp;lt;nav&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;/&amp;#34;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;/about&amp;#34;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;/contact&amp;#34;&amp;gt;Contact&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/nav&amp;gt; &amp;lt;/header&amp;gt; &amp;lt;section&amp;gt; &amp;lt;h2&amp;gt;About Us&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;Welcome to our website! We are a team of passionate individuals...&amp;lt;/p&amp;gt; &amp;lt;/section&amp;gt; &amp;lt;article&amp;gt; &amp;lt;h3&amp;gt;10 Tips for a Healthy Lifestyle&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt;Here are some valuable tips to maintain a healthy lifestyle...&amp;lt;/p&amp;gt; &amp;lt;/article&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;p&amp;gt;&amp;amp;copy; 2022 My Website. All rights reserved.&amp;lt;/p&amp;gt; &amp;lt;/footer&amp;gt; 语义化标签的选择器 语义化标签可以使用 JavaScript 和 CSS 来选择和操作，就像其他 HTML 元素一样。可以使用各种选择器和操作方法来选择和修改语义化标签。</description>
+    </item>
+  </channel>
+</rss>

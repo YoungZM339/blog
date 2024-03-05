@@ -1,7 +1,7 @@
 ---
 title: "前端开发学习笔记(五) : CSS3的[新]特性"
 date: 2024-02-16T00:00:01+08:00
-description: "一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：CSS3"
+description: "一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：CSS3, Flexbox, Grid"
 categories: [前端学习]
 tags: [JavaScript, 前端, HTML5, CSS3]
 draft: false
@@ -13,6 +13,9 @@ draft: false
 
 弹性盒子（Flexbox）用于创建灵活且响应式的布局。它通过指定容器和其内部元素的属性来实现灵活的布局。
 
+参考：[Flex 布局教程：语法篇](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+
+![flex](flex.png)
 要使用弹性盒子布局，需要设置一个容器元素的`display`属性为`flex`或`inline-flex`。容器元素的子元素将成为弹性盒子的项目。
 
 以下是弹性盒子中常用的属性和其作用：
@@ -32,6 +35,137 @@ draft: false
 7. `flex-shrink`：指定项目的缩小比例。默认值为 1，表示当空间不足时，项目将等比例缩小。如果一个项目的`flex-shrink`为 0，其他项目为 1，则前者不会缩小。
 
 8. `flex-basis`：指定项目在主轴上的初始大小。默认值为`auto`，表示由内容决定大小。可以设置为具体的长度值或百分比。
+
+### Grid
+
+![grid](./grid.png)
+
+网格布局（Grid）将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。
+
+参考：[CSS Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)，作者： 阮一峰
+
+1. grid-template-columns：用于定义网格的列的大小和布局。您可以指定具体的长度值或使用关键字来定义列的大小。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr;
+}
+```
+
+上述示例中，网格容器有三个列，第一列的宽度为 100px，第二列的宽度为 200px，第三列的宽度为剩余空间的 1 份（fr 表示分数）。
+
+2. grid-template-rows：用于定义网格的行的大小和布局。与 grid-template-columns 类似，您可以指定具体的长度值或使用关键字来定义行的大小。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-rows: 50px auto 1fr;
+}
+```
+
+上述示例中，网格容器有三行，第一行的高度为 50px，第二行的高度为内容的高度，第三行的高度为剩余空间的 1 份。
+
+3. repeat()：该函数可以用于重复一个模式。它接受两个参数，第一个参数是重复的次数，第二个参数是要重复的模式。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+}
+```
+
+上述示例中，网格容器有三个列，每个列的宽度都为 100px。
+
+4. auto-fill 关键字：当使用 repeat()函数时，可以结合 auto-fill 关键字来自动填充网格。它会根据可用空间自动计算重复的次数。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+```
+
+上述示例中，网格容器中的列会自动填充，每个列的宽度为 100px，但如果可用空间不足，则自动调整为 1 份。
+
+5. fr 关键字：用于定义分数单位，表示剩余空间的一部分。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+```
+
+上述示例中，网格容器有两个列，第一列的宽度为剩余空间的 1 份，第二列的宽度为剩余空间的 2 份。
+
+6. minmax()：该函数用于定义一个范围，指定最小值和最大值之间的大小。它在定义网格的列或行的大小时非常有用。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 200px;
+}
+```
+
+上述示例中，网格容器有两个列，第一列的宽度为 100px 到剩余空间的 1 份之间，第二列的宽度为 200px。
+
+7. grid-column-gap：用于指定网格列之间的间距。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-column-gap: 20px;
+}
+```
+
+上述示例中，网格容器的列之间有 20px 的间距。
+
+8. grid-row-gap：用于指定网格行之间的间距。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-row-gap: 10px;
+}
+```
+
+上述示例中，网格容器的行之间有 10px 的间距。
+
+9. grid-gap：用于同时指定网格列和行之间的间距。例如：
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 50px auto;
+  grid-gap: 10px 20px;
+}
+```
+
+上述示例中，网格容器的列之间有 20px 的间距，行之间有 10px 的间距。
+
+10. grid-column：用于指定一个项目跨越的列数。例如：
+
+```css
+.grid-item {
+  grid-column: span 2;
+}
+```
+
+上述示例中，一个网格项目跨越两列。
+
+11. grid-row：用于指定一个项目跨越的行数。例如：
+
+```css
+.grid-item {
+  grid-row: span 3;
+}
+```
+
+上述示例中，一个网格项目跨越三行。
 
 ### 2D/3D 转换
 

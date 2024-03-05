@@ -16,7 +16,7 @@ draft: false
 - 边框（Border）: 边框环绕在内边距的外侧。
 - 外边距（Margin）: 外边距是盒子模型的最外层，可以控制元素之间的间隔。
 
-  ![alt text](./box_model.png)
+  ![box_model](./box_model.png)
 
 - 盒子的宽度（Width）：盒子的宽度由内容宽度、内边距和边框宽度的总和决定。
 - 盒子的高度（Height）：盒子的高度由内容高度、内边距和边框高度的总和决定。

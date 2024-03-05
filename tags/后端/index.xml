@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>后端 on YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/tags/%E5%90%8E%E7%AB%AF/</link>
+    <description>Recent content in 后端 on YoungZM&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright 2023@YoungZM</copyright>
+    <lastBuildDate>Sat, 22 Jul 2023 00:00:01 +0800</lastBuildDate>
+    <atom:link href="https://blog.youngzm.com/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django RESTful API杂记(二) : </title>
+      <link>https://blog.youngzm.com/post/django-restful-notes/2/</link>
+      <pubDate>Sat, 22 Jul 2023 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/django-restful-notes/2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Django RESTful API杂记(一) : </title>
+      <link>https://blog.youngzm.com/post/django-restful-notes/1/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/post/django-restful-notes/1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

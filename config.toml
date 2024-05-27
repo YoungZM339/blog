@@ -2,9 +2,11 @@ baseURL = "https://blog.youngzm.com/"
 DefaultContentLanguage = "zh" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "zh"
 title = "YoungZM's Blog"
-copyright = "Copyright 2023@YoungZM"
+copyright = "Copyright 2024@YoungZM"
 theme = "diary"
 googleAnalytics = "421082505"
+cloudflareToken = "ce647d947e75400dbdcb5c4c3d5478a4"
+Clarity = "migdpr5u2w"
 
 [markup]
   [markup.highlight]

@@ -8,6 +8,10 @@ draft: false
 
 # About
 
-I am Brian Yang, an software engineering undergraduate in School of Artificial intelligence and Big Data, Henan University of Technology. Here is my resume: [中文](/resume/zh-cn)
+Hello!
 
-Contact: <a href="mailto:YoungZM339@outlook.com">YoungZM339@outlook.com</a>
+I am Brian Yang, currently an undergraduate student majoring in Software Engineering at Henan University of Technology. I am focusing on research in Large Language Model (LLM) applications. If you have any questions or would like to discuss further, please feel free to contact me.
+
+- Email：<a href=mailto:YoungZM339@outlook.com>YoungZM339@outlook.com</a>
+- Address：[Henan University of Technology, No. 100 Lianhua Street, Zhengzhou](https://www.google.com/maps/place/Henan+University+of+Technology/@34.829495,113.5491401,17z)
+- Github：[YoungZM](https://github.com/youngzm339)

@@ -8,14 +8,11 @@ draft: false
 
 欢迎交换友链~：
 
-| 我的朋友         | 站点地址                       |
-| ---------------- | ------------------------------ |
-| YangTY’s Blog    | <https://imyangty.com/>        |
-| Fachep           | <https://blog.Fachep.com/>     |
-| Miaow233         | <https://nekohouse.cafe/>      |
-| FlyingSky's Blog | <https://blog.fsky7.com/>      |
-| Lzy Blog         | <https://www.lzy20021010.com/> |
-| XSY              | <https://www.xsy.fun/>         |
+| 我的朋友      | 站点地址                   |
+| ------------- | -------------------------- |
+| YangTY’s Blog | <https://imyangty.com/>    |
+| Fachep        | <https://blog.Fachep.com/> |
+| Miaow233      | <https://nekohouse.cafe/>  |
 
 | 我的关注   | 站点地址                              |
 | ---------- | ------------------------------------- |

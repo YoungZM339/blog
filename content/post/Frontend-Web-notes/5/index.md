@@ -2,8 +2,8 @@
 title: "前端开发学习笔记(五) : CSS3的[新]特性"
 date: 2024-02-16T00:00:01+08:00
 description: "一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：CSS3, Flexbox, Grid"
-categories: [前端学习]
-tags: [JavaScript, 前端, HTML5, CSS3]
+categories: "前端学习"
+tags: ["JavaScript", "前端", "HTML5", "CSS3"]
 draft: false
 ---
 

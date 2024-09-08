@@ -2,8 +2,8 @@
 title: "在2021年回顾自己的博客"
 date: 2021-03-14T19:32:18+08:00
 description: "2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨"
-categories: [博客公告]
-tags: [博客公告]
+categories: "博客公告"
+tags: ["博客公告"]
 draft: false
 ---
 

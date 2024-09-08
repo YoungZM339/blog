@@ -2,8 +2,8 @@
 title: "2021年11月26日随笔一篇"
 date: 2021-11-26T19:32:18+08:00
 description: "其实事情总会朝着好的方向发展的。"
-categories: [随笔]
-tags: [中学,随笔]
+categories: "随笔"
+tags: ["中学", "随笔"]
 draft: false
 ---
 

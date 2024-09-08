@@ -1,0 +1,525 @@
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YoungZM&#39;s Blog</title>
+    <link>https://blog.youngzm.com/</link>
+    <description>Recent content on YoungZM&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright 2024@YoungZM</copyright>
+    <lastBuildDate>Fri, 16 Feb 2024 00:00:01 +0800</lastBuildDate>
+    
+        <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CS571-S23 学习笔记(四) : React 1</title>
+        <link>https://blog.youngzm.com/post/cs571-s23-notes/4/</link>
+        <pubDate>Sat, 26 Aug 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/cs571-s23-notes/4/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/4/ -&lt;h2 id=&#34;dom&#34;&gt;DOM&lt;/h2&gt;
+&lt;p&gt;DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。&lt;/p&gt;
+&lt;p&gt;尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。&lt;/p&gt;
+&lt;p&gt;React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。&lt;/p&gt;
+&lt;p&gt;使用 React 的好处包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。&lt;/p&gt;
+&lt;h2 id=&#34;react-component&#34;&gt;React Component&lt;/h2&gt;
+&lt;p&gt;React 组件是 React 应用程序中可重用的构建块。它们是 React 应用程序用户界面的基本单元。组件封装了自己的逻辑、状态和渲染，使得管理和组织代码库更加容易。&lt;/p&gt;
+&lt;p&gt;以下是一个在 React 中的函数组件示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; React from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; MyComponent = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;Hello, World!&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; MyComponent;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个示例中，&lt;code&gt;MyComponent&lt;/code&gt; 是一个使用箭头函数定义的函数组件。它返回 JSX 代码，表示组件的结构和内容。&lt;/p&gt;
+&lt;h2 id=&#34;react-hook&#34;&gt;React Hook&lt;/h2&gt;
+&lt;p&gt;React Hook 是在函数组件中使用状态和其他 React 特性的函数。它们提供了一种在不编写类组件的情况下管理有状态逻辑的方式。&lt;/p&gt;
+&lt;h3 id=&#34;usestate&#34;&gt;useState&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;useState&lt;/code&gt; Hook 用于在函数组件中添加状态。它返回一个有状态的值和一个用于更新该值的函数。初始状态可以作为参数传递给 &lt;code&gt;useState&lt;/code&gt; 函数。&lt;/p&gt;
+&lt;p&gt;以下是在函数组件中使用 &lt;code&gt;useState&lt;/code&gt; Hook 的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; React, { useState } from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; Counter = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; [count, setCount] = useState(&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; increment = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    setCount(count + &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Count: {count}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;onClick&lt;/span&gt;={increment}&amp;gt;Increment&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; Counter;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个示例中，&lt;code&gt;useState&lt;/code&gt; Hook 用于在 &lt;code&gt;Counter&lt;/code&gt; 组件中添加一个 &lt;code&gt;count&lt;/code&gt; 状态变量。初始状态设置为 &lt;code&gt;0&lt;/code&gt;。&lt;code&gt;increment&lt;/code&gt; 函数在按钮点击时更新 &lt;code&gt;count&lt;/code&gt; 状态。&lt;/p&gt;
+&lt;h3 id=&#34;useeffect&#34;&gt;useEffect&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;useEffect&lt;/code&gt; Hook 用于在函数组件中执行副作用操作。副作用操作可以包括数据获取、事件订阅或手动操作 DOM 等。&lt;/p&gt;
+&lt;p&gt;以下是在函数组件中使用 &lt;code&gt;useEffect&lt;/code&gt; Hook 的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; React, { useState, useEffect } from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; DataFetcher = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; [data, setData] = useState(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 从 API 获取数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;    fetch(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;https://api.example.com/data&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .then((response) =&amp;gt; response.json())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .then((data) =&amp;gt; setData(data))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt;((error) =&amp;gt; console.error(error));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, []);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      {data ? (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          {data.map((item) =&amp;gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;key&lt;/span&gt;={item.id}&amp;gt;{item.name}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;li&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ))}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ul&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ) : (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Loading data...&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      )}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; DataFetcher;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个示例中，&lt;code&gt;useEffect&lt;/code&gt; Hook 用于在组件挂载时从 API 获取数据。获取到的数据使用 &lt;code&gt;setData&lt;/code&gt; 函数存储在 &lt;code&gt;data&lt;/code&gt; 状态变量中。空的依赖数组 (&lt;code&gt;[]&lt;/code&gt;) 确保该效果仅在组件初始渲染时运行一次。&lt;/p&gt;
+&lt;h2 id=&#34;imports-and-exports&#34;&gt;Imports and Exports&lt;/h2&gt;
+&lt;p&gt;在 React 中，使用 &lt;code&gt;import&lt;/code&gt; 和 &lt;code&gt;export&lt;/code&gt; 语句来导入和导出组件、函数、变量等。&lt;/p&gt;
+&lt;h3 id=&#34;导入&#34;&gt;导入&lt;/h3&gt;
+&lt;p&gt;可以使用 &lt;code&gt;import&lt;/code&gt; 语句来导入其他模块导出的内容。语法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; SomeComponent from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;./SomeComponent&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; { SomeFunction, SomeVariable } from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;./SomeModule&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;SomeComponent&lt;/code&gt; 是从路径为 &lt;code&gt;./SomeComponent&lt;/code&gt; 的模块中导入的默认导出。&lt;code&gt;SomeFunction&lt;/code&gt; 和 &lt;code&gt;SomeVariable&lt;/code&gt; 是从路径为 &lt;code&gt;./SomeModule&lt;/code&gt; 的模块中按名称导入的具名导出。&lt;/p&gt;
+&lt;h3 id=&#34;导出&#34;&gt;导出&lt;/h3&gt;
+&lt;p&gt;可以使用 &lt;code&gt;export&lt;/code&gt; 语句来导出组件、函数、变量等。语法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; SomeComponent;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; { SomeFunction, SomeVariable };
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;SomeComponent&lt;/code&gt; 是默认导出的组件。&lt;code&gt;SomeFunction&lt;/code&gt; 和 &lt;code&gt;SomeVariable&lt;/code&gt; 是按名称导出的具名导出。&lt;/p&gt;
+&lt;p&gt;以下是一个完整的示例，演示了如何在 React 中导入和导出组件：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MyComponent.js：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; React from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; MyComponent = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;Hello, World!&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; MyComponent;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;App.js：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; React from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;import&lt;/span&gt; MyComponent from &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;./MyComponent&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; App = () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;My App&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;MyComponent&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;default&lt;/span&gt; App;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;MyComponent.js&lt;/code&gt; 导出了一个默认组件 &lt;code&gt;MyComponent&lt;/code&gt;，然后在 &lt;code&gt;App.js&lt;/code&gt; 中通过 &lt;code&gt;import&lt;/code&gt; 语句将其导入并使用在 &lt;code&gt;App&lt;/code&gt; 组件中。&lt;/p&gt;
+- https://blog.youngzm.com/post/cs571-s23-notes/4/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
+        <link>https://blog.youngzm.com/post/cs571-s23-notes/3/</link>
+        <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/cs571-s23-notes/3/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/3/ -&lt;h2 id=&#34;回调函数callback-function&#34;&gt;回调函数（Callback Function）&lt;/h2&gt;
+&lt;h3 id=&#34;回调函数&#34;&gt;回调函数&lt;/h3&gt;
+&lt;p&gt;回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。&lt;/p&gt;
+&lt;h3 id=&#34;fetch&#34;&gt;fetch&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;fetch&lt;/code&gt;函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。&lt;code&gt;fetch&lt;/code&gt;函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用&lt;code&gt;fetch&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fetch(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;https://api.example.com/data&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((response) =&amp;gt; response.json())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((data) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理检索到的数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt;((error) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理请求过程中发生的任何错误
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;slicebegl-endl-和-concatarr&#34;&gt;slice(begl, endl) 和 concat(arr)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;slice&lt;/code&gt;方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：&lt;code&gt;begl&lt;/code&gt;指定起始索引，&lt;code&gt;endl&lt;/code&gt;（可选）指定结束索引（不包含在内）。原始数组不会被修改。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;concat&lt;/code&gt;方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用&lt;code&gt;slice&lt;/code&gt;和&lt;code&gt;concat&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; fruits = [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apple&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;banana&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;orange&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;grape&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;kiwi&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; slicedFruits = fruits.slice(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(slicedFruits); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; moreFruits = [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;pineapple&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;mango&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; mergedArray = fruits.concat(moreFruits);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(mergedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;somecb-和-everycb&#34;&gt;some(cb) 和 every(cb)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;some&lt;/code&gt;方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回&lt;code&gt;true&lt;/code&gt;，否则返回&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;every&lt;/code&gt;方法用于检查数组中的所有元素是否都满足回调函数指定的条件。如果所有元素都满足条件，返回&lt;code&gt;true&lt;/code&gt;，否则返回&lt;code&gt;false&lt;/code&gt;。以下是示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;40&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;50&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; isGreaterThanTwenty = (number) =&amp;gt; number &amp;gt; &lt;span style=&#34;color:#b452cd&#34;&gt;20&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(numbers.some(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(numbers.every(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reducecb-start&#34;&gt;reduce(cb, start)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;reduce&lt;/code&gt;方法用于通过对数组的每个元素应用回调函数，将数组减少为单个值。回调函数接受四个参数：累加器、当前值、当前索引和数组本身。&lt;code&gt;reduce&lt;/code&gt;方法对每个元素执行回调函数，传递前一次迭代的累加值和当前元素，并返回最终的累加值。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;start&lt;/code&gt;参数是可选的初始值，用作累加器的初始值。如果提供了初始值，reduce 操作将从该初始值开始；否则，数组的第一个元素将作为初始值。&lt;/p&gt;
+&lt;p&gt;以下是使用&lt;code&gt;reduce&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; sum = numbers.reduce(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (accumulator, currentValue) =&amp;gt; accumulator + currentValue,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(sum); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：15
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;扩展运算符spread-operator&#34;&gt;扩展运算符（Spread Operator）&lt;/h2&gt;
+&lt;p&gt;扩展运算符&lt;code&gt;...&lt;/code&gt;是 JavaScript 中的语法，允许将可迭代对象（例如数组或字符串）扩展为单独的元素。它可以在多个上下文中使用，例如函数调用、数组字面量和对象字面量。&lt;/p&gt;
+&lt;p&gt;在数组中使用扩展运算符时，可以通过将现有数组的元素组合起来创建一个新数组。它类似于&lt;code&gt;concat&lt;/code&gt;方法，但提供了更简洁的语法。以下是一个示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; array1 = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; array2 = [&lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;6&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; combinedArray = [...array1, ...array2];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(combinedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4, 5, 6]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;扩展运算符也可以用于将数组的各个元素作为参数传递给函数。以下是一个示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; maxNumber = &lt;span style=&#34;color:#658b00&#34;&gt;Math&lt;/span&gt;.max(...numbers);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(maxNumber); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：5
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;数据复制data-copying&#34;&gt;数据复制（Data Copying）&lt;/h2&gt;
+&lt;h3 id=&#34;引用复制reference-copy&#34;&gt;引用复制（Reference Copy）&lt;/h3&gt;
+&lt;p&gt;引用复制是一种简单的复制方法，它将原始变量的引用（内存地址）赋值给新变量。这意味着两个变量将引用相同的内存位置，当其中一个变量发生改变时，另一个变量也会受到影响。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = originalArray; &lt;span style=&#34;color:#228b22&#34;&gt;// 引用复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray.push(&lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;originalArray&lt;/code&gt; 和 &lt;code&gt;copiedArray&lt;/code&gt; 引用相同的数组。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 时，&lt;code&gt;originalArray&lt;/code&gt; 也会受到影响，因为它们引用同一个数组对象。&lt;/p&gt;
+&lt;h3 id=&#34;浅复制shallow-copy&#34;&gt;浅复制（Shallow Copy）&lt;/h3&gt;
+&lt;p&gt;浅复制创建一个新的变量，但是只复制原始变量中的值和引用。这意味着对于引用类型的数据，新变量将引用原始变量中的相同对象。当修改原始变量中的引用类型数据时，新变量也会受到影响。但是，对于原始类型的数据，新变量将拥有自己的独立副本。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalObject = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedObject = &lt;span style=&#34;color:#658b00&#34;&gt;Object&lt;/span&gt;.assign({}, originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 浅复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedObject.age = &lt;span style=&#34;color:#b452cd&#34;&gt;40&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 30 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 40 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们使用 &lt;code&gt;Object.assign()&lt;/code&gt; 方法进行浅复制。当我们修改 &lt;code&gt;copiedObject&lt;/code&gt; 的 &lt;code&gt;age&lt;/code&gt; 属性时，&lt;code&gt;originalObject&lt;/code&gt; 不受影响，因为它们拥有各自的独立副本。但是，它们共享相同的 &lt;code&gt;name&lt;/code&gt; 属性。&lt;/p&gt;
+&lt;h3 id=&#34;深复制deep-copy&#34;&gt;深复制（Deep Copy）&lt;/h3&gt;
+&lt;p&gt;深复制是创建变量的完全独立副本，包括原始变量中的所有值和引用类型数据。这意味着当修改任何一个变量时，另一个变量都不会受到影响。&lt;/p&gt;
+&lt;p&gt;由于 JavaScript 语言本身没有提供内置的深复制方法，需要使用其他方式来实现深复制，例如递归遍历对象并复制所有属性和子对象。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; deepCopy(obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typeof&lt;/span&gt; obj !== &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt; || obj === &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;null&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; obj;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; newObj = &lt;span style=&#34;color:#658b00&#34;&gt;Array&lt;/span&gt;.isArray(obj) ? [] : {};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; key &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;in&lt;/span&gt; obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    newObj[key] = deepCopy(obj[key]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; newObj;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, [&lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;]];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = deepCopy(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 深复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray[&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;][&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [3, 4]]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [5, 4]]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们定义了一个 &lt;code&gt;deepCopy&lt;/code&gt; 函数来实现深复制。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 中嵌套数组的值时，&lt;code&gt;originalArray&lt;/code&gt; 不受影响，因为它们是独立的副本。&lt;/p&gt;
+&lt;p&gt;需要注意的是，深复制可能会导致性能上的损耗，特别是在处理大型或嵌套层级深的对象时。因此，在实际应用中，需要根据情况权衡使用深复制的必要性和性能考虑。&lt;/p&gt;
+- https://blog.youngzm.com/post/cs571-s23-notes/3/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
+        <link>https://blog.youngzm.com/post/cs571-s23-notes/2/</link>
+        <pubDate>Thu, 10 Aug 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/cs571-s23-notes/2/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/2/ -&lt;h2 id=&#34;类型转换type-conversion&#34;&gt;类型转换（Type Conversion）&lt;/h2&gt;
+&lt;p&gt;JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。&lt;/p&gt;
+&lt;h3 id=&#34;显式类型转换explicit-type-conversion&#34;&gt;显式类型转换（Explicit Type Conversion）：&lt;/h3&gt;
+&lt;p&gt;使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如&lt;code&gt;Number()&lt;/code&gt;、&lt;code&gt;String()&lt;/code&gt;、&lt;code&gt;Boolean()&lt;/code&gt;等，可以将其他类型转换为数字、字符串或布尔值。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = &lt;span style=&#34;color:#658b00&#34;&gt;Number&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;42&amp;#34;&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将字符串转换为数字
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#658b00&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;123&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为字符串
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; bool = &lt;span style=&#34;color:#658b00&#34;&gt;Boolean&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为布尔值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = +&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;42&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 将字符串转换为数字
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;隐式类型转换implicit-type-conversion&#34;&gt;隐式类型转换（Implicit Type Conversion）：&lt;/h3&gt;
+&lt;p&gt;字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; result = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt; + &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; total = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt; - &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;true&lt;/span&gt; + &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为数字2，因为true会被转换为数字1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; + &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;foreach&#34;&gt;forEach&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;forEach&lt;/code&gt; 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。&lt;/p&gt;
+&lt;p&gt;使用示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;numbers.forEach(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; (number) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  console.log(number);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述示例中，&lt;code&gt;forEach&lt;/code&gt; 方法将遍历 &lt;code&gt;numbers&lt;/code&gt; 数组的每个元素，并将每个元素打印到控制台。&lt;/p&gt;
+&lt;h2 id=&#34;map&#34;&gt;map&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;map&lt;/code&gt; 也是 JavaScript 数组的一个方法，用于对数组中的每个元素进行转换，并返回一个新的数组。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次，并将返回的值组成一个新的数组。&lt;/p&gt;
+&lt;p&gt;使用示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; doubledNumbers = numbers.map(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; (number) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; number * &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(doubledNumbers); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: [2, 4, 6, 8, 10]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述示例中，&lt;code&gt;map&lt;/code&gt; 方法将遍历 &lt;code&gt;numbers&lt;/code&gt; 数组的每个元素，并将每个元素乘以 2 后的结果组成一个新的数组 &lt;code&gt;doubledNumbers&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;filter&#34;&gt;filter&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;filter&lt;/code&gt; 是 JavaScript 数组的一个方法，用于根据指定的条件筛选出符合条件的元素，并返回一个新的数组。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次，并根据返回值的真假来决定是否保留该元素。&lt;/p&gt;
+&lt;p&gt;使用示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; evenNumbers = numbers.filter(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; (number) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; number % &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; === &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(evenNumbers); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: [2, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述示例中，&lt;code&gt;filter&lt;/code&gt; 方法将遍历 &lt;code&gt;numbers&lt;/code&gt; 数组的每个元素，并将符合条件（偶数）的元素组成一个新的数组 &lt;code&gt;evenNumbers&lt;/code&gt;。&lt;/p&gt;
+- https://blog.youngzm.com/post/cs571-s23-notes/2/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CS571-S23 学习笔记(一) : JSON</title>
+        <link>https://blog.youngzm.com/post/cs571-s23-notes/1/</link>
+        <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/cs571-s23-notes/1/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/1/ -&lt;h2 id=&#34;json&#34;&gt;JSON&lt;/h2&gt;
+&lt;p&gt;JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据类型&lt;/strong&gt;：JSON 支持以下数据类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;数字：42&lt;/li&gt;
+&lt;li&gt;布尔值：true 或 false&lt;/li&gt;
+&lt;li&gt;数组（用方括号括起来）：[1, 2, 3]&lt;/li&gt;
+&lt;li&gt;对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;键值对&lt;/strong&gt;：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;age&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;isStudent&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;嵌套&lt;/strong&gt;：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;age&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;hobbies&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;reading&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;traveling&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;address&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;street&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;123 Main St&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;New York&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。&lt;/p&gt;
+&lt;p&gt;JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 &lt;code&gt;JSON.parse()&lt;/code&gt; 将 JSON 字符串解析为 JavaScript 对象，使用 &lt;code&gt;JSON.stringify()&lt;/code&gt; 将 JavaScript 对象转换为 JSON 字符串。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false}&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonObject = JSON.parse(jsonString);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonObject.name); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#34;John&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; person = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;, isStudent: &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString2 = JSON.stringify(person);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonString2); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#39;{&amp;#34;name&amp;#34;:&amp;#34;John&amp;#34;,&amp;#34;age&amp;#34;:30,&amp;#34;isStudent&amp;#34;:false}&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上是 JSON 格式的基本规则和用法，它提供了一种方便可读的数据交换格式，广泛应用于前后端数据传输和存储。&lt;/p&gt;
+- https://blog.youngzm.com/post/cs571-s23-notes/1/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Django RESTful API杂记(二) : </title>
+        <link>https://blog.youngzm.com/post/django-restful-notes/2/</link>
+        <pubDate>Sat, 22 Jul 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/django-restful-notes/2/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/django-restful-notes/2/ -- https://blog.youngzm.com/post/django-restful-notes/2/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Django RESTful API杂记(一) : </title>
+        <link>https://blog.youngzm.com/post/django-restful-notes/1/</link>
+        <pubDate>Thu, 20 Jul 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/django-restful-notes/1/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/django-restful-notes/1/ -- https://blog.youngzm.com/post/django-restful-notes/1/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>与其说是尾声，不如说是下一段的序幕吧</title>
+        <link>https://blog.youngzm.com/post/remember-those-days/</link>
+        <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/remember-those-days/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/remember-those-days/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;现在是凌晨2点30分，我重新坐到书桌前开始写这篇随笔。对我而言，凌晨这段的安静是我不多的能让我“逃离”这个世界的时间。好像是因为初三的暑假看了些游记和博客随笔，自那时起我总喜欢隔些日子写写东西（可惜，多数已经不见了踪影）。那时是近乎疯狂与魔幻的生活的序幕，而现在是2022年10月22日，我彻底脱离过往几年那种的生活已经四个多月了。时至今日，我思想中的大学生活依旧是缺乏实感的；未来的生活依旧是缺乏想象的。面对繁琐的作业与任务，仿佛可及的目标与梦想，这几个月算是稳稳地度过了。&lt;/p&gt;
+&lt;p&gt;坐在寂静的宿舍里时，我时常回想起以前自己总喜欢站在窗边向远方眺望的场景&amp;ndash;初三傍晚趴在学校自习教室外的栏杆上接受晚风的洗礼，高考备考时一个个难眠的夜晚依在窗台仰望无际的夜空。我似乎是一个难以割舍离的人，总还是会在面拂熟悉的晚风与仰望熟悉的夜空时，在陌生的人潮人涌中时，想起以前的朋友和同学们的说笑。每当想起这些，心中总有种说不出的感觉，也常常会讲：“啊，要是能回到那时候就好了。”记忆这种东西真是奇妙，明明本是当时日复一日的常态，现在看来却像宝石一样闪耀。&lt;/p&gt;
+&lt;p&gt;我不止一次地在脑海中问我自己，“你后悔过去的选择吗？”我告诉自己，“有遗憾，但是不后悔。”这句话不知是否发自真心？可能还是有一丝后悔吧，不过我可能已经做了在当时的眼界与能力下能做的一切，也不该有后悔罢。过往的事情已经发生了，无论如何，现在只剩下自己回味啦。
+&lt;em&gt;“我们所可以自慰的，想来想去，也还是所谓对于将来的希望。”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;我如愿在大学学到了可能是曾经热爱的学科。在经济下行的大环境下，“本硕985找不到工作；微软挂掉所有日常实习生”的新闻每每让人心生焦虑。不过好在不是陷入所谓“不转专业就没出路”的境况，更何况大一也还不至于太过紧张。目前希望能多坐会儿冷板凳，看看自己究竟有没有这方面的科研或开发能力，再来讲这些未来规划也不迟罢。&lt;/p&gt;
+&lt;p&gt;近些日子不是很太平，又是一轮大潮席卷全国，蜷居在噪杂的寝室里常常有所事但也无所获。虽然在看到苗头的时候已经做了些心理和物质上的准备，可是现状还是引得心里发慌。不幸的是，视目前发展情况，短期内似乎是无法恢复正常了。“COVID夺走了我的青春”，真的不是闹着玩的。&lt;/p&gt;
+&lt;p&gt;一瞬间，还太多东西要讲，不如先点一个逗号，以后再慢慢讲吧。毕竟这段故事，还在纸上书写呢。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2022年10月22日04时15分写毕&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./book+room2.jpg&#34; alt=&#34;book+room2.jpg&#34;&gt;)&lt;/p&gt;- https://blog.youngzm.com/post/remember-those-days/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
+        <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
+        <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/recommend-website-for-gaokao/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——&lt;a href=&#34;https://colleges.chat/&#34;&gt;大学生活质量指北&lt;/a&gt;的出现恰好补充了这一点。&lt;/p&gt;
+&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。&lt;/p&gt;
+&lt;p&gt;今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。&lt;/p&gt;
+&lt;p&gt;网址是&lt;a href=&#34;https://colleges.chat/&#34;&gt;https://colleges.chat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+- https://blog.youngzm.com/post/recommend-website-for-gaokao/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>2021年11月26日随笔一篇</title>
+        <link>https://blog.youngzm.com/post/20211226essay/</link>
+        <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/20211226essay/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/20211226essay/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。&lt;/p&gt;
+&lt;p&gt;我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。&lt;/p&gt;
+&lt;p&gt;这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。&lt;/p&gt;
+&lt;p&gt;其实事情总会朝着好的方向发展的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./psc.jpg&#34; alt=&#34;20211226essay&#34;&gt;&lt;/p&gt;
+- https://blog.youngzm.com/post/20211226essay/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>在2021年回顾自己的博客</title>
+        <link>https://blog.youngzm.com/post/plan-and-promise/</link>
+        <pubDate>Sun, 14 Mar 2021 19:32:18 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/plan-and-promise/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/plan-and-promise/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;2021年3月14日，面对刚刚重建的没有任何有价值内容的博客，一时感慨&lt;/p&gt;
+&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;h3 id=&#34;回眸&#34;&gt;回眸&lt;/h3&gt;
+&lt;p&gt;由于互联网中的开发者们的写博客的传统，我在2018年创建了本博客。然而三年多过去了，竟没有一篇值得我留下的文章，探究原因，可能是因为我过分注重博客的“外在”而忽略了“内核”。&lt;/p&gt;
+&lt;p&gt;创建博客之初，我把主要工作放在了站点优化上，先将博客内静态内容转移到国内云厂商的静态储存桶，后给站点安排备案并部署了国内CDN，站点访问速度大幅度提升，至此半年过去但没有任何内容产出。&lt;/p&gt;
+&lt;p&gt;此后的三年不断更换博客系统、重构博客，原因各不相同（详见文后重建记录），如今看来却都是微不足道。&lt;/p&gt;
+&lt;p&gt;另外，以后题解报告会专门在另一个站点维护，将在暑假发布。&lt;/p&gt;
+&lt;h2 id=&#34;博客重建记录截止于2021年3月14日&#34;&gt;博客重建记录（截止于2021年3月14日）&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;时间&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;事件&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;原因&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;使用wordpress构建本网站&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;转用为typecho&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不满意wordpress的速度&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;转回使用wordpress&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;在手机设备再编辑困难&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;转用typecho&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;对富文本编辑器不满意&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2021年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;转用hexo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;更加追求站点稳定性能，并为将来不再计划拥有VPS做准备&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2021年&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;转用hugo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;构建迅速，易于上手&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;- https://blog.youngzm.com/post/plan-and-promise/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

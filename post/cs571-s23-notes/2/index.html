@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html><head>
+<title>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/cs571-s23-notes/2/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&JS2)">
+  <meta property="og:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-10T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-08-10T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="CS571">
+    <meta property="article:tag" content="前端">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&JS2)">
+  <meta name="twitter:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2type-conversion" class="nav-类型转换type-conversion">
+									类型转换（Type Conversion）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%98%be%e5%bc%8f%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2explicit-type-conversion" class="nav-显式类型转换explicit-type-conversion">
+									显式类型转换（Explicit Type Conversion）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%90%e5%bc%8f%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2implicit-type-conversion" class="nav-隐式类型转换implicit-type-conversion">
+									隐式类型转换（Implicit Type Conversion）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#foreach" class="nav-foreach">
+									forEach
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#map" class="nav-map">
+									map
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#filter" class="nav-filter">
+									filter
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)
+                    
+                    <div class="post-subtitle">
+                        CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：类型转换（Type Conversion）,forEach,map,filter
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-08-10 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/cs571">CS571</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="类型转换type-conversion">类型转换（Type Conversion）</h2>
+<p>JavaScript 中的类型转换是指将一个数据类型转换为另一个数据类型的过程。JavaScript 提供了多种方式来进行类型转换，这些方式可以根据需要进行显式或隐式转换。</p>
+<h3 id="显式类型转换explicit-type-conversion">显式类型转换（Explicit Type Conversion）：</h3>
+<p>使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如<code>Number()</code>、<code>String()</code>、<code>Boolean()</code>等，可以将其他类型转换为数字、字符串或布尔值。例如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> num = <span style="color:#658b00">Number</span>(<span style="color:#cd5555">&#34;42&#34;</span>); <span style="color:#228b22">// 将字符串转换为数字
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">var</span> str = <span style="color:#658b00">String</span>(<span style="color:#b452cd">123</span>); <span style="color:#228b22">// 将数字转换为字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">var</span> bool = <span style="color:#658b00">Boolean</span>(<span style="color:#b452cd">0</span>); <span style="color:#228b22">// 将数字转换为布尔值
+</span></span></span></code></pre></div><p>使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> num = +<span style="color:#cd5555">&#34;42&#34;</span>; <span style="color:#228b22">// 将字符串转换为数字
+</span></span></span></code></pre></div><h3 id="隐式类型转换implicit-type-conversion">隐式类型转换（Implicit Type Conversion）：</h3>
+<p>字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> result = <span style="color:#cd5555">&#34;3&#34;</span> + <span style="color:#b452cd">4</span>; <span style="color:#228b22">// 结果为字符串&#34;34&#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">var</span> total = <span style="color:#cd5555">&#34;10&#34;</span> - <span style="color:#b452cd">5</span>; <span style="color:#228b22">// 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算
+</span></span></span></code></pre></div><p>布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> num = <span style="color:#8b008b;font-weight:bold">true</span> + <span style="color:#b452cd">1</span>; <span style="color:#228b22">// 结果为数字2，因为true会被转换为数字1
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">var</span> str = <span style="color:#8b008b;font-weight:bold">false</span> + <span style="color:#cd5555">&#34;hello&#34;</span>; <span style="color:#228b22">// 结果为字符串&#34;falsehello&#34;，因为false会被转换为字符串&#34;false&#34;
+</span></span></span></code></pre></div><h2 id="foreach">forEach</h2>
+<p><code>forEach</code> 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。</p>
+<p>使用示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> numbers = [<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>];
+</span></span><span style="display:flex;"><span>numbers.forEach(<span style="color:#8b008b;font-weight:bold">function</span> (number) {
+</span></span><span style="display:flex;"><span>  console.log(number);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>上述示例中，<code>forEach</code> 方法将遍历 <code>numbers</code> 数组的每个元素，并将每个元素打印到控制台。</p>
+<h2 id="map">map</h2>
+<p><code>map</code> 也是 JavaScript 数组的一个方法，用于对数组中的每个元素进行转换，并返回一个新的数组。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次，并将返回的值组成一个新的数组。</p>
+<p>使用示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> numbers = [<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>];
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> doubledNumbers = numbers.map(<span style="color:#8b008b;font-weight:bold">function</span> (number) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> number * <span style="color:#b452cd">2</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(doubledNumbers); <span style="color:#228b22">// 输出: [2, 4, 6, 8, 10]
+</span></span></span></code></pre></div><p>上述示例中，<code>map</code> 方法将遍历 <code>numbers</code> 数组的每个元素，并将每个元素乘以 2 后的结果组成一个新的数组 <code>doubledNumbers</code>。</p>
+<h2 id="filter">filter</h2>
+<p><code>filter</code> 是 JavaScript 数组的一个方法，用于根据指定的条件筛选出符合条件的元素，并返回一个新的数组。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次，并根据返回值的真假来决定是否保留该元素。</p>
+<p>使用示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> numbers = [<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>];
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> evenNumbers = numbers.filter(<span style="color:#8b008b;font-weight:bold">function</span> (number) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> number % <span style="color:#b452cd">2</span> === <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(evenNumbers); <span style="color:#228b22">// 输出: [2, 4]
+</span></span></span></code></pre></div><p>上述示例中，<code>filter</code> 方法将遍历 <code>numbers</code> 数组的每个元素，并将符合条件（偶数）的元素组成一个新的数组 <code>evenNumbers</code>。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-08-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/cs571-s23-notes/3/">
+			下回<br>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/cs571-s23-notes/1/">
+			上回<br>CS571-S23 学习笔记(一) : JSON
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2type-conversion" class="nav-类型转换type-conversion">
+									类型转换（Type Conversion）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%98%be%e5%bc%8f%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2explicit-type-conversion" class="nav-显式类型转换explicit-type-conversion">
+									显式类型转换（Explicit Type Conversion）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%90%e5%bc%8f%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2implicit-type-conversion" class="nav-隐式类型转换implicit-type-conversion">
+									隐式类型转换（Implicit Type Conversion）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#foreach" class="nav-foreach">
+									forEach
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#map" class="nav-map">
+									map
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#filter" class="nav-filter">
+									filter
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

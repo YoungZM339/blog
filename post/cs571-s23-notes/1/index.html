@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html><head>
+<title>CS571-S23 学习笔记(一) : JSON</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/cs571-s23-notes/1/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="CS571-S23 学习笔记(一) : JSON">
+  <meta property="og:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-09T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-08-09T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="CS571">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="JSON">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CS571-S23 学习笔记(一) : JSON">
+  <meta name="twitter:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#json" class="nav-json">
+									JSON
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    CS571-S23 学习笔记(一) : JSON
+                    
+                    <div class="post-subtitle">
+                        CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：JSON
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-08-09 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/cs571">CS571</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/json">JSON</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="json">JSON</h2>
+<p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：</p>
+<ol>
+<li>
+<p><strong>数据类型</strong>：JSON 支持以下数据类型：</p>
+<ul>
+<li>字符串（用双引号括起来）：&ldquo;Hello World&rdquo;</li>
+<li>数字：42</li>
+<li>布尔值：true 或 false</li>
+<li>数组（用方括号括起来）：[1, 2, 3]</li>
+<li>对象（用花括号括起来）：{&ldquo;name&rdquo;: &ldquo;John&rdquo;, &ldquo;age&rdquo;: 30}</li>
+</ul>
+</li>
+<li>
+<p><strong>键值对</strong>：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;name&#34;</span>: <span style="color:#cd5555">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;age&#34;</span>: <span style="color:#b452cd">30</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;isStudent&#34;</span>: <span style="color:#8b008b;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
+<li><strong>数组</strong>：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>]
+</span></span></code></pre></div><ol start="4">
+<li><strong>嵌套</strong>：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;name&#34;</span>: <span style="color:#cd5555">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;age&#34;</span>: <span style="color:#b452cd">30</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;hobbies&#34;</span>: [<span style="color:#cd5555">&#34;reading&#34;</span>, <span style="color:#cd5555">&#34;traveling&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&#34;address&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">&#34;street&#34;</span>: <span style="color:#cd5555">&#34;123 Main St&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">&#34;city&#34;</span>: <span style="color:#cd5555">&#34;New York&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。</p>
+<p>JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 <code>JSON.parse()</code> 将 JSON 字符串解析为 JavaScript 对象，使用 <code>JSON.stringify()</code> 将 JavaScript 对象转换为 JSON 字符串。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> jsonString = <span style="color:#cd5555">&#39;{&#34;name&#34;: &#34;John&#34;, &#34;age&#34;: 30, &#34;isStudent&#34;: false}&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> jsonObject = JSON.parse(jsonString);
+</span></span><span style="display:flex;"><span>console.log(jsonObject.name); <span style="color:#228b22">// 输出: &#34;John&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> person = { name: <span style="color:#cd5555">&#34;John&#34;</span>, age: <span style="color:#b452cd">30</span>, isStudent: <span style="color:#8b008b;font-weight:bold">false</span> };
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> jsonString2 = JSON.stringify(person);
+</span></span><span style="display:flex;"><span>console.log(jsonString2); <span style="color:#228b22">// 输出: &#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;isStudent&#34;:false}&#39;
+</span></span></span></code></pre></div><p>以上是 JSON 格式的基本规则和用法，它提供了一种方便可读的数据交换格式，广泛应用于前后端数据传输和存储。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-08-09</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/cs571-s23-notes/2/">
+			下回<br>CS571-S23 学习笔记(二) : JavaScript Bootcamp (JS1&amp;JS2)
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/django-restful-notes/2/">
+			上回<br>Django RESTful API杂记(二) : 
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#json" class="nav-json">
+									JSON
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html><head>
+<title>C&#43;&#43; STL学习笔记(二) : algorithm 算法</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="一个自用的C&#43;&#43; 参考手册，学习方向参考C&#43;&#43; 大学教程第九版。本节关键词：algorithm 算法">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/cpp-stl-notes/2/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="C&#43;&#43; STL学习笔记(二) : algorithm 算法">
+  <meta property="og:description" content="一个自用的C&#43;&#43; 参考手册，学习方向参考C&#43;&#43; 大学教程第九版。本节关键词：algorithm 算法">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-09-11T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-09-11T00:00:01+08:00">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="STL">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C&#43;&#43; STL学习笔记(二) : algorithm 算法">
+  <meta name="twitter:description" content="一个自用的C&#43;&#43; 参考手册，学习方向参考C&#43;&#43; 大学教程第九版。本节关键词：algorithm 算法">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%97%a0%e6%95%88" class="nav-迭代器无效">
+									迭代器无效
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#algorithm" class="nav-algorithm">
+									algorithm
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#fill-fill_n-generate-generate_n" class="nav-fill-fill_n-generate-generate_n">
+									fill, fill_n, generate, generate_n
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#equal-mismatch-lexicographical_compare" class="nav-equal-mismatch-lexicographical_compare">
+									equal, mismatch, lexicographical_compare
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#remove-remove_if-remove_copy-remove_copy_if" class="nav-remove-remove_if-remove_copy-remove_copy_if">
+									remove, remove_if, remove_copy, remove_copy_if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#replace-replace_if-replace_copy-replace_copy_if" class="nav-replace-replace_if-replace_copy-replace_copy_if">
+									replace, replace_if, replace_copy, replace_copy_if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#swap-iter_swap-swap_ranges" class="nav-swap-iter_swap-swap_ranges">
+									swap, iter_swap, swap_ranges
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    C&#43;&#43; STL学习笔记(二) : algorithm 算法
+                    
+                    <div class="post-subtitle">
+                        一个自用的C&#43;&#43; 参考手册，学习方向参考C&#43;&#43; 大学教程第九版。本节关键词：algorithm 算法
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-09-11 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/c&#43;&#43;">C&#43;&#43;</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/c&#43;&#43;">C&#43;&#43;</a>
+                                &nbsp;
+                            
+                                <a href="/tags/stl">STL</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="迭代器无效">迭代器无效</h2>
+<p>在使用算法时，有时候会遇到迭代器失效的问题。迭代器失效指的是在对容器进行修改后，之前获取的迭代器可能会变得无效，不能再使用。</p>
+<p>迭代器失效的情况有多种，例如在插入元素后，原来的迭代器可能会失效；在删除元素后，指向删除元素的迭代器也会失效。</p>
+<h2 id="algorithm">algorithm</h2>
+<h3 id="fill-fill_n-generate-generate_n">fill, fill_n, generate, generate_n</h3>
+<ul>
+<li><code>fill(first, last, value)</code>：将[first, last)范围内的所有元素都设置为指定的值 value。</li>
+<li><code>fill_n(first, n, value)</code>：将从 first 开始的 n 个元素都设置为指定的值 value。</li>
+<li><code>generate(first, last, generator)</code>：使用指定的生成器 generator 生成[first, last)范围内的元素。</li>
+<li><code>generate_n(first, n, generator)</code>：使用指定的生成器 generator 生成从 first 开始的 n 个元素。</li>
+</ul>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums(<span style="color:#b452cd">5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 fill 将元素设置为 10
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::fill(nums.begin(), nums.end(), <span style="color:#b452cd">10</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：10 10 10 10 10
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 fill_n 将前3个元素设置为 5
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::fill_n(nums.begin(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：5 5 5 10 10
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 generate 生成随机数
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::generate(nums.begin(), nums.end(), []() { <span style="color:#8b008b;font-weight:bold">return</span> rand() % <span style="color:#b452cd">100</span>; });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：随机生成的 5 个数
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="equal-mismatch-lexicographical_compare">equal, mismatch, lexicographical_compare</h3>
+<ul>
+<li><code>equal(first1, last1, first2)</code>：判断两个范围内的元素是否相等。</li>
+<li><code>mismatch(first1, last1, first2)</code>：找到两个范围内第一个不相等的元素，并返回一个 pair，其中第一个元素是第一个不相等的元素在第一个范围中的迭代器，第二个元素是第一个不相等的元素在第二个范围中的迭代器。</li>
+<li><code>lexicographical_compare(first1, last1, first2, last2)</code>：按字典序比较两个范围内的元素。</li>
+</ul>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums1{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>};
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums2{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">6</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 检查两个范围内的元素是否相等
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">bool</span> isEqual = std::equal(nums1.begin(), nums1.end(), nums2.begin());
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;Is equal: &#34;</span> &lt;&lt; (isEqual ? <span style="color:#cd5555">&#34;true&#34;</span> : <span style="color:#cd5555">&#34;false&#34;</span>) &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 查找第一个不相等的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> mismatchPair = std::mismatch(nums1.begin(), nums1.end(), nums2.begin());
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">if</span> (mismatchPair.first != nums1.end()) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; <span style="color:#cd5555">&#34;First mismatch: &#34;</span> &lt;&lt; *mismatchPair.first &lt;&lt; <span style="color:#cd5555">&#34; - &#34;</span> &lt;&lt; *mismatchPair.second &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>    } <span style="color:#8b008b;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; <span style="color:#cd5555">&#34;No mismatch found: 没有找到不匹配的元素。&#34;</span> &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 按字典序比较两个范围内的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">bool</span> isLess = std::lexicographical_compare(nums1.begin(), nums1.end(), nums2.begin(), nums2.end());
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;Is nums1 &lt; nums2: &#34;</span> &lt;&lt; (isLess ? <span style="color:#cd5555">&#34;true&#34;</span> : <span style="color:#cd5555">&#34;false&#34;</span>) &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="remove-remove_if-remove_copy-remove_copy_if">remove, remove_if, remove_copy, remove_copy_if</h3>
+<ul>
+<li><code>remove(first, last, value)</code>：从[first, last)范围内移除所有等于指定值 value 的元素，并将剩余的元素移到范围的前端，并返回指向新范围末尾的迭代器。</li>
+<li><code>remove_if(first, last, predicate)</code>：从[first, last)范围内移除所有满足谓词 predicate 的元素，并将剩余的元素移到范围的前端，并返回指向新范围末尾的迭代器。</li>
+<li><code>remove_copy(first, last, result, value)</code>：从[first, last)范围内拷贝除了等于指定值 value 的元素以外的所有元素到[result, result+(last-first))范围，并返回指向新范围末尾的迭代器。</li>
+<li><code>remove_copy_if(first, last, result, predicate)</code>：从[first, last)范围内拷贝除了满足谓词 predicate 的元素以外的所有元素到[result, result+(last-first))范围，并返回指向新范围末尾的迭代器。</li>
+</ul>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">6</span>, <span style="color:#b452cd">3</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 移除所有等于 3 的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd = std::remove(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>);
+</span></span><span style="display:flex;"><span>    nums.erase(newEnd, nums.end());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 4 5 6
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 移除所有大于 3 的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd2 = std::remove_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; });
+</span></span><span style="display:flex;"><span>    nums.erase(newEnd2, nums.end());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 3
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums(nums.size());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 拷贝除了等于 2 的元素以外的所有元素到新的容器
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd3 = std::remove_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 3 0
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums.begin(), newEnd3); ++i) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; newNums[i] &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums2(nums.size());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 拷贝除了小于等于 1 的元素以外的所有元素到新的容器
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd4 = std::remove_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：3
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums2.begin(), newEnd4); ++i) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; newNums2[i] &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="replace-replace_if-replace_copy-replace_copy_if">replace, replace_if, replace_copy, replace_copy_if</h3>
+<ul>
+<li><code>replace(first, last, oldValue, newValue)</code>：将[first, last)范围内所有等于 oldValue 的元素替换为 newValue。</li>
+<li><code>replace_if(first, last, predicate, newValue)</code>：将[first, last)范围内所有满足谓词 predicate 的元素替换为 newValue。</li>
+<li><code>replace_copy(first, last, result, oldValue, newValue)</code>：将从 <code>[first, last)</code> 范围内拷贝元素到 <code>[result, result+(last-first))</code> 范围，并将所有等于 <code>oldValue</code> 的元素替换为 <code>newValue</code>。</li>
+<li><code>replace_copy_if(first, last, result, predicate, newValue)</code>：将从 <code>[first, last)</code> 范围内拷贝元素到 <code>[result, result+(last-first))</code> 范围，并将所有满足谓词 <code>predicate</code> 的元素替换为 <code>newValue</code>。</li>
+</ul>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有等于 3 的元素替换为 6
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">6</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 6 4 5
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有大于 3 的元素替换为 0
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; }, <span style="color:#b452cd">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 0 0 0
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums(nums.size());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有等于 0 的元素替换为 9，并拷贝到新的容器
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">0</span>, <span style="color:#b452cd">9</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 9 9 9
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums2(nums.size());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有小于等于 1 的元素替换为 8，并拷贝到新的容器
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; }, <span style="color:#b452cd">8</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：8 2 9 9 9
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums2) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="swap-iter_swap-swap_ranges">swap, iter_swap, swap_ranges</h3>
+<ul>
+<li><code>swap(x, y)</code>：交换两个对象的值。</li>
+<li><code>iter_swap(iter1, iter2)</code>：交换两个迭代器指向的元素的值。</li>
+<li><code>swap_ranges(first1, last1, first2)</code>：交换两个范围内的元素。</li>
+</ul>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
+</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">int</span> a = <span style="color:#b452cd">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">int</span> b = <span style="color:#b452cd">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个变量的值
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::swap(a, b);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;a: &#34;</span> &lt;&lt; a &lt;&lt; std::endl; <span style="color:#228b22">// 输出结果：2
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;b: &#34;</span> &lt;&lt; b &lt;&lt; std::endl; <span style="color:#228b22">// 输出结果：1
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums1{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>};
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums2{<span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">6</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个迭代器指向的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::iter_swap(nums1.begin(), nums2.begin());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums1: 4 2 3
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums1: &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums1) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums2: 1 5 6
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums2: &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums2) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums3{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>};
+</span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums4{<span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">6</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个范围内的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::swap_ranges(nums3.begin(), nums3.end(), nums4.begin());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums3: 4 5 6
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums3: &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums3) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums4: 1 2 3
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums4: &#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums4) {
+</span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-09-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/frontend-web-notes/1/">
+			下回<br>前端开发学习笔记(一) : 闭包,函数抖动
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/cpp-stl-notes/1/">
+			上回<br>C&#43;&#43; STL学习笔记(一) : container 容器
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%97%a0%e6%95%88" class="nav-迭代器无效">
+									迭代器无效
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#algorithm" class="nav-algorithm">
+									algorithm
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#fill-fill_n-generate-generate_n" class="nav-fill-fill_n-generate-generate_n">
+									fill, fill_n, generate, generate_n
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#equal-mismatch-lexicographical_compare" class="nav-equal-mismatch-lexicographical_compare">
+									equal, mismatch, lexicographical_compare
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#remove-remove_if-remove_copy-remove_copy_if" class="nav-remove-remove_if-remove_copy-remove_copy_if">
+									remove, remove_if, remove_copy, remove_copy_if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#replace-replace_if-replace_copy-replace_copy_if" class="nav-replace-replace_if-replace_copy-replace_copy_if">
+									replace, replace_if, replace_copy, replace_copy_if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#swap-iter_swap-swap_ranges" class="nav-swap-iter_swap-swap_ranges">
+									swap, iter_swap, swap_ranges
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

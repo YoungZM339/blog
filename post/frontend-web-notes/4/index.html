@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html><head>
+<title>前端开发学习笔记(四) : 盒子模型</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：盒子模型">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/frontend-web-notes/4/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="前端开发学习笔记(四) : 盒子模型">
+  <meta property="og:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：盒子模型">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-02-13T00:00:01+08:00">
+    <meta property="article:modified_time" content="2024-02-13T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="HTML5">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="前端开发学习笔记(四) : 盒子模型">
+  <meta name="twitter:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：盒子模型">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%9b%92%e5%ad%90%e6%a8%a1%e5%9e%8b" class="nav-盒子模型">
+									盒子模型
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    前端开发学习笔记(四) : 盒子模型
+                    
+                    <div class="post-subtitle">
+                        一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：盒子模型
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-02-13 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/html5">HTML5</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="盒子模型">盒子模型</h2>
+<p>盒子模型主要由以下四个部分组成：</p>
+<ul>
+<li>
+<p>内容（Content）: 它是盒子模型的中心部分，包含了实际的内容，比如文本、图片等。</p>
+</li>
+<li>
+<p>内边距（Padding）: 内边距位于内容区域的外围。</p>
+</li>
+<li>
+<p>边框（Border）: 边框环绕在内边距的外侧。</p>
+</li>
+<li>
+<p>外边距（Margin）: 外边距是盒子模型的最外层，可以控制元素之间的间隔。</p>
+<p><img src="./box_model.png" alt="box_model"></p>
+</li>
+<li>
+<p>盒子的宽度（Width）：盒子的宽度由内容宽度、内边距和边框宽度的总和决定。</p>
+</li>
+<li>
+<p>盒子的高度（Height）：盒子的高度由内容高度、内边距和边框高度的总和决定。</p>
+</li>
+</ul>
+<ol>
+<li>
+<p><strong>width</strong>：设置盒子的宽度。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">width</span>: <span style="color:#b452cd">300</span><span style="color:#00688b;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>height</strong>：设置盒子的高度。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">height</span>: <span style="color:#b452cd">200</span><span style="color:#00688b;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>padding</strong>：设置盒子的内边距，控制内容与边框之间的空白区域。可以使用<code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>和<code>padding-left</code>来分别指定上、右、下和左的内边距。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">padding</span>: <span style="color:#b452cd">20</span><span style="color:#00688b;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>border</strong>：设置盒子的边框样式、宽度和颜色。可以使用<code>border-width</code>、<code>border-style</code>和<code>border-color</code>分别指定边框的宽度、样式和颜色。也可以使用<code>border-top</code>、<code>border-right</code>、<code>border-bottom</code>和<code>border-left</code>来分别指定上、右、下和左的边框。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">border</span>: <span style="color:#b452cd">1</span><span style="color:#00688b;font-weight:bold">px</span> <span style="color:#8b008b;font-weight:bold">solid</span> <span style="color:#b452cd">#000</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>margin</strong>：设置盒子的外边距，控制元素与其他元素之间的间隔。可以使用<code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>和<code>margin-left</code>来分别指定上、右、下和左的外边距。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">margin</span>: <span style="color:#b452cd">10</span><span style="color:#00688b;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>box-sizing</strong>：指定盒子模型的类型，可以是<code>content-box</code>（标准盒子模型）或<code>border-box</code>（IE 盒子模型）。
+盒子模型（Box Model）是 CSS 中用来描述和布局 HTML 元素的概念。它将每个 HTML 元素看作一个矩形的盒子，由内容区域、内边距、边框和外边距组成。</p>
+<p>在 CSS 中，盒子模型有两种常见的类型：</p>
+<ul>
+<li>标准盒子模型（Content Box Model）：
+标准盒子模型是 CSS 的默认盒子模型。在标准盒子模型中，一个元素的宽度和高度仅包括其内容区域（content area），不包括内边距、边框和外边距。</li>
+</ul>
+<pre tabindex="0"><code>+---------------------------+
+|       content area        |
+|                           |
++---------------------------+
+</code></pre><p>在标准盒子模型中，元素的总宽度 = 左内边距 + 左边框 + 内容宽度 + 右边框 + 右内边距，元素的总高度 = 上内边距 + 上边框 + 内容高度 + 下边框 + 下内边距。</p>
+<ul>
+<li>IE 盒子模型（Border Box Model）：
+IE 盒子模型是早期 Internet Explorer 浏览器使用的盒子模型。在 IE 盒子模型中，一个元素的宽度和高度包括其内容区域、内边距和边框，不计算外边距。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">box-sizing</span>: <span style="color:#8b008b;font-weight:bold">border-box</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>display</strong>：指定元素的显示方式，常用的值包括<code>block</code>（块级元素）、<code>inline</code>（内联元素）和<code>inline-block</code>（内联块级元素）。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">display</span>: <span style="color:#8b008b;font-weight:bold">inline-block</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>float</strong>：指定元素的浮动方式，使元素脱离正常的文档流，常用于实现多列布局。</p>
+<p>Float（浮动）：</p>
+<ul>
+<li>float 属性用于将元素从正常的文档流中浮动到其容器的左侧或右侧，以便实现元素的排列。</li>
+<li>值可以是<code>left</code>（左浮动）、<code>right</code>（右浮动）或<code>none</code>（默认值，不浮动）。</li>
+<li>浮动的元素会脱离正常的文档流，其他元素会围绕浮动元素进行布局。</li>
+<li>使用浮动通常可以实现多列布局、图文混排等效果。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">float</span>: <span style="color:#8b008b;font-weight:bold">left</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>position</strong>：指定元素的定位方式，常用的值包括<code>relative</code>（相对定位）、<code>absolute</code>（绝对定位）和<code>fixed</code>（固定定位）。
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#try_it">https://developer.mozilla.org/en-US/docs/Web/CSS/position#try_it</a></p>
+<ul>
+<li>position 属性用于控制元素的定位方式，指定元素在页面中的位置。</li>
+<li>值可以是<code>static</code>（默认值，元素在正常的文档流中）、<code>relative</code>（相对定位）、<code>absolute</code>（绝对定位）、<code>fixed</code>（固定定位）或<code>sticky</code>（粘性定位）。</li>
+<li>相对定位（relative）：元素相对于其正常位置进行定位，可以使用<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>属性来指定偏移量。</li>
+<li>绝对定位（absolute）：元素相对于最近的已定位祖先元素进行定位，如果不存在已定位的祖先元素，则相对于文档的初始包含块进行定位。</li>
+<li>固定定位（fixed）：元素相对于浏览器窗口进行定位，即元素会固定在页面的某个位置不动。</li>
+<li>粘性定位（sticky）：元素在滚动到特定位置时变为固定定位，否则保持相对定位的状态</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">position</span>: <span style="color:#8b008b;font-weight:bold">absolute</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">top</span>: <span style="color:#b452cd">50</span><span style="color:#00688b;font-weight:bold">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">left</span>: <span style="color:#b452cd">50</span><span style="color:#00688b;font-weight:bold">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">transform</span>: <span style="color:#658b00">translate</span>(<span style="color:#b452cd">-50</span><span style="color:#00688b;font-weight:bold">%</span>, <span style="color:#b452cd">-50</span><span style="color:#00688b;font-weight:bold">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>overflow</strong>：控制当内容超出盒子尺寸时的显示方式。常用的值包括<code>visible</code>（默认，内容超出盒子会显示在盒子外部）、<code>hidden</code>（内容超出盒子会被隐藏）、<code>scroll</code>（显示滚动条，无论内容是否超出盒子）和<code>auto</code>（根据内容是否超出盒子自动显示滚动条）。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">box</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">overflow</span>: <span style="color:#8b008b;font-weight:bold">auto</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-02-13</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/frontend-web-notes/5/">
+			下回<br>前端开发学习笔记(五) : CSS3的[新]特性
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/frontend-web-notes/3/">
+			上回<br>前端开发学习笔记(三) : HTML5的一些[新]标准
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%9b%92%e5%ad%90%e6%a8%a1%e5%9e%8b" class="nav-盒子模型">
+									盒子模型
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

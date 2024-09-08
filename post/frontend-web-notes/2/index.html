@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html><head>
+<title>前端开发学习笔记(二) : Vue3 常用指令和功能</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：Vue3">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/frontend-web-notes/2/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="前端开发学习笔记(二) : Vue3 常用指令和功能">
+  <meta property="og:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：Vue3">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-02-05T00:00:01+08:00">
+    <meta property="article:modified_time" content="2024-02-05T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="Vue3">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="前端开发学习笔记(二) : Vue3 常用指令和功能">
+  <meta name="twitter:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：Vue3">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#v-if" class="nav-v-if">
+									v-if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-else-%e5%92%8c-v-else-if" class="nav-v-else-和-v-else-if">
+									v-else 和 v-else-if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-for" class="nav-v-for">
+									v-for
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-model" class="nav-v-model">
+									v-model
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-on" class="nav-v-on">
+									v-on
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-bind" class="nav-v-bind">
+									v-bind
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-show" class="nav-v-show">
+									v-show
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-slot" class="nav-v-slot">
+									v-slot
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-pre" class="nav-v-pre">
+									v-pre
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-cloak" class="nav-v-cloak">
+									v-cloak
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-once" class="nav-v-once">
+									v-once
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    前端开发学习笔记(二) : Vue3 常用指令和功能
+                    
+                    <div class="post-subtitle">
+                        一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：Vue3
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-02-05 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/vue3">Vue3</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>Vue 提供了许多指令和功能来处理不同的任务和逻辑，使得开发更加高效和便捷。</p>
+<h3 id="v-if"><code>v-if</code></h3>
+<p>在模板中使用 <code>v-if</code> 指令时，你需要将其绑定到一个布尔表达式上。如果该表达式的值为 <code>true</code>，则元素或组件将被渲染到页面上；如果为 <code>false</code>，则元素或组件将被从 DOM 中移除。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">v-if</span>=<span style="color:#cd5555">&#34;isShown&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">&lt;!-- 这个元素/组件将在isShown为true时渲染 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span></code></pre></div><h3 id="v-else-和-v-else-if"><code>v-else</code> 和 <code>v-else-if</code></h3>
+<p>除了 <code>v-if</code>，Vue 还提供了 <code>v-else</code> 和 <code>v-else-if</code> 来实现条件渲染的分支。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">v-if</span>=<span style="color:#cd5555">&#34;condition&#34;</span>&gt;条件为true时显示&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">v-else-if</span>=<span style="color:#cd5555">&#34;otherCondition&#34;</span>&gt;其他条件为true时显示&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">v-else</span>&gt;以上条件都不满足时显示&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span></code></pre></div><p><code>v-else</code> 指令必须紧跟在带有 <code>v-if</code> 或 <code>v-else-if</code> 的元素之后，并且在同一父元素内。</p>
+<h3 id="v-for"><code>v-for</code></h3>
+<p>用于基于一个数组来渲染一个列表。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">li</span> <span style="color:#658b00">v-for</span>=<span style="color:#cd5555">&#34;(item, index) in items&#34;</span> <span style="color:#658b00">:key</span>=<span style="color:#cd5555">&#34;index&#34;</span>&gt;{{ item.text }}&lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span></code></pre></div><h3 id="v-model"><code>v-model</code></h3>
+<p>用于在表单输入和应用状态之间创建双向绑定。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">v-model</span>=<span style="color:#cd5555">&#34;message&#34;</span> /&gt;
+</span></span></code></pre></div><h3 id="v-on"><code>v-on</code></h3>
+<p>用于监听 DOM 事件，并在触发时执行一些 JavaScript 代码。可以简写为 <code>@</code>。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">v-on:click</span>=<span style="color:#cd5555">&#34;doSomething&#34;</span>&gt;Click me&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#228b22">&lt;!-- 简写形式 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#a61717;background-color:#e3d2d2">@</span><span style="color:#658b00">click</span>=<span style="color:#cd5555">&#34;doSomething&#34;</span>&gt;Click me&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span></code></pre></div><h3 id="v-bind"><code>v-bind</code></h3>
+<p>用于动态地绑定一个或多个属性，或者一个组件 prop 到表达式。可以简写为 <code>:</code>。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">v-bind:href</span>=<span style="color:#cd5555">&#34;url&#34;</span>&gt;Link&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#228b22">&lt;!-- 简写形式 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">:href</span>=<span style="color:#cd5555">&#34;url&#34;</span>&gt;Link&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;
+</span></span></code></pre></div><h3 id="v-show"><code>v-show</code></h3>
+<p>另一种条件渲染的指令，不同于 <code>v-if</code> 的是，<code>v-show</code> 只是切换元素的 CSS 属性 <code>display</code>，而不是真正地移除和重建元素。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">v-show</span>=<span style="color:#cd5555">&#34;isVisible&#34;</span>&gt;Hello, World!&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span></code></pre></div><h3 id="v-slot"><code>v-slot</code></h3>
+<p>用于访问子组件中的插槽。Vue 2.6.0+ 中引入了一个统一的语法（以 <code>v-slot</code> 指令前缀表示），在 2.6.0 之前是使用 <code>slot</code> 和 <code>slot-scope</code> 属性。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span> <span style="color:#658b00">v-slot:header</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;Here might be a page title&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span></code></pre></div><h3 id="v-pre"><code>v-pre</code></h3>
+<p>跳过这个元素和它的子元素的编译过程。可以用来优化更新性能。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">v-pre</span>&gt;{{ this will not be compiled }}&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span></code></pre></div><h3 id="v-cloak"><code>v-cloak</code></h3>
+<p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">v-cloak</span>&gt;{{ message }}&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span></code></pre></div><h3 id="v-once"><code>v-once</code></h3>
+<p>渲染元素和组件只一次。之后的渲染任务，将会跳过该元素和它的子元素，这对于优化更新性能是非常有用的。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">v-once</span>&gt;This will never change: {{msg}}&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span></code></pre></div><p>这些指令和功能是 Vue 开发中的基础，能够帮助你更好地控制渲染流程、数据绑定、事件处理等。了解和熟练使用这些能力，将极大地提升你的 Vue 应用开发效率。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-02-05</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/frontend-web-notes/3/">
+			下回<br>前端开发学习笔记(三) : HTML5的一些[新]标准
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/frontend-web-notes/1/">
+			上回<br>前端开发学习笔记(一) : 闭包,函数抖动
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#v-if" class="nav-v-if">
+									v-if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-else-%e5%92%8c-v-else-if" class="nav-v-else-和-v-else-if">
+									v-else 和 v-else-if
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-for" class="nav-v-for">
+									v-for
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-model" class="nav-v-model">
+									v-model
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-on" class="nav-v-on">
+									v-on
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-bind" class="nav-v-bind">
+									v-bind
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-show" class="nav-v-show">
+									v-show
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-slot" class="nav-v-slot">
+									v-slot
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-pre" class="nav-v-pre">
+									v-pre
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-cloak" class="nav-v-cloak">
+									v-cloak
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#v-once" class="nav-v-once">
+									v-once
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

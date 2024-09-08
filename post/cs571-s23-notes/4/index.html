@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html><head>
+<title>CS571-S23 学习笔记(四) : React 1</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：DOM,Component,Hook,useState,useEffect,Imports and Exports">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/cs571-s23-notes/4/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="CS571-S23 学习笔记(四) : React 1">
+  <meta property="og:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：DOM,Component,Hook,useState,useEffect,Imports and Exports">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-26T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-08-26T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="CS571">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="React">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CS571-S23 学习笔记(四) : React 1">
+  <meta name="twitter:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：DOM,Component,Hook,useState,useEffect,Imports and Exports">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#dom" class="nav-dom">
+									DOM
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#react-component" class="nav-react-component">
+									React Component
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#react-hook" class="nav-react-hook">
+									React Hook
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#usestate" class="nav-usestate">
+									useState
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#useeffect" class="nav-useeffect">
+									useEffect
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#imports-and-exports" class="nav-imports-and-exports">
+									Imports and Exports
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e5%85%a5" class="nav-导入">
+									导入
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e5%87%ba" class="nav-导出">
+									导出
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    CS571-S23 学习笔记(四) : React 1
+                    
+                    <div class="post-subtitle">
+                        CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：DOM,Component,Hook,useState,useEffect,Imports and Exports
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-08-26 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/cs571">CS571</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/react">React</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="dom">DOM</h2>
+<p>DOM 是文档对象模型（Document Object Model）的缩写，它是一种用于表示和操作 HTML、XML 和 XHTML 等文档的编程接口。DOM 可以将文档中的每个元素（如标签、属性和文本）都表示为对象，开发者可以使用 DOM 提供的方法和属性来操作这些对象，例如修改元素的内容、样式、属性等。</p>
+<p>尽管 DOM 是一种广泛使用的标准，但在处理大规模和复杂的应用程序时，直接使用 DOM 可能会导致性能问题。这是因为 DOM 操作是昂贵的，对 DOM 的频繁操作可能会导致页面重新渲染，从而影响用户体验。</p>
+<p>React 是一个流行的 JavaScript 库，它采用了虚拟 DOM（Virtual DOM）的概念来解决直接操作 DOM 时的性能问题。虚拟 DOM 是一个轻量级的复制 DOM 结构的 JavaScript 对象，React 使用它来跟踪页面上的变化。当应用程序的状态发生变化时，React 会通过比较虚拟 DOM 与实际 DOM 之间的差异，然后仅仅更新必要的部分。</p>
+<p>使用 React 的好处包括：</p>
+<ol>
+<li>
+<p>性能优化：React 通过批处理 DOM 更新和最小化实际 DOM 操作，提高了应用程序的性能。</p>
+</li>
+<li>
+<p>组件化开发：React 鼓励将用户界面划分为独立的组件，每个组件负责管理自己的状态和渲染逻辑。这样的组件化开发模式使代码更加可维护、可测试和可重用。</p>
+</li>
+<li>
+<p>虚拟 DOM 的抽象：React 的虚拟 DOM 提供了一个抽象层，使开发者可以专注于应用程序的逻辑而不是直接操作 DOM。</p>
+</li>
+</ol>
+<p>虽然 React 在大多数情况下是一个很好的选择，但在某些特定场景下，直接操作 DOM 可能仍然是必要的，例如需要对特定的 DOM 元素进行细粒度的操作或集成第三方库等。在这些情况下，可以通过 React 提供的 ref 机制来引用 DOM 元素并进行操作，以获得更好的性能和开发体验。</p>
+<h2 id="react-component">React Component</h2>
+<p>React 组件是 React 应用程序中可重用的构建块。它们是 React 应用程序用户界面的基本单元。组件封装了自己的逻辑、状态和渲染，使得管理和组织代码库更加容易。</p>
+<p>以下是一个在 React 中的函数组件示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> MyComponent = () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;Hello, World!&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> MyComponent;
+</span></span></code></pre></div><p>在这个示例中，<code>MyComponent</code> 是一个使用箭头函数定义的函数组件。它返回 JSX 代码，表示组件的结构和内容。</p>
+<h2 id="react-hook">React Hook</h2>
+<p>React Hook 是在函数组件中使用状态和其他 React 特性的函数。它们提供了一种在不编写类组件的情况下管理有状态逻辑的方式。</p>
+<h3 id="usestate">useState</h3>
+<p><code>useState</code> Hook 用于在函数组件中添加状态。它返回一个有状态的值和一个用于更新该值的函数。初始状态可以作为参数传递给 <code>useState</code> 函数。</p>
+<p>以下是在函数组件中使用 <code>useState</code> Hook 的示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useState } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> Counter = () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> [count, setCount] = useState(<span style="color:#b452cd">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> increment = () =&gt; {
+</span></span><span style="display:flex;"><span>    setCount(count + <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;Count: {count}&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">onClick</span>={increment}&gt;Increment&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> Counter;
+</span></span></code></pre></div><p>在这个示例中，<code>useState</code> Hook 用于在 <code>Counter</code> 组件中添加一个 <code>count</code> 状态变量。初始状态设置为 <code>0</code>。<code>increment</code> 函数在按钮点击时更新 <code>count</code> 状态。</p>
+<h3 id="useeffect">useEffect</h3>
+<p><code>useEffect</code> Hook 用于在函数组件中执行副作用操作。副作用操作可以包括数据获取、事件订阅或手动操作 DOM 等。</p>
+<p>以下是在函数组件中使用 <code>useEffect</code> Hook 的示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useState, useEffect } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> DataFetcher = () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> [data, setData] = useState(<span style="color:#8b008b;font-weight:bold">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 从 API 获取数据
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    fetch(<span style="color:#cd5555">&#34;https://api.example.com/data&#34;</span>)
+</span></span><span style="display:flex;"><span>      .then((response) =&gt; response.json())
+</span></span><span style="display:flex;"><span>      .then((data) =&gt; setData(data))
+</span></span><span style="display:flex;"><span>      .<span style="color:#8b008b;font-weight:bold">catch</span>((error) =&gt; console.error(error));
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      {data ? (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>          {data.map((item) =&gt; (
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">li</span> <span style="color:#658b00">key</span>={item.id}&gt;{item.name}&lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>          ))}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>      ) : (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;Loading data...&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>      )}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> DataFetcher;
+</span></span></code></pre></div><p>在这个示例中，<code>useEffect</code> Hook 用于在组件挂载时从 API 获取数据。获取到的数据使用 <code>setData</code> 函数存储在 <code>data</code> 状态变量中。空的依赖数组 (<code>[]</code>) 确保该效果仅在组件初始渲染时运行一次。</p>
+<h2 id="imports-and-exports">Imports and Exports</h2>
+<p>在 React 中，使用 <code>import</code> 和 <code>export</code> 语句来导入和导出组件、函数、变量等。</p>
+<h3 id="导入">导入</h3>
+<p>可以使用 <code>import</code> 语句来导入其他模块导出的内容。语法如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> SomeComponent from <span style="color:#cd5555">&#34;./SomeComponent&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { SomeFunction, SomeVariable } from <span style="color:#cd5555">&#34;./SomeModule&#34;</span>;
+</span></span></code></pre></div><p>在上面的示例中，<code>SomeComponent</code> 是从路径为 <code>./SomeComponent</code> 的模块中导入的默认导出。<code>SomeFunction</code> 和 <code>SomeVariable</code> 是从路径为 <code>./SomeModule</code> 的模块中按名称导入的具名导出。</p>
+<h3 id="导出">导出</h3>
+<p>可以使用 <code>export</code> 语句来导出组件、函数、变量等。语法如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> SomeComponent;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> { SomeFunction, SomeVariable };
+</span></span></code></pre></div><p>在上面的示例中，<code>SomeComponent</code> 是默认导出的组件。<code>SomeFunction</code> 和 <code>SomeVariable</code> 是按名称导出的具名导出。</p>
+<p>以下是一个完整的示例，演示了如何在 React 中导入和导出组件：</p>
+<p><strong>MyComponent.js：</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> MyComponent = () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;Hello, World!&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> MyComponent;
+</span></span></code></pre></div><p><strong>App.js：</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> MyComponent from <span style="color:#cd5555">&#34;./MyComponent&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> App = () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;My App&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">MyComponent</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> App;
+</span></span></code></pre></div><p>在上面的示例中，<code>MyComponent.js</code> 导出了一个默认组件 <code>MyComponent</code>，然后在 <code>App.js</code> 中通过 <code>import</code> 语句将其导入并使用在 <code>App</code> 组件中。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-08-26</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/cs571-s23-notes/5/">
+			下回<br>CS571-S23 学习笔记(五) : React 2
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/cs571-s23-notes/3/">
+			上回<br>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#dom" class="nav-dom">
+									DOM
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#react-component" class="nav-react-component">
+									React Component
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#react-hook" class="nav-react-hook">
+									React Hook
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#usestate" class="nav-usestate">
+									useState
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#useeffect" class="nav-useeffect">
+									useEffect
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#imports-and-exports" class="nav-imports-and-exports">
+									Imports and Exports
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e5%85%a5" class="nav-导入">
+									导入
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e5%87%ba" class="nav-导出">
+									导出
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

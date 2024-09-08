@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html><head>
+<title>前端开发学习笔记(三) : HTML5的一些[新]标准</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：语义化标签,多媒体支持,表单增强">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/frontend-web-notes/3/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="前端开发学习笔记(三) : HTML5的一些[新]标准">
+  <meta property="og:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：语义化标签,多媒体支持,表单增强">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-02-08T00:00:01+08:00">
+    <meta property="article:modified_time" content="2024-02-08T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="HTML5">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="前端开发学习笔记(三) : HTML5的一些[新]标准">
+  <meta name="twitter:description" content="一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：语义化标签,多媒体支持,表单增强">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%ad%e4%b9%89%e5%8c%96%e6%a0%87%e7%ad%be" class="nav-语义化标签">
+									语义化标签
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%ad%e4%b9%89%e5%8c%96%e6%a0%87%e7%ad%be%e7%9a%84%e9%80%89%e6%8b%a9%e5%99%a8" class="nav-语义化标签的选择器">
+									语义化标签的选择器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#web-%e5%ad%98%e5%82%a8" class="nav-web-存储">
+									Web 存储
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#web-%e5%ad%98%e5%82%a8%e5%92%8c%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81" class="nav-web-存储和身份验证">
+									Web 存储和身份验证
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e5%aa%92%e4%bd%93%e6%94%af%e6%8c%81" class="nav-多媒体支持">
+									多媒体支持
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a1%a8%e5%8d%95%e5%a2%9e%e5%bc%ba" class="nav-表单增强">
+									表单增强
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#canvas" class="nav-canvas">
+									Canvas
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9c%b0%e7%90%86%e4%bd%8d%e7%bd%ae-api" class="nav-地理位置-api">
+									地理位置 API
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#websockets" class="nav-websockets">
+									WebSockets
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    前端开发学习笔记(三) : HTML5的一些[新]标准
+                    
+                    <div class="post-subtitle">
+                        一个自用的前端开发学习笔记，基于ES6,Vue3标准。本节关键词：语义化标签,多媒体支持,表单增强
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-02-08 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/html5">HTML5</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h3 id="语义化标签">语义化标签</h3>
+<p>HTML5 引入了一些新的语义化标签，这些标签有助于更清晰地描述页面结构和内容。它们提供了更具有可读性和可维护性的 HTML 代码，同时也使搜索引擎和辅助技术更好地理解网页。</p>
+<ul>
+<li><code>&lt;header&gt;</code>：表示页面或节的顶部，通常包含网站的标题、导航栏或其他引导性内容。</li>
+<li><code>&lt;nav&gt;</code>：表示导航区域，通常包含网站的主要导航链接。</li>
+<li><code>&lt;section&gt;</code>：表示文档中的一个独立节或主题，通常包含一组相关的内容。</li>
+<li><code>&lt;article&gt;</code>：表示独立的、完整的、可以独立分配或重用的内容，如博客文章、新闻报道等。</li>
+<li><code>&lt;footer&gt;</code>：表示页面或节的底部，通常包含版权信息、联系方式或其他辅助性内容。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">header</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;My Website&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">nav</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">li</span>&gt;&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;/&#34;</span>&gt;Home&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">li</span>&gt;&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;/about&#34;</span>&gt;About&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">li</span>&gt;&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;/contact&#34;</span>&gt;Contact&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">nav</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">header</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">section</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">h2</span>&gt;About Us&lt;/<span style="color:#8b008b;font-weight:bold">h2</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;Welcome to our website! We are a team of passionate individuals...&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">section</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">article</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">h3</span>&gt;10 Tips for a Healthy Lifestyle&lt;/<span style="color:#8b008b;font-weight:bold">h3</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;Here are some valuable tips to maintain a healthy lifestyle...&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">article</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">footer</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;&amp;copy; 2022 My Website. All rights reserved.&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">footer</span>&gt;
+</span></span></code></pre></div><h4 id="语义化标签的选择器">语义化标签的选择器</h4>
+<p>语义化标签可以使用 JavaScript 和 CSS 来选择和操作，就像其他 HTML 元素一样。可以使用各种选择器和操作方法来选择和修改语义化标签。</p>
+<p>在 JavaScript 中，可以使用<code>querySelector</code>和<code>querySelectorAll</code>方法来选择语义化标签。这些方法通过传递选择器作为参数，返回匹配的元素。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 选择单个语义化标签
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> header = <span style="color:#658b00">document</span>.querySelector(<span style="color:#cd5555">&#34;header&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 选择多个语义化标签
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> sections = <span style="color:#658b00">document</span>.querySelectorAll(<span style="color:#cd5555">&#34;section&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 对选择的语义化标签进行操作
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>header.classList.add(<span style="color:#cd5555">&#34;highlight&#34;</span>);
+</span></span><span style="display:flex;"><span>sections.forEach((section) =&gt; {
+</span></span><span style="display:flex;"><span>  section.style.backgroundColor = <span style="color:#cd5555">&#34;lightgray&#34;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>在 CSS 中，可以使用选择器来选择和样式化语义化标签。可以使用标签选择器、类选择器、ID 选择器等来选择语义化标签，并应用所需的样式。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#228b22">/* 选择特定的语义化标签 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">header</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">background-color</span>: <span style="color:#8b008b;font-weight:bold">blue</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">section</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">padding</span>: <span style="color:#b452cd">10</span><span style="color:#00688b;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">/* 选择具有特定类名的语义化标签 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">section</span>.<span style="color:#008b45;font-weight:bold">highlight</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">background-color</span>: <span style="color:#8b008b;font-weight:bold">yellow</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">/* 选择具有特定ID的语义化标签 */</span>
+</span></span><span style="display:flex;"><span>#<span style="color:#008b45;text-decoration:underline">footer</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">color</span>: <span style="color:#8b008b;font-weight:bold">red</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="web-存储">Web 存储</h3>
+<p>HTML5 引入了 Web 存储 API，包括本地存储（localStorage）和会话存储（sessionStorage）。这些 API 允许在客户端存储数据，以便离线使用或持久保存用户的数据。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 存储数据到本地存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;John&#34;</span>);
+</span></span><span style="display:flex;"><span>localStorage.setItem(<span style="color:#cd5555">&#34;age&#34;</span>, <span style="color:#cd5555">&#34;25&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 获取本地存储中的数据
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> age = localStorage.getItem(<span style="color:#cd5555">&#34;age&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(username); <span style="color:#228b22">// 输出 &#34;John&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(age); <span style="color:#228b22">// 输出 &#34;25&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 删除本地存储中的数据
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.removeItem(<span style="color:#cd5555">&#34;age&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 清空本地存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.clear();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 存储数据到会话存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.setItem(<span style="color:#cd5555">&#34;theme&#34;</span>, <span style="color:#cd5555">&#34;dark&#34;</span>);
+</span></span><span style="display:flex;"><span>sessionStorage.setItem(<span style="color:#cd5555">&#34;language&#34;</span>, <span style="color:#cd5555">&#34;en&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 获取会话存储中的数据
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> theme = sessionStorage.getItem(<span style="color:#cd5555">&#34;theme&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> language = sessionStorage.getItem(<span style="color:#cd5555">&#34;language&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(theme); <span style="color:#228b22">// 输出 &#34;dark&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(language); <span style="color:#228b22">// 输出 &#34;en&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 删除会话存储中的数据
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.removeItem(<span style="color:#cd5555">&#34;language&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 清空会话存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.clear();
+</span></span></code></pre></div><h4 id="web-存储和身份验证">Web 存储和身份验证</h4>
+<p>基于 JWT（JSON Web Token）的登录认证是一种常见的身份验证机制。JWT 是一种开放标准（RFC 7519），用于在网络应用间安全传递声明。它由三部分组成：头部（header）、载荷（payload）和签名（signature）。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 存储JWT到本地存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> saveJWT(jwt) {
+</span></span><span style="display:flex;"><span>  localStorage.setItem(<span style="color:#cd5555">&#34;jwt&#34;</span>, jwt);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 验证JWT
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> verifyJWT() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> jwt = localStorage.getItem(<span style="color:#cd5555">&#34;jwt&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span> (jwt) {
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 执行JWT验证的操作
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#8b008b;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 登录操作
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> login() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> username = <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;username&#34;</span>).value;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> password = <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;password&#34;</span>).value;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 发送用户名和密码到服务器进行验证
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#228b22">// 如果验证成功，则获取并保存JWT到本地存储
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">const</span> jwt = <span style="color:#cd5555">&#34;example_jwt&#34;</span>;
+</span></span><span style="display:flex;"><span>  saveJWT(jwt);
+</span></span><span style="display:flex;"><span>  alert(<span style="color:#cd5555">&#34;登录成功！&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 执行登录成功后的操作
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// 注销操作
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> logout() {
+</span></span><span style="display:flex;"><span>  localStorage.removeItem(<span style="color:#cd5555">&#34;jwt&#34;</span>);
+</span></span><span style="display:flex;"><span>  alert(<span style="color:#cd5555">&#34;已注销！&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在上述代码中，<code>saveJWT()</code> 函数用于将 JWT 保存到本地存储中，<code>verifyJWT()</code> 函数用于验证 JWT 的有效性。</p>
+<p>在实际应用中，服务器端通常会生成 JWT 并将其返回给客户端，在每次请求中，客户端将 JWT 作为头部或请求参数发送给服务器进行验证。服务器会解码 JWT 并验证其有效性，从而授权或拒绝请求。这种基于 JWT 的登录认证机制具有简单、可扩展和无状态的特点，可以在分布式系统中广泛使用。</p>
+<h3 id="多媒体支持">多媒体支持</h3>
+<p>HTML5 提供了内置的多媒体支持，其中包括<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>标签，使得在网页中嵌入音频和视频变得更加简单。这些标签提供了丰富的属性和方法，以控制和定制嵌入的音频和视频。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">audio</span> <span style="color:#658b00">src</span>=<span style="color:#cd5555">&#34;music.mp3&#34;</span> <span style="color:#658b00">controls</span>&gt;
+</span></span><span style="display:flex;"><span>  Your browser does not support the audio element.
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">audio</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">video</span> <span style="color:#658b00">src</span>=<span style="color:#cd5555">&#34;video.mp4&#34;</span> <span style="color:#658b00">controls</span>&gt;
+</span></span><span style="display:flex;"><span>  Your browser does not support the video element.
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">video</span>&gt;
+</span></span></code></pre></div><p>在上述示例中，<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>标签用于嵌入音频和视频文件。通过<code>src</code>属性指定媒体文件的路径，<code>controls</code>属性添加了默认的播放控制器。如果浏览器不支持这些标签或指定的媒体格式，则显示后备内容。</p>
+<h3 id="表单增强">表单增强</h3>
+<p>HTML5 引入了一些表单增强功能，使得表单的开发和验证更加方便和灵活。下面是一些 HTML5 表单增强的功能和示例：</p>
+<ul>
+<li>新的输入类型：HTML5 引入了许多新的输入类型，用于指定不同类型的用户输入。例如，<code>&lt;input type=&quot;email&quot;&gt;</code>用于接收电子邮件地址，<code>&lt;input type=&quot;date&quot;&gt;</code>用于选择日期，<code>&lt;input type=&quot;range&quot;&gt;</code>用于选择范围等。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;email&#34;</span>&gt;Email:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;email&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;email&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;email&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;dob&#34;</span>&gt;Date of Birth:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;date&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;dob&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;dob&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;age&#34;</span>&gt;Age:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;number&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;age&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;age&#34;</span> <span style="color:#658b00">min</span>=<span style="color:#cd5555">&#34;18&#34;</span> <span style="color:#658b00">max</span>=<span style="color:#cd5555">&#34;99&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;rating&#34;</span>&gt;Rating:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;range&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;rating&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;rating&#34;</span> <span style="color:#658b00">min</span>=<span style="color:#cd5555">&#34;1&#34;</span> <span style="color:#658b00">max</span>=<span style="color:#cd5555">&#34;5&#34;</span> /&gt;
+</span></span></code></pre></div><ul>
+<li>表单验证：HTML5 提供了内置的表单验证功能，可以通过使用新的属性和属性值来验证用户输入的数据。例如，<code>required</code>属性可以用于确保输入字段不为空，<code>pattern</code>属性可以用于指定输入字段的正则表达式模式。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;username&#34;</span>&gt;Username:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;text&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;username&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;username&#34;</span> <span style="color:#658b00">required</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;password&#34;</span>&gt;Password:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;password&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;password&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;password&#34;</span> <span style="color:#658b00">minlength</span>=<span style="color:#cd5555">&#34;8&#34;</span> <span style="color:#658b00">required</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;phone&#34;</span>&gt;Phone Number:&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;tel&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;phone&#34;</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;phone&#34;</span> <span style="color:#658b00">pattern</span>=<span style="color:#cd5555">&#34;[0-9]{10}&#34;</span> <span style="color:#658b00">required</span> /&gt;
+</span></span></code></pre></div><h3 id="canvas">Canvas</h3>
+<p>HTML5 的<code>&lt;canvas&gt;</code>元素允许使用 JavaScript 绘制图形、动画和游戏。通过 Canvas API，开发人员可以在网页上创建交互式的绘图效果。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">canvas</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;myCanvas&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">canvas</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> canvas = <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;myCanvas&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> ctx = canvas.getContext(<span style="color:#cd5555">&#34;2d&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ctx.fillStyle = <span style="color:#cd5555">&#34;red&#34;</span>;
+</span></span><span style="display:flex;"><span>ctx.fillRect(<span style="color:#b452cd">10</span>, <span style="color:#b452cd">10</span>, <span style="color:#b452cd">50</span>, <span style="color:#b452cd">50</span>);
+</span></span></code></pre></div><h3 id="地理位置-api">地理位置 API</h3>
+<p>HTML5 提供了地理位置 API，使得网页可以获取用户的地理位置信息。通过 Geolocation API，开发人员可以根据用户的位置提供个性化的服务或功能。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (navigator.geolocation) {
+</span></span><span style="display:flex;"><span>  navigator.geolocation.getCurrentPosition(
+</span></span><span style="display:flex;"><span>    (position) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">const</span> latitude = position.coords.latitude;
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">const</span> longitude = position.coords.longitude;
+</span></span><span style="display:flex;"><span>      console.log(<span style="color:#cd5555">`Latitude: </span><span style="color:#cd5555">${</span>latitude<span style="color:#cd5555">}</span><span style="color:#cd5555">, Longitude: </span><span style="color:#cd5555">${</span>longitude<span style="color:#cd5555">}</span><span style="color:#cd5555">`</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    (error) =&gt; {
+</span></span><span style="display:flex;"><span>      console.error(error.message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="websockets">WebSockets</h3>
+<p>HTML5 引入了 WebSockets，提供了一种在客户端和服务器之间进行实时双向通信的方式。通过 WebSocket API，开发人员可以创建持久的连接，并实时传输数据。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> socket = <span style="color:#8b008b;font-weight:bold">new</span> WebSocket(<span style="color:#cd5555">&#34;wss://example.com/socket&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>socket.onopen = () =&gt; {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#cd5555">&#34;WebSocket connection established.&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>socket.onmessage = (event) =&gt; {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#cd5555">&#34;Received message:&#34;</span>, event.data);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>socket.onclose = (event) =&gt; {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#cd5555">&#34;WebSocket connection closed:&#34;</span>, event.code);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>socket.send;
+</span></span></code></pre></div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-02-08</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/frontend-web-notes/4/">
+			下回<br>前端开发学习笔记(四) : 盒子模型
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/frontend-web-notes/2/">
+			上回<br>前端开发学习笔记(二) : Vue3 常用指令和功能
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%ad%e4%b9%89%e5%8c%96%e6%a0%87%e7%ad%be" class="nav-语义化标签">
+									语义化标签
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%ad%e4%b9%89%e5%8c%96%e6%a0%87%e7%ad%be%e7%9a%84%e9%80%89%e6%8b%a9%e5%99%a8" class="nav-语义化标签的选择器">
+									语义化标签的选择器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#web-%e5%ad%98%e5%82%a8" class="nav-web-存储">
+									Web 存储
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#web-%e5%ad%98%e5%82%a8%e5%92%8c%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81" class="nav-web-存储和身份验证">
+									Web 存储和身份验证
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e5%aa%92%e4%bd%93%e6%94%af%e6%8c%81" class="nav-多媒体支持">
+									多媒体支持
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a1%a8%e5%8d%95%e5%a2%9e%e5%bc%ba" class="nav-表单增强">
+									表单增强
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#canvas" class="nav-canvas">
+									Canvas
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9c%b0%e7%90%86%e4%bd%8d%e7%bd%ae-api" class="nav-地理位置-api">
+									地理位置 API
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#websockets" class="nav-websockets">
+									WebSockets
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

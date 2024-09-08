@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html><head>
+<title>CS571-S23 学习笔记(六) : React 3</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：Fragments,共享状态,props,Context,路由管理,Cookies,Session,Local">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/cs571-s23-notes/6/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="CS571-S23 学习笔记(六) : React 3">
+  <meta property="og:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：Fragments,共享状态,props,Context,路由管理,Cookies,Session,Local">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-30T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-08-30T00:00:01+08:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="CS571">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="React">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CS571-S23 学习笔记(六) : React 3">
+  <meta name="twitter:description" content="CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：Fragments,共享状态,props,Context,路由管理,Cookies,Session,Local">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#react-fragmentsreact-%e7%89%87%e6%ae%b5" class="nav-react-fragmentsreact-片段">
+									React Fragments（React 片段）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bb%84%e4%bb%b6%e5%92%8c%e7%89%87%e6%ae%b5%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab" class="nav-组件和片段有什么区别">
+									组件和片段有什么区别？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9c%a8-react-%e4%b8%ad%e5%85%b1%e4%ba%ab%e7%8a%b6%e6%80%81share-state" class="nav-在-react-中共享状态share-state">
+									在 React 中共享状态（Share State）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#props" class="nav-props">
+									props
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8a%e4%b8%8b%e6%96%87context" class="nav-上下文context">
+									上下文（Context）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#usecontext-hook" class="nav-usecontext-hook">
+									useContext Hook
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#react-%e4%b8%ad%e7%9a%84%e8%b7%af%e7%94%b1routing" class="nav-react-中的路由routing">
+									React 中的路由（Routing）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#react-router" class="nav-react-router">
+									React Router
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-react-router" class="nav-安装-react-router">
+									安装 React Router：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%99%a8router" class="nav-路由器router">
+									路由器（Router）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%ae%9a%e4%b9%89" class="nav-路由定义">
+									路由定义：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e8%88%aa%e9%93%be%e6%8e%a5link" class="nav-导航链接link">
+									导航链接（Link）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%a5%97%e8%b7%af%e7%94%b1nested-routes" class="nav-嵌套路由nested-routes">
+									嵌套路由（Nested Routes）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%8f%82%e6%95%b0route-parameters" class="nav-路由参数route-parameters">
+									路由参数（Route Parameters）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#cookies-session-local" class="nav-cookies-session-local">
+									Cookies Session Local
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#cookiescookie" class="nav-cookiescookie">
+									Cookies（Cookie）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#session-storage%e4%bc%9a%e8%af%9d%e5%ad%98%e5%82%a8" class="nav-session-storage会话存储">
+									Session Storage（会话存储）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#local-storage%e6%9c%ac%e5%9c%b0%e5%ad%98%e5%82%a8" class="nav-local-storage本地存储">
+									Local Storage（本地存储）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    CS571-S23 学习笔记(六) : React 3
+                    
+                    <div class="post-subtitle">
+                        CS571 S23 旨在向CS本科生介绍UX开发的精彩世界，这是我在这门课的学习笔记。本节关键词：Fragments,共享状态,props,Context,路由管理,Cookies,Session,Local
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-08-30 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0">前端学习</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/javascript">JavaScript</a>
+                                &nbsp;
+                            
+                                <a href="/tags/cs571">CS571</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                                &nbsp;
+                            
+                                <a href="/tags/react">React</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="react-fragmentsreact-片段">React Fragments（React 片段）：</h2>
+<p>React 片段是一个用于包装多个子元素的特殊组件。它们允许我们在不引入额外 DOM 节点的情况下，将多个元素组合在一起。使用 React 片段，我们可以在组件中返回多个子元素而无需使用额外的包装元素。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;&gt;
+</span></span><span style="display:flex;"><span>      &lt;h1&gt;Hello&lt;<span style="color:#a61717;background-color:#e3d2d2">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;p&gt;React Fragments&lt;<span style="color:#a61717;background-color:#e3d2d2">/p&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a61717;background-color:#e3d2d2">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="组件和片段有什么区别">组件和片段有什么区别？</h3>
+<p>组件是可重用的、独立的、有状态或无状态的代码单元，用于构建用户界面的一部分。组件接收输入（称为 props）并返回用于描述该组件在屏幕上显示的元素树。组件可以包含其他组件，形成组件层次结构。它们具有自己的生命周期、状态和方法，并且可以通过 props 传递数据和回调函数。</p>
+<p>片段是一种特殊的组件，用于在不引入额外 DOM 节点的情况下包装多个子元素。它允许我们将多个元素组合在一起，而不需要使用额外的包装元素。片段不会创建新的 DOM 节点，而是在渲染时直接返回其子元素。片段通常用于在组件中返回多个子元素，并且对于需要在组件中返回多个元素而不引入额外层级的情况非常有用。</p>
+<p>下面是组件和片段之间的区别总结：</p>
+<p>组件：</p>
+<ul>
+<li>可重用的、独立的代码单元。</li>
+<li>可以包含其他组件，形成组件层次结构。</li>
+<li>具有自己的生命周期、状态和方法。</li>
+<li>通过 props 传递数据和回调函数。</li>
+</ul>
+<p>片段：</p>
+<ul>
+<li>用于包装多个子元素。</li>
+<li>允许在不引入额外 DOM 节点的情况下组合元素。</li>
+<li>不会创建新的 DOM 节点，而是直接返回其子元素。</li>
+</ul>
+<h2 id="在-react-中共享状态share-state">在 React 中共享状态（Share State）：</h2>
+<p>在 React 中，组件之间的状态共享是通过 props 和上下文（context）来实现的。通过将状态作为属性传递给子组件，我们可以在整个应用程序中共享数据。另外，React 还引入了状态管理库（如 Redux 和 MobX），以简化大型应用程序中的状态共享和管理。</p>
+<h3 id="props">props</h3>
+<p>在父组件中，我们可以通过在子组件的标签上添加属性来传递数据。这些属性会作为一个名为 props 的对象被子组件接收</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useState } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Parent() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> [count, setCount] = useState(<span style="color:#b452cd">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;div&gt;
+</span></span><span style="display:flex;"><span>      &lt;Child count={count} /&gt;
+</span></span><span style="display:flex;"><span>      &lt;button onClick={() =&gt; setCount(count + <span style="color:#b452cd">1</span>)}&gt;Increment&lt;<span style="color:#a61717;background-color:#e3d2d2">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Child({ count }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;p&gt;Count: {count}&lt;<span style="color:#a61717;background-color:#e3d2d2">/p&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="上下文context">上下文（Context）</h3>
+<p>在 React 中，上下文（Context）是一种用于在组件树中共享数据的机制。它允许我们在组件之间传递数据，而无需手动通过 props 将数据逐层传递。</p>
+<p>通常情况下，数据通过组件的 props 属性从父组件向子组件传递。但是，当应用程序的组件层次结构较深或多个组件需要访问相同的数据时，通过 props 一层层传递数据变得繁琐和冗长。这时，上下文提供了一种更便捷的方式来共享数据。</p>
+<p>使用上下文，我们可以在组件树中的某个地方创建一个上下文提供者（Context Provider），并将数据传递给它。然后，在组件树的其他地方，我们可以使用上下文消费者（Context Consumer）来访问该数据。</p>
+<p>通过这种方式，提供者组件中的数据可以在其子组件中被访问到，而无需通过 props 一层层传递。</p>
+<h3 id="usecontext-hook">useContext Hook</h3>
+<p><code>useContext</code> 是 React 提供的一个钩子函数，用于在函数组件中访问上下文（Context）的值。我们可以按照以下方式使用：</p>
+<ol>
+<li>创建上下文对象：
+首先，我们需要创建一个上下文对象，可以使用 <code>React.createContext()</code> 来创建。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> MyContext = React.createContext();
+</span></span></code></pre></div><ol start="2">
+<li>提供上下文的值：
+在某个组件中，我们可以使用上下文对象的 <code>Provider</code> 组件来提供上下文的值。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> ParentComponent() {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> contextValue = <span style="color:#cd5555">&#34;Hello, Context!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>&lt;MyContext.Provider value={contextValue}&gt;
+</span></span><span style="display:flex;"><span>&lt;ChildComponent /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a61717;background-color:#e3d2d2">/MyContext.Provider&gt;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>在上述示例中<span style="color:#a61717;background-color:#e3d2d2">，</span><span style="color:#cd5555">`ParentComponent`</span> 组件提供了上下文的值 <span style="color:#cd5555">`&#34;Hello, Context!&#34;`</span> 给 <span style="color:#cd5555">`ChildComponent`</span> 组件<span style="color:#a61717;background-color:#e3d2d2">。</span>
+</span></span></code></pre></div><ol start="3">
+<li>使用 <code>useContext</code> 访问上下文的值：
+在需要访问上下文的组件中，我们可以使用 <code>useContext</code> 钩子来获取上下文的值。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> ChildComponent() {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> contextValue = useContext(MyContext);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> &lt;p&gt;{contextValue}&lt;<span style="color:#a61717;background-color:#e3d2d2">/p&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>在 <span style="color:#cd5555">`ChildComponent`</span> 组件中<span style="color:#a61717;background-color:#e3d2d2">，</span>我们使用 <span style="color:#cd5555">`useContext`</span> 钩子传入上下文对象 <span style="color:#cd5555">`MyContext`</span><span style="color:#a61717;background-color:#e3d2d2">，</span>并将返回的上下文值赋值给 <span style="color:#cd5555">`contextValue`</span> 变量<span style="color:#a61717;background-color:#e3d2d2">。</span>然后<span style="color:#a61717;background-color:#e3d2d2">，</span>我们可以在组件中使用该值进行渲染<span style="color:#a61717;background-color:#e3d2d2">。</span>
+</span></span></code></pre></div><p>在上述示例中，<code>ParentComponent</code> 通过 <code>MyContext.Provider</code> 提供了上下文的值给 <code>ChildComponent</code>，并在 <code>ChildComponent</code> 中使用 <code>useContext</code> 钩子来访问上下文的值。最终，渲染结果会显示 <code>&quot;Hello, Context!&quot;</code>。</p>
+<p>使用 <code>useContext</code> 钩子可以简化在函数组件中访问上下文的过程，提高代码的可读性和可维护性。</p>
+<h2 id="react-中的路由routing">React 中的路由（Routing）：</h2>
+<p>在 React 应用程序中实现导航和路由功能通常需要使用第三方路由库，比如 React Router。React Router 提供了一组组件，用于定义不同路径下的页面和导航链接。它使得在单页应用程序中处理多个页面变得更加简单和直观。React 路由库最常用的是 React Router，它提供了强大而灵活的路由功能。</p>
+<h3 id="react-router">React Router</h3>
+<h4 id="安装-react-router">安装 React Router：</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install react-router-dom
+</span></span></code></pre></div><h4 id="路由器router">路由器（Router）：</h4>
+<p>在 React Router 中，路由器是最顶层的组件，它负责将 URL 映射到相应的组件。在大多数情况下，将使用 <code>&lt;BrowserRouter&gt;</code> 组件作为路由器。它使用 HTML5 的 history API 来处理 URL，并将路由信息传递给子组件。示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { BrowserRouter } from <span style="color:#cd5555">&#34;react-router-dom&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ReactDOM.render(
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">BrowserRouter</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">App</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">BrowserRouter</span>&gt;,
+</span></span><span style="display:flex;"><span>  <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;root&#34;</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h4 id="路由定义">路由定义：</h4>
+<p>在 React Router 中，可以使用 <code>&lt;Route&gt;</code> 组件定义路由。每个 <code>&lt;Route&gt;</code> 组件表示一个路径与相应组件的对应关系。例如，要将路径 &ldquo;/home&rdquo; 映射到 Home 组件，可以这样写：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { Route } from <span style="color:#cd5555">&#34;react-router-dom&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">Route</span> <span style="color:#658b00">path</span>=<span style="color:#cd5555">&#34;/home&#34;</span> <span style="color:#658b00">component</span>={Home} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="导航链接link">导航链接（Link）：</h4>
+<p>为了在应用程序中进行导航，React Router 提供了 <code>&lt;Link&gt;</code> 组件。它创建一个链接，点击该链接将导航到指定的路径。示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { Link } from <span style="color:#cd5555">&#34;react-router-dom&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Navigation() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">nav</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#8b008b;font-weight:bold">Link</span> <span style="color:#658b00">to</span>=<span style="color:#cd5555">&#34;/home&#34;</span>&gt;Home&lt;/<span style="color:#8b008b;font-weight:bold">Link</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#8b008b;font-weight:bold">Link</span> <span style="color:#658b00">to</span>=<span style="color:#cd5555">&#34;/about&#34;</span>&gt;About&lt;/<span style="color:#8b008b;font-weight:bold">Link</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">nav</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="嵌套路由nested-routes">嵌套路由（Nested Routes）：</h4>
+<p>React Router 支持嵌套路由，即在组件内部定义子级路由。这使得可以在应用程序中创建复杂的页面结构。示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">Route</span> <span style="color:#658b00">path</span>=<span style="color:#cd5555">&#34;/home&#34;</span> <span style="color:#658b00">component</span>={Home} /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">Route</span> <span style="color:#658b00">path</span>=<span style="color:#cd5555">&#34;/about&#34;</span> <span style="color:#658b00">component</span>={About} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Home() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">h2</span>&gt;Home&lt;/<span style="color:#8b008b;font-weight:bold">h2</span>&gt;
+</span></span><span style="display:flex;"><span>      {<span style="color:#228b22">/* 嵌套的子级路由 */</span>}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">Route</span> <span style="color:#658b00">path</span>=<span style="color:#cd5555">&#34;/home/subpage&#34;</span> <span style="color:#658b00">component</span>={SubPage} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="路由参数route-parameters">路由参数（Route Parameters）：</h4>
+<p>有时，可能需要在路由中传递参数。React Router 允许通过使用占位符来定义动态路径参数。示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      {<span style="color:#228b22">/* :id 是动态参数 */</span>}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">Route</span> <span style="color:#658b00">path</span>=<span style="color:#cd5555">&#34;/user/:id&#34;</span> <span style="color:#658b00">component</span>={User} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> User(props) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> { id } = props.match.params;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;<span style="color:#8b008b;font-weight:bold">h2</span>&gt;User ID: {id}&lt;/<span style="color:#8b008b;font-weight:bold">h2</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="cookies-session-local">Cookies Session Local</h2>
+<p>在 React 中，我们可以使用不同的机制来处理浏览器端的数据存储，包括 Cookies、Session Storage 和 Local Storage。这些机制提供了不同的用途和特性，适用于不同的数据存储需求。</p>
+<h3 id="cookiescookie">Cookies（Cookie）：</h3>
+<p>Cookies 是一种存储在用户浏览器中的小型文本文件，用于存储有关用户和网站之间的会话信息。Cookies 可以设置过期时间，可以在浏览器和服务器之间进行传输，可以被服务器读取和修改。</p>
+<p>在 React 中，可以使用第三方库（如 <code>js-cookie</code>）来操作 Cookies。下面是一个使用 Cookies 的示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useEffect } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> Cookies from <span style="color:#cd5555">&#34;js-cookie&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Cookie
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    Cookies.set(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Cookie
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = Cookies.get(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Cookie
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    Cookies.remove(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在上述示例中，我们使用 <code>js-cookie</code> 库来设置、读取和删除 Cookies。<code>Cookies.set()</code> 用于设置 Cookie，<code>Cookies.get()</code> 用于读取 Cookie，<code>Cookies.remove()</code> 用于删除 Cookie。</p>
+<h3 id="session-storage会话存储">Session Storage（会话存储）：</h3>
+<p>Session Storage 是一种在浏览器中存储数据的机制，数据在当前会话期间有效，关闭浏览器后会话数据将被删除。Session Storage 可以通过 JavaScript 的 <code>sessionStorage</code> 对象访问。</p>
+<p>下面是一个使用 Session Storage 的示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useEffect } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Session Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    sessionStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Session Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = sessionStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Session Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    sessionStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在上述示例中，我们使用 <code>sessionStorage</code> 对象来设置、读取和删除 Session Storage 中的数据。</p>
+<h3 id="local-storage本地存储">Local Storage（本地存储）：</h3>
+<p>Local Storage 是一种在浏览器中存储数据的机制，数据在浏览器关闭后仍然有效。Local Storage 可以通过 JavaScript 的 <code>localStorage</code> 对象访问。</p>
+<p>下面是一个使用 Local Storage 的示例：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> React, { useEffect } from <span style="color:#cd5555">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
+</span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Local Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Local Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Local Storage
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    localStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在上述示例中，我们使用 <code>localStorage</code> 对象来设置、读取和删除 Local Storage 中的数据。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-08-30</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/cs571-s23-notes/7/">
+			下回<br>CS571-S23 学习笔记(七) : React 4
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/cs571-s23-notes/5/">
+			上回<br>CS571-S23 学习笔记(五) : React 2
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#react-fragmentsreact-%e7%89%87%e6%ae%b5" class="nav-react-fragmentsreact-片段">
+									React Fragments（React 片段）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%bb%84%e4%bb%b6%e5%92%8c%e7%89%87%e6%ae%b5%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab" class="nav-组件和片段有什么区别">
+									组件和片段有什么区别？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9c%a8-react-%e4%b8%ad%e5%85%b1%e4%ba%ab%e7%8a%b6%e6%80%81share-state" class="nav-在-react-中共享状态share-state">
+									在 React 中共享状态（Share State）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#props" class="nav-props">
+									props
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8a%e4%b8%8b%e6%96%87context" class="nav-上下文context">
+									上下文（Context）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#usecontext-hook" class="nav-usecontext-hook">
+									useContext Hook
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#react-%e4%b8%ad%e7%9a%84%e8%b7%af%e7%94%b1routing" class="nav-react-中的路由routing">
+									React 中的路由（Routing）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#react-router" class="nav-react-router">
+									React Router
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-react-router" class="nav-安装-react-router">
+									安装 React Router：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%99%a8router" class="nav-路由器router">
+									路由器（Router）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%ae%9a%e4%b9%89" class="nav-路由定义">
+									路由定义：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%bc%e8%88%aa%e9%93%be%e6%8e%a5link" class="nav-导航链接link">
+									导航链接（Link）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%a5%97%e8%b7%af%e7%94%b1nested-routes" class="nav-嵌套路由nested-routes">
+									嵌套路由（Nested Routes）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b7%af%e7%94%b1%e5%8f%82%e6%95%b0route-parameters" class="nav-路由参数route-parameters">
+									路由参数（Route Parameters）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#cookies-session-local" class="nav-cookies-session-local">
+									Cookies Session Local
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#cookiescookie" class="nav-cookiescookie">
+									Cookies（Cookie）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#session-storage%e4%bc%9a%e8%af%9d%e5%ad%98%e5%82%a8" class="nav-session-storage会话存储">
+									Session Storage（会话存储）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#local-storage%e6%9c%ac%e5%9c%b0%e5%ad%98%e5%82%a8" class="nav-local-storage本地存储">
+									Local Storage（本地存储）：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Copyright 2024@YoungZM
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

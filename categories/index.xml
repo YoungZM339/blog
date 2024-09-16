@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Fri, 16 Feb 2024 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2024 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM应用开发</title>
+      <link>https://blog.youngzm.com/categories/llm%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/categories/llm%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>软件设计</title>
+      <link>https://blog.youngzm.com/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</guid>
+      <description></description>
+    </item>
     <item>
       <title>前端学习</title>
       <link>https://blog.youngzm.com/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/</link>

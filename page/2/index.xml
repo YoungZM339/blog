@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Sun, 01 Sep 2024 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2024 00:00:01 +0800</lastBuildDate>
     
         <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -807,28 +807,6 @@
     
     
         <item>
-        <title>Django RESTful API杂记(二) : </title>
-        <link>https://blog.youngzm.com/post/django-restful-notes/2/</link>
-        <pubDate>Sat, 22 Jul 2023 00:00:01 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/django-restful-notes/2/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/django-restful-notes/2/ -- https://blog.youngzm.com/post/django-restful-notes/2/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Django RESTful API杂记(一) : </title>
-        <link>https://blog.youngzm.com/post/django-restful-notes/1/</link>
-        <pubDate>Thu, 20 Jul 2023 00:00:01 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/django-restful-notes/1/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/django-restful-notes/1/ -- https://blog.youngzm.com/post/django-restful-notes/1/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
         <title>与其说是尾声，不如说是下一段的序幕吧</title>
         <link>https://blog.youngzm.com/post/remember-those-days/</link>
         <pubDate>Sat, 22 Oct 2022 04:15:51 +0800</pubDate>
@@ -843,10 +821,45 @@
 &lt;p&gt;近些日子不是很太平，又是一轮大潮席卷全国，蜷居在噪杂的寝室里常常有所事但也无所获。虽然在看到苗头的时候已经做了些心理和物质上的准备，可是现状还是引得心里发慌。不幸的是，视目前发展情况，短期内似乎是无法恢复正常了。“COVID夺走了我的青春”，真的不是闹着玩的。&lt;/p&gt;
 &lt;p&gt;一瞬间，还太多东西要讲，不如先点一个逗号，以后再慢慢讲吧。毕竟这段故事，还在纸上书写呢。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;2022年10月22日04时15分写毕&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./book+room2.jpg&#34; alt=&#34;book+room2.jpg&#34;&gt;)&lt;/p&gt;- https://blog.youngzm.com/post/remember-those-days/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
+        <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
+        <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/recommend-website-for-gaokao/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——&lt;a href=&#34;https://colleges.chat/&#34;&gt;大学生活质量指北&lt;/a&gt;的出现恰好补充了这一点。&lt;/p&gt;
+&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。&lt;/p&gt;
+&lt;p&gt;今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。&lt;/p&gt;
+&lt;p&gt;网址是&lt;a href=&#34;https://colleges.chat/&#34;&gt;https://colleges.chat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+- https://blog.youngzm.com/post/recommend-website-for-gaokao/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>2021年11月26日随笔一篇</title>
+        <link>https://blog.youngzm.com/post/20211226essay/</link>
+        <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/20211226essay/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/20211226essay/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;p&gt;隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。&lt;/p&gt;
+&lt;p&gt;我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。&lt;/p&gt;
+&lt;p&gt;这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。&lt;/p&gt;
+&lt;p&gt;其实事情总会朝着好的方向发展的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./psc.jpg&#34; alt=&#34;20211226essay&#34;&gt;&lt;/p&gt;
+- https://blog.youngzm.com/post/20211226essay/ - Copyright 2024@YoungZM</description>
         </item>
     
     

@@ -7,45 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Sun, 01 Sep 2024 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2024 00:00:01 +0800</lastBuildDate>
     
         <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-        <item>
-        <title>这是一个帮助你在择校阶段提升大学生活质量的网站</title>
-        <link>https://blog.youngzm.com/post/recommend-website-for-gaokao/</link>
-        <pubDate>Sat, 11 Jun 2022 22:53:51 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/recommend-website-for-gaokao/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/recommend-website-for-gaokao/ -&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;大家在高考后择校时可能更加看重学校学科实力，却忽视了最影响大学生活质量的一些问题——正是因为往往这些问题不被人们关注，使得可供参考的资料过少，进而导致许多人入学后对现实与期望的偏差产生“劝退”情绪。而这个网站——&lt;a href=&#34;https://colleges.chat/&#34;&gt;大学生活质量指北&lt;/a&gt;的出现恰好补充了这一点。&lt;/p&gt;
-&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;去年高考后翻过这个网站，里面包含了有关国内诸多大学的大家比较关心的学校生活和学习环境的相关问题，当时对我的帮助很大。&lt;/p&gt;
-&lt;p&gt;今年又翻出这个网站，发现又补充了不少大学，应该能给大部分人择校提供参考。&lt;/p&gt;
-&lt;p&gt;网址是&lt;a href=&#34;https://colleges.chat/&#34;&gt;https://colleges.chat/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./recommend-website-for-gaokao-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-- https://blog.youngzm.com/post/recommend-website-for-gaokao/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>2021年11月26日随笔一篇</title>
-        <link>https://blog.youngzm.com/post/20211226essay/</link>
-        <pubDate>Fri, 26 Nov 2021 19:32:18 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/20211226essay/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/20211226essay/ -&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
-&lt;p&gt;隆冬，暖洋洋的太阳照亮整个房间，我起床到书桌上补齐上周欠下的语文默写。看着已经完成了半本的默写本，才确信二分之一的日子又已经过去，且还有不到一周就要迎来新的一年了。&lt;/p&gt;
-&lt;p&gt;我想回想这一年，却又觉得脑袋空空，一年重复、繁琐的复习备考本就不会给人留下多么美好的记忆。放榜之后的一切尘埃落定，换来与父亲漫步绿城时的无奈和独自骑行在珞喻路上的叹息。&lt;/p&gt;
-&lt;p&gt;这些年，我总感慨命运总是不如人愿。但往往是在无数痛苦中，在重重矛盾和艰难中，才使人成熟起来，坚强起来，虽然这些东西在实际感受中给人带来的并不都是快乐。&lt;/p&gt;
-&lt;p&gt;其实事情总会朝着好的方向发展的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./psc.jpg&#34; alt=&#34;20211226essay&#34;&gt;&lt;/p&gt;
-- https://blog.youngzm.com/post/20211226essay/ - Copyright 2024@YoungZM</description>
-        </item>
     
     
     
@@ -67,41 +31,41 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;时间&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;事件&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;原因&lt;/th&gt;
+          &lt;th&gt;时间&lt;/th&gt;
+          &lt;th&gt;事件&lt;/th&gt;
+          &lt;th&gt;原因&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2018年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;使用wordpress构建本网站&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;2018年&lt;/td&gt;
+          &lt;td&gt;使用wordpress构建本网站&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;转用为typecho&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;不满意wordpress的速度&lt;/td&gt;
+          &lt;td&gt;2019年&lt;/td&gt;
+          &lt;td&gt;转用为typecho&lt;/td&gt;
+          &lt;td&gt;不满意wordpress的速度&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;转回使用wordpress&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;在手机设备再编辑困难&lt;/td&gt;
+          &lt;td&gt;2019年&lt;/td&gt;
+          &lt;td&gt;转回使用wordpress&lt;/td&gt;
+          &lt;td&gt;在手机设备再编辑困难&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2019年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;转用typecho&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;对富文本编辑器不满意&lt;/td&gt;
+          &lt;td&gt;2019年&lt;/td&gt;
+          &lt;td&gt;转用typecho&lt;/td&gt;
+          &lt;td&gt;对富文本编辑器不满意&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2021年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;转用hexo&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;更加追求站点稳定性能，并为将来不再计划拥有VPS做准备&lt;/td&gt;
+          &lt;td&gt;2021年&lt;/td&gt;
+          &lt;td&gt;转用hexo&lt;/td&gt;
+          &lt;td&gt;更加追求站点稳定性能，并为将来不再计划拥有VPS做准备&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2021年&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;转用hugo&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;构建迅速，易于上手&lt;/td&gt;
+          &lt;td&gt;2021年&lt;/td&gt;
+          &lt;td&gt;转用hugo&lt;/td&gt;
+          &lt;td&gt;构建迅速，易于上手&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;- https://blog.youngzm.com/post/plan-and-promise/ - Copyright 2024@YoungZM</description>
@@ -121,8 +85,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;依据教育部《普通高中课程方案（实验）》、《河南省普通高中课程设置方案（试行）》和《河南省普通高中学业水平考试方案》等有关文件精神，依据各学科课程标准对必修内容的基本要求进行命题。从知识与技能，过程与方法，情感、态度与价值观等方面考查学生的学习情况，同时考查学生灵活应用知识分析解决实际问题的能力。各学科具体考试范围如下：&lt;br&gt;
 信息技术：《普通高中信息技术课程标准（实验）》中必修学分（4学分）规定的学习内容，即必修模块“信息技术基础”和一个选修模块。考生须从“选修1：算法与程序设计”、“选修2：多媒体技术应用”、“选修3：网络技术应用”和“选修4：数据管理技术”中任意选考一个模块。
-&lt;a href=&#34;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&#34;&gt;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;a href=&#34;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&#34;&gt;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;粗略看了看学业水平考试考试说明，其实并没有我想象中的那么“低幼”，比如在操作题中：&lt;/p&gt;
 &lt;p&gt;“选修1：算法与程序设计”：需要学会利用Visual Basic编程，并掌握一些简单的算法（比如输出九九乘法表）和算法概念的相关知识。&lt;/p&gt;
 &lt;p&gt;“选修2：多媒体技术应用”：需要学会利用Photoshop和Flash完成图像或动画的编辑。&lt;/p&gt;
@@ -191,8 +154,7 @@ PDU:fragment 段；&lt;br&gt;
 作用：控制应用程序；&lt;br&gt;
 典型协议：telnet, ssh, http, ftp, smtp, rip, BGP, (未完待续)&lt;br&gt;
 备注：为应用程序提供网络服务；
-&lt;a href=&#34;https://www.runoob.com/tcpip/tcpip-intro.html&#34;&gt;https://www.runoob.com/tcpip/tcpip-intro.html&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;a href=&#34;https://www.runoob.com/tcpip/tcpip-intro.html&#34;&gt;https://www.runoob.com/tcpip/tcpip-intro.html&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;好吧，我输了，我是真的不会。&lt;/p&gt;
 &lt;p&gt;选修部分的填空题有两道，这是第二道，第一道我也写错了，但是我觉得实在是可惜：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;mailto:aaaaa@sina.cn&#34;&gt;aaaaa@sina.cn&lt;/a&gt;在Outlook上发送邮件，发信服务器应是：__收信服务器应是：__(填空题）&lt;/p&gt;
@@ -264,15 +226,13 @@ tie 1 邀请客人的通知:请 &lt;del&gt;。 2 旧时
 tie
 tiè 名 学习写字或绘画时临摹用的样
 本:碑~|习字~|画~|临 ~。
-另见 1295 页 tie;1296 页 tiě。&lt;/p&gt;
-&lt;/blockquote&gt;
+另见 1295 页 tie;1296 页 tiě。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？&lt;/p&gt;
 &lt;p&gt;但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？&lt;/p&gt;
 &lt;p&gt;我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2,  期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。”
-&lt;a href=&#34;https://www.zhihu.com/question/19678782/answer/12925529&#34;&gt;应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;a href=&#34;https://www.zhihu.com/question/19678782/answer/12925529&#34;&gt;应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;这是否证明了我的观点？
 然而我又使用搜索引擎设置时间段功能搜索后却发现早在百度贴吧问世（2003年11月25日）以前，CSDN论坛就已经有“贴子”一词出现：
 &lt;img src=&#34;./2020-06-17%20012303.png&#34; alt=&#34;png&#34;&gt;
@@ -302,13 +262,11 @@ tiè 名 学习写字或绘画时临摹用的样
 &lt;p&gt;1.获取QQ群文件的下载直链
 2.使用现有的多线程下载工具进行多线程下载&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;当然，本思路也普遍适用于提升 仅限制单个线程下载速度的下载 的下载速度（经测试下载百度云盘文件用此方法开太多线程会导致404，不过少一些速度也很快）&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;当然，本思路也普遍适用于提升 仅限制单个线程下载速度的下载 的下载速度（经测试下载百度云盘文件用此方法开太多线程会导致404，不过少一些速度也很快）&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;实现过程&#34;&gt;实现过程&lt;/h2&gt;
 &lt;p&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;经过一番搜索，我发现QQ群群文件是有页面版的，我们不妨登入页面：
 &lt;a href=&#34;http://qun.qzone.qq.com/group&#34;&gt;http://qun.qzone.qq.com/group&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当然，你也可以使用链接&lt;/p&gt;
@@ -366,90 +324,90 @@ tiè 名 学习写字或绘画时临摹用的样
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;我的朋友&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;站点地址&lt;/th&gt;
+          &lt;th&gt;我的朋友&lt;/th&gt;
+          &lt;th&gt;站点地址&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;YangTY’s Blog&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://imyangty.com/&#34;&gt;https://imyangty.com/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;YangTY’s Blog&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://imyangty.com/&#34;&gt;https://imyangty.com/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Fachep&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://blog.Fachep.com/&#34;&gt;https://blog.Fachep.com/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Fachep&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://blog.Fachep.com/&#34;&gt;https://blog.Fachep.com/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Miaow233&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://nekohouse.cafe/&#34;&gt;https://nekohouse.cafe/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Miaow233&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://nekohouse.cafe/&#34;&gt;https://nekohouse.cafe/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;我的关注&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;站点地址&lt;/th&gt;
+          &lt;th&gt;我的关注&lt;/th&gt;
+          &lt;th&gt;站点地址&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;BYVoid&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.byvoid.com/&#34;&gt;https://www.byvoid.com/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;BYVoid&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.byvoid.com/&#34;&gt;https://www.byvoid.com/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;KSKun&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://ksmeow.moe/&#34;&gt;https://ksmeow.moe/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;KSKun&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://ksmeow.moe/&#34;&gt;https://ksmeow.moe/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;menci&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://oi.men.ci/#blog&#34;&gt;https://oi.men.ci/#blog&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;menci&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://oi.men.ci/#blog&#34;&gt;https://oi.men.ci/#blog&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;stdcall&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/mlystdcall/&#34;&gt;https://www.cnblogs.com/mlystdcall/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;stdcall&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.cnblogs.com/mlystdcall/&#34;&gt;https://www.cnblogs.com/mlystdcall/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;rqy&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://rqy.moe/&#34;&gt;https://rqy.moe/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;rqy&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://rqy.moe/&#34;&gt;https://rqy.moe/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Baoshuo&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://baoshuo.ren/&#34;&gt;https://baoshuo.ren/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Baoshuo&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://baoshuo.ren/&#34;&gt;https://baoshuo.ren/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;kernel.bin&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://kernelbin.cn/&#34;&gt;https://kernelbin.cn/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;kernel.bin&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://kernelbin.cn/&#34;&gt;https://kernelbin.cn/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;icys&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://icys.top/&#34;&gt;https://icys.top/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;icys&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://icys.top/&#34;&gt;https://icys.top/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;无垠&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://flyhigher.top/&#34;&gt;https://flyhigher.top/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;无垠&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://flyhigher.top/&#34;&gt;https://flyhigher.top/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;nocriz&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://bytew.net/&#34;&gt;https://bytew.net/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;nocriz&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://bytew.net/&#34;&gt;https://bytew.net/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;我的收藏&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;站点地址&lt;/th&gt;
+          &lt;th&gt;我的收藏&lt;/th&gt;
+          &lt;th&gt;站点地址&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;OI Wiki&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://oi.wiki/&#34;&gt;https://oi.wiki/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;OI Wiki&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://oi.wiki/&#34;&gt;https://oi.wiki/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;CS 自学指南&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://csdiy.wiki/&#34;&gt;https://csdiy.wiki/&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;CS 自学指南&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://csdiy.wiki/&#34;&gt;https://csdiy.wiki/&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;

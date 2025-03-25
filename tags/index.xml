@@ -7,26 +7,61 @@
     <generator>Hugo</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Mon, 24 Mar 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Mar 2025 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript</title>
       <link>https://blog.youngzm.com/tags/javascript/</link>
-      <pubDate>Mon, 24 Mar 2025 00:00:01 +0800</pubDate>
+      <pubDate>Sun, 23 Mar 2025 00:00:01 +0800</pubDate>
       <guid>https://blog.youngzm.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>This</title>
+      <link>https://blog.youngzm.com/tags/this/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/this/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promise</title>
+      <link>https://blog.youngzm.com/tags/promise/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/promise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>异步事件</title>
+      <link>https://blog.youngzm.com/tags/%E5%BC%82%E6%AD%A5%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/%E5%BC%82%E6%AD%A5%E4%BA%8B%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Object</title>
+      <link>https://blog.youngzm.com/tags/object/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/object/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prototype Chain</title>
+      <link>https://blog.youngzm.com/tags/prototype-chain/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/prototype-chain/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>https://blog.youngzm.com/tags/python/</link>
-      <pubDate>Mon, 24 Mar 2025 00:00:01 +0800</pubDate>
+      <pubDate>Thu, 20 Mar 2025 00:00:01 +0800</pubDate>
       <guid>https://blog.youngzm.com/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>正则表达式</title>
       <link>https://blog.youngzm.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
-      <pubDate>Mon, 24 Mar 2025 00:00:01 +0800</pubDate>
+      <pubDate>Thu, 20 Mar 2025 00:00:01 +0800</pubDate>
       <guid>https://blog.youngzm.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
       <description></description>
     </item>

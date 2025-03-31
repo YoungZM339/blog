@@ -7,9 +7,129 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Sun, 23 Mar 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:01 +0800</lastBuildDate>
     
         <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>教学教程: container 容器</title>
+        <link>https://blog.youngzm.com/post/docker-install-mysql-redis/</link>
+        <pubDate>Sun, 30 Mar 2025 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/docker-install-mysql-redis/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/docker-install-mysql-redis/ -&lt;h3 id=&#34;在-windows-上使用-docker-部署-mysql-和-redis-服务教程&#34;&gt;在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程&lt;/h3&gt;
+&lt;p&gt;本教程将指导你在 &lt;strong&gt;Windows 系统&lt;/strong&gt;上通过 Docker 快速部署 MySQL 和 Redis 服务，适用于本地开发环境搭建。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;系统要求&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10/11（建议最新版本）&lt;/li&gt;
+&lt;li&gt;管理员权限的 PowerShell 或 CMD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-1安装-chocolateywindows-包管理器&#34;&gt;步骤 1：安装 Chocolatey（Windows 包管理器）&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install --id=Chocolatey.Chocolatey -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Windows 官方工具 &lt;code&gt;winget&lt;/code&gt; 安装 Chocolatey，用于后续安装 Docker Desktop。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果提示权限问题，请以管理员身份运行 PowerShell。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-2启用-wslwindows-子系统-linux&#34;&gt;步骤 2：启用 WSL（Windows 子系统 Linux）&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：安装 WSL 2，这是 Docker Desktop 在 Windows 上的依赖环境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完成后需重启电脑&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-3安装-docker-desktop&#34;&gt;步骤 3：安装 Docker Desktop&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install &lt;span style=&#34;color:#658b00&#34;&gt;docker-desktop&lt;/span&gt; --version=&lt;span style=&#34;color:#b452cd&#34;&gt;4.25&lt;/span&gt;.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证安装&lt;/strong&gt;：&lt;br&gt;
+安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-4部署-mysql-服务&#34;&gt;步骤 4：部署 MySQL 服务&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name=&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt; -p &lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt; -e MYSQL_ROOT_PASSWORD=&lt;span style=&#34;color:#b452cd&#34;&gt;123456&lt;/span&gt; -d mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--name=mysql-server&lt;/code&gt;：容器名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-p 3306:3306&lt;/code&gt;：将本地 3306 端口映射到容器的 3306 端口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-e MYSQL_ROOT_PASSWORD=123456&lt;/code&gt;：设置 root 用户密码（生产环境请使用复杂密码）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mysql/mysql-server&lt;/code&gt;：官方 MySQL 镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证是否运行&lt;/strong&gt;：
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker &lt;span style=&#34;color:#658b00&#34;&gt;ps &lt;/span&gt;-a | findstr &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;mysql-server&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-5部署-redis-服务&#34;&gt;步骤 5：部署 Redis 服务&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d --name=&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server -p &lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt; redis/&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;redis/redis-stack-server:latest&lt;/code&gt;：Redis 官方镜像（包含 RedisInsight 可视化工具）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证是否运行&lt;/strong&gt;：
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker &lt;span style=&#34;color:#658b00&#34;&gt;ps &lt;/span&gt;-a | findstr &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;redis-stack-server&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;测试服务可用性&#34;&gt;测试服务可用性&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试 MySQL&lt;/strong&gt;&lt;br&gt;
+使用数据库工具（如 MySQL Workbench）连接：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host: &lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Port: &lt;code&gt;3306&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Username: &lt;code&gt;root&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Password: &lt;code&gt;123456&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试 Redis&lt;/strong&gt;&lt;br&gt;
+使用 &lt;code&gt;redis-cli&lt;/code&gt; 或 RedisInsight（访问 &lt;code&gt;http://localhost:8001&lt;/code&gt;）连接：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec -it &lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server &lt;span style=&#34;color:#658b00&#34;&gt;redis-cli&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;常见问题&#34;&gt;常见问题&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;端口冲突&lt;/strong&gt;&lt;br&gt;
+如果 3306 或 6379 端口被占用，修改 &lt;code&gt;-p&lt;/code&gt; 参数（如 &lt;code&gt;-p 3307:3306&lt;/code&gt;）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;镜像拉取失败&lt;/strong&gt;&lt;br&gt;
+尝试更换镜像源：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull redis/&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据持久化（可选）&lt;/strong&gt;&lt;br&gt;
+添加 &lt;code&gt;-v&lt;/code&gt; 参数挂载数据卷（示例）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name=&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt; -v C:/mysql_data&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;/var/lib/mysql -p &lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt; -e MYSQL_ROOT_PASSWORD=&lt;span style=&#34;color:#b452cd&#34;&gt;123456&lt;/span&gt; -d mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结&lt;/h4&gt;
+&lt;p&gt;通过以上步骤，你已成功部署了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL 服务（端口 3306）&lt;/li&gt;
+&lt;li&gt;Redis 服务（端口 6379）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在可以开始本地开发调试！如需停止服务，使用 &lt;code&gt;docker stop &amp;lt;容器名&amp;gt;&lt;/code&gt;；删除服务用 &lt;code&gt;docker rm &amp;lt;容器名&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+- https://blog.youngzm.com/post/docker-install-mysql-redis/ - Copyright 2024@YoungZM</description>
+        </item>
     
     
     
@@ -1951,67 +2071,6 @@ IE 盒子模型是早期 Internet Explorer 浏览器使用的盒子模型。在 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;socket.send;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://blog.youngzm.com/post/frontend-web-notes/3/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>前端开发学习笔记(二) : Vue3 常用指令和功能</title>
-        <link>https://blog.youngzm.com/post/frontend-web-notes/2/</link>
-        <pubDate>Mon, 05 Feb 2024 00:00:01 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/frontend-web-notes/2/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/frontend-web-notes/2/ -&lt;p&gt;Vue 提供了许多指令和功能来处理不同的任务和逻辑，使得开发更加高效和便捷。&lt;/p&gt;
-&lt;h3 id=&#34;v-if&#34;&gt;&lt;code&gt;v-if&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;在模板中使用 &lt;code&gt;v-if&lt;/code&gt; 指令时，你需要将其绑定到一个布尔表达式上。如果该表达式的值为 &lt;code&gt;true&lt;/code&gt;，则元素或组件将被渲染到页面上；如果为 &lt;code&gt;false&lt;/code&gt;，则元素或组件将被从 DOM 中移除。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-if&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;isShown&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;&amp;lt;!-- 这个元素/组件将在isShown为true时渲染 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-else-和-v-else-if&#34;&gt;&lt;code&gt;v-else&lt;/code&gt; 和 &lt;code&gt;v-else-if&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;除了 &lt;code&gt;v-if&lt;/code&gt;，Vue 还提供了 &lt;code&gt;v-else&lt;/code&gt; 和 &lt;code&gt;v-else-if&lt;/code&gt; 来实现条件渲染的分支。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-if&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;condition&amp;#34;&lt;/span&gt;&amp;gt;条件为true时显示&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-else-if&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;otherCondition&amp;#34;&lt;/span&gt;&amp;gt;其他条件为true时显示&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-else&lt;/span&gt;&amp;gt;以上条件都不满足时显示&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;v-else&lt;/code&gt; 指令必须紧跟在带有 &lt;code&gt;v-if&lt;/code&gt; 或 &lt;code&gt;v-else-if&lt;/code&gt; 的元素之后，并且在同一父元素内。&lt;/p&gt;
-&lt;h3 id=&#34;v-for&#34;&gt;&lt;code&gt;v-for&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;用于基于一个数组来渲染一个列表。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ul&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-for&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;(item, index) in items&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;:key&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt;&amp;gt;{{ item.text }}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;li&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;ul&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-model&#34;&gt;&lt;code&gt;v-model&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;用于在表单输入和应用状态之间创建双向绑定。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-model&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt; /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-on&#34;&gt;&lt;code&gt;v-on&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;用于监听 DOM 事件，并在触发时执行一些 JavaScript 代码。可以简写为 &lt;code&gt;@&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-on:click&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;doSomething&amp;#34;&lt;/span&gt;&amp;gt;Click me&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&amp;lt;!-- 简写形式 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;@&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;click&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;doSomething&amp;#34;&lt;/span&gt;&amp;gt;Click me&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;button&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-bind&#34;&gt;&lt;code&gt;v-bind&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;用于动态地绑定一个或多个属性，或者一个组件 prop 到表达式。可以简写为 &lt;code&gt;:&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-bind:href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&amp;gt;Link&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&amp;lt;!-- 简写形式 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;:href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&amp;gt;Link&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-show&#34;&gt;&lt;code&gt;v-show&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;另一种条件渲染的指令，不同于 &lt;code&gt;v-if&lt;/code&gt; 的是，&lt;code&gt;v-show&lt;/code&gt; 只是切换元素的 CSS 属性 &lt;code&gt;display&lt;/code&gt;，而不是真正地移除和重建元素。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-show&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;isVisible&amp;#34;&lt;/span&gt;&amp;gt;Hello, World!&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-slot&#34;&gt;&lt;code&gt;v-slot&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;用于访问子组件中的插槽。Vue 2.6.0+ 中引入了一个统一的语法（以 &lt;code&gt;v-slot&lt;/code&gt; 指令前缀表示），在 2.6.0 之前是使用 &lt;code&gt;slot&lt;/code&gt; 和 &lt;code&gt;slot-scope&lt;/code&gt; 属性。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;template&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-slot:header&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;Here might be a page title&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;template&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-pre&#34;&gt;&lt;code&gt;v-pre&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;跳过这个元素和它的子元素的编译过程。可以用来优化更新性能。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-pre&lt;/span&gt;&amp;gt;{{ this will not be compiled }}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;span&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-cloak&#34;&gt;&lt;code&gt;v-cloak&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 &lt;code&gt;[v-cloak] { display: none }&lt;/code&gt; 一起用，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-cloak&lt;/span&gt;&amp;gt;{{ message }}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;v-once&#34;&gt;&lt;code&gt;v-once&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;渲染元素和组件只一次。之后的渲染任务，将会跳过该元素和它的子元素，这对于优化更新性能是非常有用的。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;v-once&lt;/span&gt;&amp;gt;This will never change: {{msg}}&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;span&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这些指令和功能是 Vue 开发中的基础，能够帮助你更好地控制渲染流程、数据绑定、事件处理等。了解和熟练使用这些能力，将极大地提升你的 Vue 应用开发效率。&lt;/p&gt;
-- https://blog.youngzm.com/post/frontend-web-notes/2/ - Copyright 2024@YoungZM</description>
         </item>
     
     

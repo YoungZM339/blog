@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Sun, 23 Mar 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>教学教程</title>
+      <link>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
     <item>
       <title>JavaScript</title>
       <link>https://blog.youngzm.com/categories/javascript/</link>
@@ -42,13 +49,6 @@
       <link>https://blog.youngzm.com/categories/c&#43;&#43;/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:01 +0800</pubDate>
       <guid>https://blog.youngzm.com/categories/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>教学教程</title>
-      <link>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:01 +0800</pubDate>
-      <guid>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     <item>

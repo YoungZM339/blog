@@ -644,6 +644,126 @@ Bit at position 7: 1
     
     
         <item>
+        <title>教学教程: container 容器</title>
+        <link>https://blog.youngzm.com/post/docker-install-mysql-redis/</link>
+        <pubDate>Sun, 10 Sep 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/docker-install-mysql-redis/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/docker-install-mysql-redis/ -&lt;h3 id=&#34;在-windows-上使用-docker-部署-mysql-和-redis-服务教程&#34;&gt;在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程&lt;/h3&gt;
+&lt;p&gt;本教程将指导你在 &lt;strong&gt;Windows 系统&lt;/strong&gt;上通过 Docker 快速部署 MySQL 和 Redis 服务，适用于本地开发环境搭建。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;系统要求&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10/11（建议最新版本）&lt;/li&gt;
+&lt;li&gt;管理员权限的 PowerShell 或 CMD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-1安装-chocolateywindows-包管理器&#34;&gt;步骤 1：安装 Chocolatey（Windows 包管理器）&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install --id=Chocolatey.Chocolatey -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Windows 官方工具 &lt;code&gt;winget&lt;/code&gt; 安装 Chocolatey，用于后续安装 Docker Desktop。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果提示权限问题，请以管理员身份运行 PowerShell。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-2启用-wslwindows-子系统-linux&#34;&gt;步骤 2：启用 WSL（Windows 子系统 Linux）&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：安装 WSL 2，这是 Docker Desktop 在 Windows 上的依赖环境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完成后需重启电脑&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-3安装-docker-desktop&#34;&gt;步骤 3：安装 Docker Desktop&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install &lt;span style=&#34;color:#658b00&#34;&gt;docker-desktop&lt;/span&gt; --version=&lt;span style=&#34;color:#b452cd&#34;&gt;4.25&lt;/span&gt;.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证安装&lt;/strong&gt;：&lt;br&gt;
+安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-4部署-mysql-服务&#34;&gt;步骤 4：部署 MySQL 服务&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name=&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt; -p &lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt; -e MYSQL_ROOT_PASSWORD=&lt;span style=&#34;color:#b452cd&#34;&gt;123456&lt;/span&gt; -d mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--name=mysql-server&lt;/code&gt;：容器名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-p 3306:3306&lt;/code&gt;：将本地 3306 端口映射到容器的 3306 端口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-e MYSQL_ROOT_PASSWORD=123456&lt;/code&gt;：设置 root 用户密码（生产环境请使用复杂密码）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mysql/mysql-server&lt;/code&gt;：官方 MySQL 镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证是否运行&lt;/strong&gt;：
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker &lt;span style=&#34;color:#658b00&#34;&gt;ps &lt;/span&gt;-a | findstr &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;mysql-server&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;步骤-5部署-redis-服务&#34;&gt;步骤 5：部署 Redis 服务&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d --name=&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server -p &lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt; redis/&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;redis/redis-stack-server:latest&lt;/code&gt;：Redis 官方镜像（包含 RedisInsight 可视化工具）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证是否运行&lt;/strong&gt;：
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker &lt;span style=&#34;color:#658b00&#34;&gt;ps &lt;/span&gt;-a | findstr &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;redis-stack-server&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;测试服务可用性&#34;&gt;测试服务可用性&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试 MySQL&lt;/strong&gt;&lt;br&gt;
+使用数据库工具（如 MySQL Workbench）连接：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host: &lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Port: &lt;code&gt;3306&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Username: &lt;code&gt;root&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Password: &lt;code&gt;123456&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试 Redis&lt;/strong&gt;&lt;br&gt;
+使用 &lt;code&gt;redis-cli&lt;/code&gt; 或 RedisInsight（访问 &lt;code&gt;http://localhost:8001&lt;/code&gt;）连接：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec -it &lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server &lt;span style=&#34;color:#658b00&#34;&gt;redis-cli&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;常见问题&#34;&gt;常见问题&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;端口冲突&lt;/strong&gt;&lt;br&gt;
+如果 3306 或 6379 端口被占用，修改 &lt;code&gt;-p&lt;/code&gt; 参数（如 &lt;code&gt;-p 3307:3306&lt;/code&gt;）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;镜像拉取失败&lt;/strong&gt;&lt;br&gt;
+尝试更换镜像源：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull redis/&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据持久化（可选）&lt;/strong&gt;&lt;br&gt;
+添加 &lt;code&gt;-v&lt;/code&gt; 参数挂载数据卷（示例）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name=&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt; -v C:/mysql_data&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;/var/lib/mysql -p &lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt; -e MYSQL_ROOT_PASSWORD=&lt;span style=&#34;color:#b452cd&#34;&gt;123456&lt;/span&gt; -d mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结&lt;/h4&gt;
+&lt;p&gt;通过以上步骤，你已成功部署了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL 服务（端口 3306）&lt;/li&gt;
+&lt;li&gt;Redis 服务（端口 6379）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在可以开始本地开发调试！如需停止服务，使用 &lt;code&gt;docker stop &amp;lt;容器名&amp;gt;&lt;/code&gt;；删除服务用 &lt;code&gt;docker rm &amp;lt;容器名&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+- https://blog.youngzm.com/post/docker-install-mysql-redis/ - Copyright 2024@YoungZM</description>
+        </item>
+    
+    
+    
+        <item>
         <title>CS571-S23 学习笔记(七) : React 4</title>
         <link>https://blog.youngzm.com/post/cs571-s23-notes/7/</link>
         <pubDate>Sat, 02 Sep 2023 00:00:01 +0800</pubDate>
@@ -1373,65 +1493,6 @@ Bit at position 7: 1
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(evenNumbers); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: [2, 4]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述示例中，&lt;code&gt;filter&lt;/code&gt; 方法将遍历 &lt;code&gt;numbers&lt;/code&gt; 数组的每个元素，并将符合条件（偶数）的元素组成一个新的数组 &lt;code&gt;evenNumbers&lt;/code&gt;。&lt;/p&gt;
 - https://blog.youngzm.com/post/cs571-s23-notes/2/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>CS571-S23 学习笔记(一) : JSON</title>
-        <link>https://blog.youngzm.com/post/cs571-s23-notes/1/</link>
-        <pubDate>Wed, 09 Aug 2023 00:00:01 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/post/cs571-s23-notes/1/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/1/ -&lt;h2 id=&#34;json&#34;&gt;JSON&lt;/h2&gt;
-&lt;p&gt;JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，常用于数据的传输和存储。它采用键值对的方式表示数据，并且具有简洁、易于理解和生成的特点。以下是 JSON 格式的一些基本规则和示例：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;数据类型&lt;/strong&gt;：JSON 支持以下数据类型：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;字符串（用双引号括起来）：&amp;ldquo;Hello World&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;数字：42&lt;/li&gt;
-&lt;li&gt;布尔值：true 或 false&lt;/li&gt;
-&lt;li&gt;数组（用方括号括起来）：[1, 2, 3]&lt;/li&gt;
-&lt;li&gt;对象（用花括号括起来）：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;John&amp;rdquo;, &amp;ldquo;age&amp;rdquo;: 30}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;键值对&lt;/strong&gt;：JSON 中的对象由一组键值对组成，键和值之间使用冒号分隔，每个键值对之间使用逗号分隔，对象用花括号括起来。键必须是字符串，值可以是任意数据类型。示例：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;age&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;isStudent&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;：JSON 中的数组由一组值组成，值之间使用逗号分隔，数组用方括号括起来。示例：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;strong&gt;嵌套&lt;/strong&gt;：JSON 支持嵌套，可以在对象中包含对象或数组，也可以在数组中包含对象或其他数组。示例：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;age&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;hobbies&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;reading&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;traveling&amp;#34;&lt;/span&gt;],
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;address&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;street&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;123 Main St&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;New York&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意，JSON 中的键和字符串必须使用双引号括起来，而不是单引号。&lt;/p&gt;
-&lt;p&gt;JSON 是一种通用的数据格式，在多种编程语言中都有对应的解析和生成 JSON 的库和函数。在 JavaScript 中，可以使用 &lt;code&gt;JSON.parse()&lt;/code&gt; 将 JSON 字符串解析为 JavaScript 对象，使用 &lt;code&gt;JSON.stringify()&lt;/code&gt; 将 JavaScript 对象转换为 JSON 字符串。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false}&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonObject = JSON.parse(jsonString);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonObject.name); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#34;John&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; person = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;, isStudent: &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; };
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString2 = JSON.stringify(person);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonString2); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#39;{&amp;#34;name&amp;#34;:&amp;#34;John&amp;#34;,&amp;#34;age&amp;#34;:30,&amp;#34;isStudent&amp;#34;:false}&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上是 JSON 格式的基本规则和用法，它提供了一种方便可读的数据交换格式，广泛应用于前后端数据传输和存储。&lt;/p&gt;
-- https://blog.youngzm.com/post/cs571-s23-notes/1/ - Copyright 2024@YoungZM</description>
         </item>
     
     

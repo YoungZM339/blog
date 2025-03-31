@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html><head>
+<title>教学教程: container 容器</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="一个用于辅助教学的教程，记录相关的操作步骤和注意事项。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="https://blog.youngzm.com/post/docker-install-mysql-redis/">
+  <meta property="og:site_name" content="YoungZM&#39;s Blog">
+  <meta property="og:title" content="教学教程: container 容器">
+  <meta property="og:description" content="一个用于辅助教学的教程，记录相关的操作步骤和注意事项。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-09-10T00:00:01+08:00">
+    <meta property="article:modified_time" content="2023-09-10T00:00:01+08:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="Redis">
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="教学教程: container 容器">
+  <meta name="twitter:description" content="一个用于辅助教学的教程，记录相关的操作步骤和注意事项。">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/">
+                    主页
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/post/">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories/">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags/">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/links/">
+                    友链
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9c%a8-windows-%e4%b8%8a%e4%bd%bf%e7%94%a8-docker-%e9%83%a8%e7%bd%b2-mysql-%e5%92%8c-redis-%e6%9c%8d%e5%8a%a1%e6%95%99%e7%a8%8b" class="nav-在-windows-上使用-docker-部署-mysql-和-redis-服务教程">
+									在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%ae%89%e8%a3%85-chocolateywindows-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8" class="nav-步骤-1安装-chocolateywindows-包管理器">
+									步骤 1：安装 Chocolatey（Windows 包管理器）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-2启用-wslwindows-子系统-linux">
+									步骤 2：启用 WSL（Windows 子系统 Linux）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-3%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-3安装-docker-desktop">
+									步骤 3：安装 Docker Desktop
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-mysql-服务">
+									步骤 4：部署 MySQL 服务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-5%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-5部署-redis-服务">
+									步骤 5：部署 Redis 服务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8b%e8%af%95%e6%9c%8d%e5%8a%a1%e5%8f%af%e7%94%a8%e6%80%a7" class="nav-测试服务可用性">
+									测试服务可用性
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" class="nav-常见问题">
+									常见问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%bb%e7%bb%93" class="nav-总结">
+									总结
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.youngzm.com/">
+            YoungZM&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.youngzm.com/">
+        <div class="single-column-header-title">YoungZM&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">苔花如米小，也学牡丹开</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    教学教程: container 容器
+                    
+                    <div class="post-subtitle">
+                        一个用于辅助教学的教程，记录相关的操作步骤和注意事项。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-09-10 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B">教学教程</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/docker">docker</a>
+                                &nbsp;
+                            
+                                <a href="/tags/mysql">mysql</a>
+                                &nbsp;
+                            
+                                <a href="/tags/redis">redis</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h3 id="在-windows-上使用-docker-部署-mysql-和-redis-服务教程">在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程</h3>
+<p>本教程将指导你在 <strong>Windows 系统</strong>上通过 Docker 快速部署 MySQL 和 Redis 服务，适用于本地开发环境搭建。</p>
+<hr>
+<h4 id="准备工作">准备工作</h4>
+<ol>
+<li><strong>系统要求</strong>
+<ul>
+<li>Windows 10/11（建议最新版本）</li>
+<li>管理员权限的 PowerShell 或 CMD</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤-1安装-chocolateywindows-包管理器">步骤 1：安装 Chocolatey（Windows 包管理器）</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>winget install --id=Chocolatey.Chocolatey -e
+</span></span></code></pre></div><ul>
+<li><strong>作用</strong>：通过 Windows 官方工具 <code>winget</code> 安装 Chocolatey，用于后续安装 Docker Desktop。</li>
+<li><strong>注意</strong>：如果提示权限问题，请以管理员身份运行 PowerShell。</li>
+</ul>
+<hr>
+<h4 id="步骤-2启用-wslwindows-子系统-linux">步骤 2：启用 WSL（Windows 子系统 Linux）</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --install
+</span></span></code></pre></div><ul>
+<li><strong>作用</strong>：安装 WSL 2，这是 Docker Desktop 在 Windows 上的依赖环境。</li>
+<li><strong>完成后需重启电脑</strong>。</li>
+</ul>
+<hr>
+<h4 id="步骤-3安装-docker-desktop">步骤 3：安装 Docker Desktop</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>choco install <span style="color:#658b00">docker-desktop</span> --version=<span style="color:#b452cd">4.25</span>.0
+</span></span></code></pre></div><ul>
+<li><strong>作用</strong>：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。</li>
+<li><strong>验证安装</strong>：<br>
+安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。</li>
+</ul>
+<hr>
+<h4 id="步骤-4部署-mysql-服务">步骤 4：部署 MySQL 服务</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker run --name=<span style="color:#658b00">mysql-server</span> -p <span style="color:#b452cd">3306</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#b452cd">3306</span> -e MYSQL_ROOT_PASSWORD=<span style="color:#b452cd">123456</span> -d mysql/<span style="color:#658b00">mysql-server</span>
+</span></span></code></pre></div><ul>
+<li><strong>参数解释</strong>：
+<ul>
+<li><code>--name=mysql-server</code>：容器名称</li>
+<li><code>-p 3306:3306</code>：将本地 3306 端口映射到容器的 3306 端口</li>
+<li><code>-e MYSQL_ROOT_PASSWORD=123456</code>：设置 root 用户密码（生产环境请使用复杂密码）</li>
+<li><code>mysql/mysql-server</code>：官方 MySQL 镜像</li>
+</ul>
+</li>
+<li><strong>验证是否运行</strong>：
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker <span style="color:#658b00">ps </span>-a | findstr <span style="color:#cd5555">&#34;mysql-server&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="步骤-5部署-redis-服务">步骤 5：部署 Redis 服务</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker run -d --name=<span style="color:#658b00">redis-stack</span>-server -p <span style="color:#b452cd">6379</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#b452cd">6379</span> redis/<span style="color:#658b00">redis-stack</span>-server:latest
+</span></span></code></pre></div><ul>
+<li><strong>参数解释</strong>：
+<ul>
+<li><code>redis/redis-stack-server:latest</code>：Redis 官方镜像（包含 RedisInsight 可视化工具）</li>
+</ul>
+</li>
+<li><strong>验证是否运行</strong>：
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker <span style="color:#658b00">ps </span>-a | findstr <span style="color:#cd5555">&#34;redis-stack-server&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h4 id="测试服务可用性">测试服务可用性</h4>
+<ol>
+<li>
+<p><strong>测试 MySQL</strong><br>
+使用数据库工具（如 MySQL Workbench）连接：</p>
+<ul>
+<li>Host: <code>127.0.0.1</code></li>
+<li>Port: <code>3306</code></li>
+<li>Username: <code>root</code></li>
+<li>Password: <code>123456</code></li>
+</ul>
+</li>
+<li>
+<p><strong>测试 Redis</strong><br>
+使用 <code>redis-cli</code> 或 RedisInsight（访问 <code>http://localhost:8001</code>）连接：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker exec -it <span style="color:#658b00">redis-stack</span>-server <span style="color:#658b00">redis-cli</span>
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h4 id="常见问题">常见问题</h4>
+<ol>
+<li>
+<p><strong>端口冲突</strong><br>
+如果 3306 或 6379 端口被占用，修改 <code>-p</code> 参数（如 <code>-p 3307:3306</code>）。</p>
+</li>
+<li>
+<p><strong>镜像拉取失败</strong><br>
+尝试更换镜像源：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker pull mysql/<span style="color:#658b00">mysql-server</span><span style="color:#a61717;background-color:#e3d2d2">:</span>latest
+</span></span><span style="display:flex;"><span>docker pull redis/<span style="color:#658b00">redis-stack</span>-server:latest
+</span></span></code></pre></div></li>
+<li>
+<p><strong>数据持久化（可选）</strong><br>
+添加 <code>-v</code> 参数挂载数据卷（示例）：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker run --name=<span style="color:#658b00">mysql-server</span> -v C:/mysql_data<span style="color:#a61717;background-color:#e3d2d2">:</span>/var/lib/mysql -p <span style="color:#b452cd">3306</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#b452cd">3306</span> -e MYSQL_ROOT_PASSWORD=<span style="color:#b452cd">123456</span> -d mysql/<span style="color:#658b00">mysql-server</span>
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h4 id="总结">总结</h4>
+<p>通过以上步骤，你已成功部署了：</p>
+<ul>
+<li>MySQL 服务（端口 3306）</li>
+<li>Redis 服务（端口 6379）</li>
+</ul>
+<p>现在可以开始本地开发调试！如需停止服务，使用 <code>docker stop &lt;容器名&gt;</code>；删除服务用 <code>docker rm &lt;容器名&gt;</code>。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-09-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/post/cpp-stl-notes/1/">
+			下回<br>C&#43;&#43; STL学习笔记(一) : container 容器
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/post/cs571-s23-notes/7/">
+			上回<br>CS571-S23 学习笔记(七) : React 4
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="youngzm339/blog"
+        data-repo-id=""
+        data-category="Announcements"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-input-position=""
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.youngzm.com/">
+    
+        <div class="nav-title">
+            YoungZM&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            苔花如米小，也学牡丹开
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/">
+                主页
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/post/">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories/">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags/">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/links/">
+                友链
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        &copy;
+
+Copyright 2024@YoungZM
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9c%a8-windows-%e4%b8%8a%e4%bd%bf%e7%94%a8-docker-%e9%83%a8%e7%bd%b2-mysql-%e5%92%8c-redis-%e6%9c%8d%e5%8a%a1%e6%95%99%e7%a8%8b" class="nav-在-windows-上使用-docker-部署-mysql-和-redis-服务教程">
+									在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%ae%89%e8%a3%85-chocolateywindows-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8" class="nav-步骤-1安装-chocolateywindows-包管理器">
+									步骤 1：安装 Chocolatey（Windows 包管理器）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-2启用-wslwindows-子系统-linux">
+									步骤 2：启用 WSL（Windows 子系统 Linux）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-3%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-3安装-docker-desktop">
+									步骤 3：安装 Docker Desktop
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-mysql-服务">
+									步骤 4：部署 MySQL 服务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%ad%a5%e9%aa%a4-5%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-5部署-redis-服务">
+									步骤 5：部署 Redis 服务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8b%e8%af%95%e6%9c%8d%e5%8a%a1%e5%8f%af%e7%94%a8%e6%80%a7" class="nav-测试服务可用性">
+									测试服务可用性
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" class="nav-常见问题">
+									常见问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%bb%e7%bb%93" class="nav-总结">
+									总结
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">&copy;
+
+Copyright 2024@YoungZM
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

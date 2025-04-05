@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sklearn</title>
+      <link>https://blog.youngzm.com/categories/sklearn/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/categories/sklearn/</guid>
+      <description></description>
+    </item>
     <item>
       <title>教学教程</title>
       <link>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</link>

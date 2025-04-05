@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.youngzm.com/categories/</loc>
-    <lastmod>2025-03-30T00:00:01+08:00</lastmod>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/post/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/python/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/categories/sklearn/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/sklearn/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/post/ml-python/sklearn-submodules/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.youngzm.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2025-04-01T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/tags/docker/</loc>
     <lastmod>2025-03-30T00:00:01+08:00</lastmod>
@@ -11,22 +35,13 @@
     <loc>https://blog.youngzm.com/tags/mysql/</loc>
     <lastmod>2025-03-30T00:00:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.youngzm.com/post/</loc>
-    <lastmod>2025-03-30T00:00:01+08:00</lastmod>
-  </url><url>
     <loc>https://blog.youngzm.com/tags/redis/</loc>
     <lastmod>2025-03-30T00:00:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.youngzm.com/tags/</loc>
-    <lastmod>2025-03-30T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/</loc>
+    <loc>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-03-30T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/docker-install-mysql-redis/</loc>
-    <lastmod>2025-03-30T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/categories/%E6%95%99%E5%AD%A6%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-03-30T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/categories/javascript/</loc>
@@ -58,9 +73,6 @@
   </url><url>
     <loc>https://blog.youngzm.com/post/frontend-web-notes/7/</loc>
     <lastmod>2025-03-21T00:00:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.youngzm.com/tags/python/</loc>
-    <lastmod>2025-03-20T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.youngzm.com/post/frontend-web-notes/6/</loc>
     <lastmod>2025-03-20T00:00:01+08:00</lastmod>

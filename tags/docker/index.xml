@@ -10,7 +10,7 @@
     <lastBuildDate>Sun, 30 Mar 2025 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>辅助教学教程: 在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务</title>
+      <title>在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务</title>
       <link>https://blog.youngzm.com/post/docker-install-mysql-redis/</link>
       <pubDate>Sun, 30 Mar 2025 00:00:01 +0800</pubDate>
       <guid>https://blog.youngzm.com/post/docker-install-mysql-redis/</guid>

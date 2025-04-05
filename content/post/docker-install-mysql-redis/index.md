@@ -1,5 +1,5 @@
 ---
-title: "辅助教学教程: 在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务"
+title: "在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务"
 date: 2025-03-30T00:00:01+08:00
 description: "一个用于辅助教学的教程，记录相关的操作步骤和注意事项。"
 categories: "教学教程"

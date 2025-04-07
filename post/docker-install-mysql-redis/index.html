@@ -231,8 +231,8 @@
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%ae%89%e8%a3%85-chocolateywindows-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8" class="nav-步骤-1安装-chocolateywindows-包管理器">
-									步骤 1：安装 Chocolatey（Windows 包管理器）
+								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-1启用-wslwindows-子系统-linux">
+									步骤 1：启用 WSL（Windows 子系统 Linux）
 								</a>
 							</li>
 						
@@ -249,8 +249,8 @@
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-2启用-wslwindows-子系统-linux">
-									步骤 2：启用 WSL（Windows 子系统 Linux）
+								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-2安装-docker-desktop">
+									步骤 2：安装 Docker Desktop
 								</a>
 							</li>
 						
@@ -267,8 +267,8 @@
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-3%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-3安装-docker-desktop">
-									步骤 3：安装 Docker Desktop
+								<a href="#%e6%ad%a5%e9%aa%a4-3%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-3部署-mysql-服务">
+									步骤 3：部署 MySQL 服务
 								</a>
 							</li>
 						
@@ -285,26 +285,8 @@
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-mysql-服务">
-									步骤 4：部署 MySQL 服务
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-5%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-5部署-redis-服务">
-									步骤 5：部署 Redis 服务
+								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-redis-服务">
+									步骤 4：部署 Redis 服务
 								</a>
 							</li>
 						
@@ -475,29 +457,22 @@
 </li>
 </ol>
 <hr>
-<h4 id="步骤-1安装-chocolateywindows-包管理器">步骤 1：安装 Chocolatey（Windows 包管理器）</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>winget install --id=Chocolatey.Chocolatey -e
-</span></span></code></pre></div><ul>
-<li><strong>作用</strong>：通过 Windows 官方工具 <code>winget</code> 安装 Chocolatey，用于后续安装 Docker Desktop。</li>
-<li><strong>注意</strong>：如果提示权限问题，请以管理员身份运行 PowerShell。</li>
-</ul>
-<hr>
-<h4 id="步骤-2启用-wslwindows-子系统-linux">步骤 2：启用 WSL（Windows 子系统 Linux）</h4>
+<h4 id="步骤-1启用-wslwindows-子系统-linux">步骤 1：启用 WSL（Windows 子系统 Linux）</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --install
 </span></span></code></pre></div><ul>
 <li><strong>作用</strong>：安装 WSL 2，这是 Docker Desktop 在 Windows 上的依赖环境。</li>
 <li><strong>完成后需重启电脑</strong>。</li>
 </ul>
 <hr>
-<h4 id="步骤-3安装-docker-desktop">步骤 3：安装 Docker Desktop</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>choco install <span style="color:#658b00">docker-desktop</span> --version=<span style="color:#b452cd">4.25</span>.0
-</span></span></code></pre></div><ul>
-<li><strong>作用</strong>：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。</li>
+<h4 id="步骤-2安装-docker-desktop">步骤 2：安装 Docker Desktop</h4>
+<pre tabindex="0"><code class="language-powershell.0" data-lang="powershell.0">winget install -e --id Docker.DockerDesktop -v 4.25.0
+</code></pre><ul>
+<li><strong>作用</strong>：通过 Winget 安装指定版本的 Docker Desktop（社区版）。</li>
 <li><strong>验证安装</strong>：<br>
 安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。</li>
 </ul>
 <hr>
-<h4 id="步骤-4部署-mysql-服务">步骤 4：部署 MySQL 服务</h4>
+<h4 id="步骤-3部署-mysql-服务">步骤 3：部署 MySQL 服务</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker run --name=<span style="color:#658b00">mysql-server</span> -p <span style="color:#b452cd">3306</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#b452cd">3306</span> -e MYSQL_ROOT_PASSWORD=<span style="color:#b452cd">123456</span> -d mysql/<span style="color:#658b00">mysql-server</span>
 </span></span></code></pre></div><ul>
 <li><strong>参数解释</strong>：
@@ -513,7 +488,7 @@
 </span></span></code></pre></div></li>
 </ul>
 <hr>
-<h4 id="步骤-5部署-redis-服务">步骤 5：部署 Redis 服务</h4>
+<h4 id="步骤-4部署-redis-服务">步骤 4：部署 Redis 服务</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>docker run -d --name=<span style="color:#658b00">redis-stack</span>-server -p <span style="color:#b452cd">6379</span><span style="color:#a61717;background-color:#e3d2d2">:</span><span style="color:#b452cd">6379</span> redis/<span style="color:#658b00">redis-stack</span>-server:latest
 </span></span></code></pre></div><ul>
 <li><strong>参数解释</strong>：
@@ -583,7 +558,7 @@
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/post/ml-python/sklearn-submodules/">
+                <a class="newer-posts" href="/post/ml-python/">
 			下回<br>sklearn 子模块详解
                 </a>
                 
@@ -801,8 +776,8 @@ Copyright 2024@YoungZM
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%ae%89%e8%a3%85-chocolateywindows-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8" class="nav-步骤-1安装-chocolateywindows-包管理器">
-									步骤 1：安装 Chocolatey（Windows 包管理器）
+								<a href="#%e6%ad%a5%e9%aa%a4-1%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-1启用-wslwindows-子系统-linux">
+									步骤 1：启用 WSL（Windows 子系统 Linux）
 								</a>
 							</li>
 						
@@ -819,8 +794,8 @@ Copyright 2024@YoungZM
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%90%af%e7%94%a8-wslwindows-%e5%ad%90%e7%b3%bb%e7%bb%9f-linux" class="nav-步骤-2启用-wslwindows-子系统-linux">
-									步骤 2：启用 WSL（Windows 子系统 Linux）
+								<a href="#%e6%ad%a5%e9%aa%a4-2%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-2安装-docker-desktop">
+									步骤 2：安装 Docker Desktop
 								</a>
 							</li>
 						
@@ -837,8 +812,8 @@ Copyright 2024@YoungZM
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-3%e5%ae%89%e8%a3%85-docker-desktop" class="nav-步骤-3安装-docker-desktop">
-									步骤 3：安装 Docker Desktop
+								<a href="#%e6%ad%a5%e9%aa%a4-3%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-3部署-mysql-服务">
+									步骤 3：部署 MySQL 服务
 								</a>
 							</li>
 						
@@ -855,26 +830,8 @@ Copyright 2024@YoungZM
 						
 						
 							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-mysql-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-mysql-服务">
-									步骤 4：部署 MySQL 服务
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%ad%a5%e9%aa%a4-5%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-5部署-redis-服务">
-									步骤 5：部署 Redis 服务
+								<a href="#%e6%ad%a5%e9%aa%a4-4%e9%83%a8%e7%bd%b2-redis-%e6%9c%8d%e5%8a%a1" class="nav-步骤-4部署-redis-服务">
+									步骤 4：部署 Redis 服务
 								</a>
 							</li>
 						

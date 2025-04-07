@@ -15,11 +15,11 @@
     
         <item>
         <title>sklearn 子模块详解</title>
-        <link>https://blog.youngzm.com/post/ml-python/sklearn-submodules/</link>
+        <link>https://blog.youngzm.com/post/ml-python/</link>
         <pubDate>Tue, 01 Apr 2025 00:00:01 +0800</pubDate>
         
-        <guid>https://blog.youngzm.com/post/ml-python/sklearn-submodules/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/ml-python/sklearn-submodules/ -&lt;p&gt;&lt;img src=&#34;./SKlearn-img.png&#34; alt=&#34;SKlearn-img&#34;&gt;
+        <guid>https://blog.youngzm.com/post/ml-python/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/ml-python/ -&lt;p&gt;&lt;img src=&#34;./Sklearn-img.png&#34; alt=&#34;SKlearn-img&#34;&gt;
 以下是对 &lt;code&gt;sklearn&lt;/code&gt; 子模块更详细的补充说明，涵盖每个模块的核心功能、关键类和典型应用场景：&lt;/p&gt;
 &lt;h3 id=&#34;1-数据预处理与特征工程&#34;&gt;&lt;strong&gt;1. 数据预处理与特征工程&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
@@ -470,7 +470,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;impute&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;compose&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://blog.youngzm.com/post/ml-python/sklearn-submodules/ - Copyright 2024@YoungZM</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://blog.youngzm.com/post/ml-python/ - Copyright 2024@YoungZM</description>
         </item>
     
     
@@ -494,29 +494,22 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;步骤-1安装-chocolateywindows-包管理器&#34;&gt;步骤 1：安装 Chocolatey（Windows 包管理器）&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install --id=Chocolatey.Chocolatey -e
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Windows 官方工具 &lt;code&gt;winget&lt;/code&gt; 安装 Chocolatey，用于后续安装 Docker Desktop。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果提示权限问题，请以管理员身份运行 PowerShell。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;步骤-2启用-wslwindows-子系统-linux&#34;&gt;步骤 2：启用 WSL（Windows 子系统 Linux）&lt;/h4&gt;
+&lt;h4 id=&#34;步骤-1启用-wslwindows-子系统-linux&#34;&gt;步骤 1：启用 WSL（Windows 子系统 Linux）&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --install
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：安装 WSL 2，这是 Docker Desktop 在 Windows 上的依赖环境。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;完成后需重启电脑&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;步骤-3安装-docker-desktop&#34;&gt;步骤 3：安装 Docker Desktop&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install &lt;span style=&#34;color:#658b00&#34;&gt;docker-desktop&lt;/span&gt; --version=&lt;span style=&#34;color:#b452cd&#34;&gt;4.25&lt;/span&gt;.0
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。&lt;/li&gt;
+&lt;h4 id=&#34;步骤-2安装-docker-desktop&#34;&gt;步骤 2：安装 Docker Desktop&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-powershell.0&#34; data-lang=&#34;powershell.0&#34;&gt;winget install -e --id Docker.DockerDesktop -v 4.25.0
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：通过 Winget 安装指定版本的 Docker Desktop（社区版）。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;验证安装&lt;/strong&gt;：&lt;br&gt;
 安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;步骤-4部署-mysql-服务&#34;&gt;步骤 4：部署 MySQL 服务&lt;/h4&gt;
+&lt;h4 id=&#34;步骤-3部署-mysql-服务&#34;&gt;步骤 3：部署 MySQL 服务&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name=&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt; -p &lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;3306&lt;/span&gt; -e MYSQL_ROOT_PASSWORD=&lt;span style=&#34;color:#b452cd&#34;&gt;123456&lt;/span&gt; -d mysql/&lt;span style=&#34;color:#658b00&#34;&gt;mysql-server&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：
@@ -532,7 +525,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;步骤-5部署-redis-服务&#34;&gt;步骤 5：部署 Redis 服务&lt;/h4&gt;
+&lt;h4 id=&#34;步骤-4部署-redis-服务&#34;&gt;步骤 4：部署 Redis 服务&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d --name=&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server -p &lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;6379&lt;/span&gt; redis/&lt;span style=&#34;color:#658b00&#34;&gt;redis-stack&lt;/span&gt;-server:latest
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;参数解释&lt;/strong&gt;：

@@ -7,6 +7,7 @@ tags: ["docker", "mysql", "redis"]
 
 draft: false
 ---
+
 ### 在 Windows 上使用 Docker 部署 MySQL 和 Redis 服务教程
 
 本教程将指导你在 **Windows 系统**上通过 Docker 快速部署 MySQL 和 Redis 服务，适用于本地开发环境搭建。
@@ -21,18 +22,7 @@ draft: false
 
 ---
 
-#### 步骤 1：安装 Chocolatey（Windows 包管理器）
-
-```powershell
-winget install --id=Chocolatey.Chocolatey -e
-```
-
-- **作用**：通过 Windows 官方工具 `winget` 安装 Chocolatey，用于后续安装 Docker Desktop。
-- **注意**：如果提示权限问题，请以管理员身份运行 PowerShell。
-
----
-
-#### 步骤 2：启用 WSL（Windows 子系统 Linux）
+#### 步骤 1：启用 WSL（Windows 子系统 Linux）
 
 ```powershell
 wsl --install
@@ -43,19 +33,19 @@ wsl --install
 
 ---
 
-#### 步骤 3：安装 Docker Desktop
+#### 步骤 2：安装 Docker Desktop
 
-```powershell
-choco install docker-desktop --version=4.25.0
+```powershell.0
+winget install -e --id Docker.DockerDesktop -v 4.25.0
 ```
 
-- **作用**：通过 Chocolatey 安装指定版本的 Docker Desktop（社区版）。
+- **作用**：通过 Winget 安装指定版本的 Docker Desktop（社区版）。
 - **验证安装**：  
   安装完成后，启动 Docker Desktop，任务栏出现鲸鱼图标即表示成功。
 
 ---
 
-#### 步骤 4：部署 MySQL 服务
+#### 步骤 3：部署 MySQL 服务
 
 ```powershell
 docker run --name=mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server
@@ -73,7 +63,7 @@ docker run --name=mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mys
 
 ---
 
-#### 步骤 5：部署 Redis 服务
+#### 步骤 4：部署 Redis 服务
 
 ```powershell
 docker run -d --name=redis-stack-server -p 6379:6379 redis/redis-stack-server:latest

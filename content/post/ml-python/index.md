@@ -8,7 +8,7 @@ tags: ["sklearn", "python", "机器学习"]
 draft: false
 ---
 
-![SKlearn-img](./SKlearn-img.png)
+![SKlearn-img](./Sklearn-img.png)
 以下是对 `sklearn` 子模块更详细的补充说明，涵盖每个模块的核心功能、关键类和典型应用场景：
 
 ### **1. 数据预处理与特征工程**

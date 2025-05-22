@@ -14,7 +14,7 @@
     
     
         <item>
-        <title>sklearn 子模块详解</title>
+        <title>Machine learning（一）：sklearn 子模块详解</title>
         <link>https://blog.youngzm.com/post/ml-python/1/</link>
         <pubDate>Tue, 01 Apr 2025 00:00:01 +0800</pubDate>
         
@@ -589,7 +589,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(九) : JavaScript的this</title>
+        <title>Front-end Web(九) : JavaScript的this</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/9/</link>
         <pubDate>Sun, 23 Mar 2025 00:00:01 +0800</pubDate>
         
@@ -728,7 +728,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(八) : JavaScript的异步事件和Promise</title>
+        <title>Front-end Web(八) : JavaScript的异步事件和Promise</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/8/</link>
         <pubDate>Sat, 22 Mar 2025 00:00:01 +0800</pubDate>
         
@@ -995,7 +995,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(七) : JavaScript的Prototype Chain和Object</title>
+        <title>Front-end Web(七) : JavaScript的Prototype Chain和Object</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/7/</link>
         <pubDate>Fri, 21 Mar 2025 00:00:01 +0800</pubDate>
         
@@ -1424,7 +1424,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(六) : 正则表达式提取和检测推荐方法-Python &amp; JavaScript</title>
+        <title>Front-end Web(六) : 正则表达式提取和检测推荐方法-Python &amp; JavaScript</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/6/</link>
         <pubDate>Thu, 20 Mar 2025 00:00:01 +0800</pubDate>
         
@@ -1654,7 +1654,7 @@
     
     
         <item>
-        <title>软件设计笔记(二) : 软件设计原则</title>
+        <title>Design Patterns(二) : 软件设计原则</title>
         <link>https://blog.youngzm.com/post/software-design-notes/2/</link>
         <pubDate>Sun, 02 Jun 2024 00:00:01 +0800</pubDate>
         
@@ -1831,7 +1831,7 @@
     
     
         <item>
-        <title>软件设计笔记(一) : 类与类之间的关系</title>
+        <title>Design Patterns(一) : 类与类之间的关系</title>
         <link>https://blog.youngzm.com/post/software-design-notes/1/</link>
         <pubDate>Sat, 01 Jun 2024 00:00:01 +0800</pubDate>
         
@@ -2007,7 +2007,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(五) : CSS3的[新]特性</title>
+        <title>Front-end Web(五) : CSS3的[新]特性</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/5/</link>
         <pubDate>Fri, 16 Feb 2024 00:00:01 +0800</pubDate>
         
@@ -2175,7 +2175,7 @@
     
     
         <item>
-        <title>前端开发学习笔记(四) : 盒子模型</title>
+        <title>Front-end Web(四) : 盒子模型</title>
         <link>https://blog.youngzm.com/post/frontend-web-notes/4/</link>
         <pubDate>Tue, 13 Feb 2024 00:00:01 +0800</pubDate>
         

@@ -1,5 +1,5 @@
 ---
-title: "sklearn 子模块详解"
+title: "Machine learning（一）：sklearn 子模块详解"
 date: 2025-04-01T00:00:01+08:00
 description: "一个用于辅助教学的教程，记录相关的操作步骤和注意事项。"
 categories: "sklearn"

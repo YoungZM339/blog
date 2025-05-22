@@ -15,12 +15,12 @@
     
         <item>
         <title>sklearn 子模块详解</title>
-        <link>https://blog.youngzm.com/post/ml-python/</link>
+        <link>https://blog.youngzm.com/post/ml-python/1/</link>
         <pubDate>Tue, 01 Apr 2025 00:00:01 +0800</pubDate>
         
-        <guid>https://blog.youngzm.com/post/ml-python/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/ml-python/ -&lt;p&gt;&lt;img src=&#34;./Sklearn-img.png&#34; alt=&#34;SKlearn-img&#34;&gt;
-以下是对 &lt;code&gt;sklearn&lt;/code&gt; 子模块更详细的补充说明，涵盖每个模块的核心功能、关键类和典型应用场景：&lt;/p&gt;
+        <guid>https://blog.youngzm.com/post/ml-python/1/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/ml-python/1/ -&lt;p&gt;&lt;img src=&#34;sklearn-img.png&#34; alt=&#34;sklearn-img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下是对 &lt;code&gt;sklearn&lt;/code&gt; 子模块更详细的补充说明，涵盖每个模块的核心功能、关键类和典型应用场景：&lt;/p&gt;
 &lt;h3 id=&#34;1-数据预处理与特征工程&#34;&gt;&lt;strong&gt;1. 数据预处理与特征工程&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -470,7 +470,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;impute&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;compose&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://blog.youngzm.com/post/ml-python/ - Copyright 2024@YoungZM</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://blog.youngzm.com/post/ml-python/1/ - Copyright 2024@YoungZM</description>
         </item>
     
     

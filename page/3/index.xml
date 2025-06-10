@@ -7,9 +7,127 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Tue, 01 Apr 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:01 +0800</lastBuildDate>
     
         <atom:link href="https://blog.youngzm.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CS571-S23 学习笔记(三) : JavaScript Bootcamp (JS3)</title>
+        <link>https://blog.youngzm.com/post/cs571-s23-notes/3/</link>
+        <pubDate>Fri, 11 Aug 2023 00:00:01 +0800</pubDate>
+        
+        <guid>https://blog.youngzm.com/post/cs571-s23-notes/3/</guid>
+        <description>YoungZM&#39;s Blog https://blog.youngzm.com/post/cs571-s23-notes/3/ -&lt;h2 id=&#34;回调函数callback-function&#34;&gt;回调函数（Callback Function）&lt;/h2&gt;
+&lt;h3 id=&#34;回调函数&#34;&gt;回调函数&lt;/h3&gt;
+&lt;p&gt;回调函数是作为参数传递给另一个函数，并在稍后执行的函数。在 JavaScript 中，回调函数常用于处理异步操作，例如处理服务器请求的响应或在特定事件发生后执行任务。它们允许非阻塞执行，并有助于管理异步代码的流程。&lt;/p&gt;
+&lt;h3 id=&#34;fetch&#34;&gt;fetch&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;fetch&lt;/code&gt;函数是 JavaScript 内置的函数，用于进行网络请求并从服务器检索资源。它返回一个 Promise，该 Promise 解析为请求的响应。&lt;code&gt;fetch&lt;/code&gt;函数常用于发起 HTTP 请求和与 API 进行交互。以下是使用&lt;code&gt;fetch&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fetch(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;https://api.example.com/data&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((response) =&amp;gt; response.json())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((data) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理检索到的数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt;((error) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理请求过程中发生的任何错误
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;slicebegl-endl-和-concatarr&#34;&gt;slice(begl, endl) 和 concat(arr)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;slice&lt;/code&gt;方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：&lt;code&gt;begl&lt;/code&gt;指定起始索引，&lt;code&gt;endl&lt;/code&gt;（可选）指定结束索引（不包含在内）。原始数组不会被修改。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;concat&lt;/code&gt;方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用&lt;code&gt;slice&lt;/code&gt;和&lt;code&gt;concat&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; fruits = [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;apple&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;banana&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;orange&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;grape&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;kiwi&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; slicedFruits = fruits.slice(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(slicedFruits); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; moreFruits = [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;pineapple&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;mango&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; mergedArray = fruits.concat(moreFruits);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(mergedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;somecb-和-everycb&#34;&gt;some(cb) 和 every(cb)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;some&lt;/code&gt;方法用于检查数组中是否至少有一个元素满足回调函数指定的条件。如果至少有一个元素满足条件，返回&lt;code&gt;true&lt;/code&gt;，否则返回&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;every&lt;/code&gt;方法用于检查数组中的所有元素是否都满足回调函数指定的条件。如果所有元素都满足条件，返回&lt;code&gt;true&lt;/code&gt;，否则返回&lt;code&gt;false&lt;/code&gt;。以下是示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;40&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;50&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; isGreaterThanTwenty = (number) =&amp;gt; number &amp;gt; &lt;span style=&#34;color:#b452cd&#34;&gt;20&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(numbers.some(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(numbers.every(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reducecb-start&#34;&gt;reduce(cb, start)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;reduce&lt;/code&gt;方法用于通过对数组的每个元素应用回调函数，将数组减少为单个值。回调函数接受四个参数：累加器、当前值、当前索引和数组本身。&lt;code&gt;reduce&lt;/code&gt;方法对每个元素执行回调函数，传递前一次迭代的累加值和当前元素，并返回最终的累加值。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;start&lt;/code&gt;参数是可选的初始值，用作累加器的初始值。如果提供了初始值，reduce 操作将从该初始值开始；否则，数组的第一个元素将作为初始值。&lt;/p&gt;
+&lt;p&gt;以下是使用&lt;code&gt;reduce&lt;/code&gt;的示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; sum = numbers.reduce(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (accumulator, currentValue) =&amp;gt; accumulator + currentValue,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(sum); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：15
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;扩展运算符spread-operator&#34;&gt;扩展运算符（Spread Operator）&lt;/h2&gt;
+&lt;p&gt;扩展运算符&lt;code&gt;...&lt;/code&gt;是 JavaScript 中的语法，允许将可迭代对象（例如数组或字符串）扩展为单独的元素。它可以在多个上下文中使用，例如函数调用、数组字面量和对象字面量。&lt;/p&gt;
+&lt;p&gt;在数组中使用扩展运算符时，可以通过将现有数组的元素组合起来创建一个新数组。它类似于&lt;code&gt;concat&lt;/code&gt;方法，但提供了更简洁的语法。以下是一个示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; array1 = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; array2 = [&lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;6&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; combinedArray = [...array1, ...array2];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(combinedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4, 5, 6]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;扩展运算符也可以用于将数组的各个元素作为参数传递给函数。以下是一个示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; numbers = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; maxNumber = &lt;span style=&#34;color:#658b00&#34;&gt;Math&lt;/span&gt;.max(...numbers);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(maxNumber); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：5
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;数据复制data-copying&#34;&gt;数据复制（Data Copying）&lt;/h2&gt;
+&lt;h3 id=&#34;引用复制reference-copy&#34;&gt;引用复制（Reference Copy）&lt;/h3&gt;
+&lt;p&gt;引用复制是一种简单的复制方法，它将原始变量的引用（内存地址）赋值给新变量。这意味着两个变量将引用相同的内存位置，当其中一个变量发生改变时，另一个变量也会受到影响。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = originalArray; &lt;span style=&#34;color:#228b22&#34;&gt;// 引用复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray.push(&lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;originalArray&lt;/code&gt; 和 &lt;code&gt;copiedArray&lt;/code&gt; 引用相同的数组。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 时，&lt;code&gt;originalArray&lt;/code&gt; 也会受到影响，因为它们引用同一个数组对象。&lt;/p&gt;
+&lt;h3 id=&#34;浅复制shallow-copy&#34;&gt;浅复制（Shallow Copy）&lt;/h3&gt;
+&lt;p&gt;浅复制创建一个新的变量，但是只复制原始变量中的值和引用。这意味着对于引用类型的数据，新变量将引用原始变量中的相同对象。当修改原始变量中的引用类型数据时，新变量也会受到影响。但是，对于原始类型的数据，新变量将拥有自己的独立副本。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalObject = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedObject = &lt;span style=&#34;color:#658b00&#34;&gt;Object&lt;/span&gt;.assign({}, originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 浅复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedObject.age = &lt;span style=&#34;color:#b452cd&#34;&gt;40&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 30 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 40 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们使用 &lt;code&gt;Object.assign()&lt;/code&gt; 方法进行浅复制。当我们修改 &lt;code&gt;copiedObject&lt;/code&gt; 的 &lt;code&gt;age&lt;/code&gt; 属性时，&lt;code&gt;originalObject&lt;/code&gt; 不受影响，因为它们拥有各自的独立副本。但是，它们共享相同的 &lt;code&gt;name&lt;/code&gt; 属性。&lt;/p&gt;
+&lt;h3 id=&#34;深复制deep-copy&#34;&gt;深复制（Deep Copy）&lt;/h3&gt;
+&lt;p&gt;深复制是创建变量的完全独立副本，包括原始变量中的所有值和引用类型数据。这意味着当修改任何一个变量时，另一个变量都不会受到影响。&lt;/p&gt;
+&lt;p&gt;由于 JavaScript 语言本身没有提供内置的深复制方法，需要使用其他方式来实现深复制，例如递归遍历对象并复制所有属性和子对象。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; deepCopy(obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typeof&lt;/span&gt; obj !== &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt; || obj === &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;null&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; obj;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; newObj = &lt;span style=&#34;color:#658b00&#34;&gt;Array&lt;/span&gt;.isArray(obj) ? [] : {};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; key &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;in&lt;/span&gt; obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    newObj[key] = deepCopy(obj[key]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; newObj;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, [&lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;]];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = deepCopy(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 深复制
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray[&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;][&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [3, 4]]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [5, 4]]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们定义了一个 &lt;code&gt;deepCopy&lt;/code&gt; 函数来实现深复制。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 中嵌套数组的值时，&lt;code&gt;originalArray&lt;/code&gt; 不受影响，因为它们是独立的副本。&lt;/p&gt;
+&lt;p&gt;需要注意的是，深复制可能会导致性能上的损耗，特别是在处理大型或嵌套层级深的对象时。因此，在实际应用中，需要根据情况权衡使用深复制的必要性和性能考虑。&lt;/p&gt;
+- https://blog.youngzm.com/post/cs571-s23-notes/3/ - Copyright 2024@YoungZM</description>
+        </item>
     
     
     
@@ -463,25 +581,6 @@ tiè 名 学习写字或绘画时临摹用的样
 &lt;p&gt;这样，你就学会了如何利用多线程快速下载腾讯QQ群文件。&lt;/p&gt;
 &lt;h2 id=&#34;本方法已经失效&#34;&gt;本方法已经失效&lt;/h2&gt;
 &lt;p&gt;原因是腾讯已经关闭了QQ群空间&lt;/p&gt;- https://blog.youngzm.com/post/qqdownload/ - Copyright 2024@YoungZM</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>About</title>
-        <link>https://blog.youngzm.com/about/</link>
-        <pubDate>Thu, 01 Jan 1970 11:11:11 +0800</pubDate>
-        
-        <guid>https://blog.youngzm.com/about/</guid>
-        <description>YoungZM&#39;s Blog https://blog.youngzm.com/about/ -&lt;h1 id=&#34;about&#34;&gt;About&lt;/h1&gt;
-&lt;p&gt;Hello!&lt;/p&gt;
-&lt;p&gt;I am Brian Yang, currently an undergraduate student majoring in Software Engineering at Henan University of Technology. I am focusing on research in Large Language Model (LLM) applications. If you have any questions or would like to discuss further, please feel free to contact me.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Email：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;mailto:YoungZM339@outlook.com&#34;&gt;YoungZM339@outlook.com&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
-&lt;li&gt;Address：&lt;a href=&#34;https://www.google.com/maps/place/Henan+University+of+Technology/@34.829495,113.5491401,17z&#34;&gt;Henan University of Technology, No. 100 Lianhua Street, Zhengzhou&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github：&lt;a href=&#34;https://github.com/youngzm339&#34;&gt;YoungZM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.youngzm.com/about/ - Copyright 2024@YoungZM</description>
         </item>
     
     

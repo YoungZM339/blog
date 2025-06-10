@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>zh</language>
     <copyright>Copyright 2024@YoungZM</copyright>
-    <lastBuildDate>Tue, 01 Apr 2025 00:00:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:01 +0800</lastBuildDate>
     <atom:link href="https://blog.youngzm.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>健康</title>
+      <link>https://blog.youngzm.com/tags/%E5%81%A5%E5%BA%B7/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/%E5%81%A5%E5%BA%B7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>学习</title>
+      <link>https://blog.youngzm.com/tags/%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:01 +0800</pubDate>
+      <guid>https://blog.youngzm.com/tags/%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Python</title>
       <link>https://blog.youngzm.com/tags/python/</link>

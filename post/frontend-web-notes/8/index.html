@@ -758,13 +758,13 @@
 </li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>console.log(<span style="color:#cd5555">&#34;1&#34;</span>); <span style="color:#228b22">// 同步任务
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>setTimeout(() =&gt; console.log(<span style="color:#cd5555">&#34;2&#34;</span>), <span style="color:#b452cd">0</span>); <span style="color:#228b22">// 宏任务
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.resolve().then(() =&gt; console.log(<span style="color:#cd5555">&#34;3&#34;</span>)); <span style="color:#228b22">// 微任务
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>console.log(<span style="color:#cd5555">&#34;4&#34;</span>); <span style="color:#228b22">// 同步任务
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 输出顺序：1 → 4 → 3 → 2
 </span></span></span></code></pre></div><hr>
 <h3 id="二promise-的设计与使用">二、Promise 的设计与使用</h3>
@@ -774,7 +774,7 @@
 </span></span><span style="display:flex;"><span>  getMoreData(a, <span style="color:#8b008b;font-weight:bold">function</span> (b) {
 </span></span><span style="display:flex;"><span>    getMoreData(b, <span style="color:#8b008b;font-weight:bold">function</span> (c) {
 </span></span><span style="display:flex;"><span>      <span style="color:#228b22">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    });
+</span></span></span><span style="display:flex;"><span>    });
 </span></span><span style="display:flex;"><span>  });
 </span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div><p>Promise 通过链式调用（Chaining）和统一错误处理解决了这一问题。</p>
@@ -793,7 +793,7 @@
 <p>使用 <code>new Promise()</code> 构造函数，传入执行器函数（executor）：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> promise = <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Promise</span>((resolve, reject) =&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 异步操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  setTimeout(() =&gt; {
+</span></span></span><span style="display:flex;"><span>  setTimeout(() =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">const</span> success = <span style="color:#658b00">Math</span>.random() &gt; <span style="color:#b452cd">0.5</span>;
 </span></span><span style="display:flex;"><span>    success ? resolve(<span style="color:#cd5555">&#34;Success!&#34;</span>) : reject(<span style="color:#cd5555">&#34;Error!&#34;</span>);
 </span></span><span style="display:flex;"><span>  }, <span style="color:#b452cd">1000</span>);
@@ -949,22 +949,22 @@
 </ul>
 <p><strong>示例</strong>：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 普通值
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#658b00">Promise</span>.resolve(<span style="color:#b452cd">42</span>).then(console.log); <span style="color:#228b22">// 42
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.resolve(<span style="color:#b452cd">42</span>).then(console.log); <span style="color:#228b22">// 42
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// Promise 对象
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> p = <span style="color:#658b00">Promise</span>.resolve(<span style="color:#cd5555">&#34;hello&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> p = <span style="color:#658b00">Promise</span>.resolve(<span style="color:#cd5555">&#34;hello&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.resolve(p) === p; <span style="color:#228b22">// true
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// thenable 对象
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> thenable = {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> thenable = {
 </span></span><span style="display:flex;"><span>  then(resolve) {
 </span></span><span style="display:flex;"><span>    resolve(<span style="color:#cd5555">&#34;done&#34;</span>);
 </span></span><span style="display:flex;"><span>  },
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.resolve(thenable).then(console.log); <span style="color:#228b22">// &#39;done&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 嵌套 thenable
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> nestedThenable = {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> nestedThenable = {
 </span></span><span style="display:flex;"><span>  then(resolve) {
 </span></span><span style="display:flex;"><span>    resolve({ then: (r) =&gt; r(<span style="color:#b452cd">100</span>) });
 </span></span><span style="display:flex;"><span>  },
@@ -979,11 +979,11 @@
 <p><strong>功能</strong>：返回一个立即 reject 的 Promise，参数作为拒绝原因。</p>
 <p><strong>示例</strong>：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 拒绝原因可以是任意类型
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#658b00">Promise</span>.reject(<span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Error</span>(<span style="color:#cd5555">&#34;失败&#34;</span>)).<span style="color:#8b008b;font-weight:bold">catch</span>((err) =&gt; console.log(err.message)); <span style="color:#228b22">// &#39;失败&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#658b00">Promise</span>.reject(<span style="color:#cd5555">&#34;直接拒绝&#34;</span>).<span style="color:#8b008b;font-weight:bold">catch</span>(console.log); <span style="color:#228b22">// &#39;直接拒绝&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.reject(<span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Error</span>(<span style="color:#cd5555">&#34;失败&#34;</span>)).<span style="color:#8b008b;font-weight:bold">catch</span>((err) =&gt; console.log(err.message)); <span style="color:#228b22">// &#39;失败&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.reject(<span style="color:#cd5555">&#34;直接拒绝&#34;</span>).<span style="color:#8b008b;font-weight:bold">catch</span>(console.log); <span style="color:#228b22">// &#39;直接拒绝&#39;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 即使参数是 Promise，也会作为原因传递
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> p = <span style="color:#658b00">Promise</span>.resolve(<span style="color:#cd5555">&#34;test&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> p = <span style="color:#658b00">Promise</span>.resolve(<span style="color:#cd5555">&#34;test&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#658b00">Promise</span>.reject(p).<span style="color:#8b008b;font-weight:bold">catch</span>(console.log); <span style="color:#228b22">// 打印 Promise 对象，而非 &#39;test&#39;
 </span></span></span></code></pre></div><p><strong>注意事项</strong>：</p>
 <ul>

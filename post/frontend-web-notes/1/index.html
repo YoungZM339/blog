@@ -440,7 +440,7 @@
 <p>闭包允许在对象外部创建私有变量，这些变量只能通过特定的函数访问和修改，而不能直接从外部访问。这有助于封装对象的状态，实现数据的私有化和保护。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> createCounter() {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">let</span> count = <span style="color:#b452cd">0</span>; <span style="color:#228b22">// 私有变量
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">return</span> {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> {
 </span></span><span style="display:flex;"><span>    increment: <span style="color:#8b008b;font-weight:bold">function</span> () {
 </span></span><span style="display:flex;"><span>      count++;
 </span></span><span style="display:flex;"><span>    },
@@ -456,7 +456,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> counter = createCounter();
 </span></span><span style="display:flex;"><span>counter.increment();
 </span></span><span style="display:flex;"><span>console.log(counter.getCount()); <span style="color:#228b22">// 输出：1
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(counter.count); <span style="color:#228b22">// 输出：undefined，因为count是私有的
+</span></span></span><span style="display:flex;"><span>console.log(counter.count); <span style="color:#228b22">// 输出：undefined，因为count是私有的
 </span></span></span></code></pre></div><h3 id="2-创建模块">2. 创建模块</h3>
 <p>闭包允许模块化代码，可以创建暴露特定功能的公共 API，同时隐藏内部实现的细节。这是一种非常强大的设计模式，广泛用于现代 JavaScript 开发中，以构建可维护和可扩展的应用程序。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> myModule = (<span style="color:#8b008b;font-weight:bold">function</span> () {

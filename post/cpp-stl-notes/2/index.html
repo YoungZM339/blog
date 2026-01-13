@@ -421,33 +421,33 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
-</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums(<span style="color:#b452cd">5</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 fill 将元素设置为 10
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::fill(nums.begin(), nums.end(), <span style="color:#b452cd">10</span>);
+</span></span></span><span style="display:flex;"><span>    std::fill(nums.begin(), nums.end(), <span style="color:#b452cd">10</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：10 10 10 10 10
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 fill_n 将前3个元素设置为 5
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::fill_n(nums.begin(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">5</span>);
+</span></span></span><span style="display:flex;"><span>    std::fill_n(nums.begin(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">5</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：5 5 5 10 10
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 使用 generate 生成随机数
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::generate(nums.begin(), nums.end(), []() { <span style="color:#8b008b;font-weight:bold">return</span> rand() % <span style="color:#b452cd">100</span>; });
+</span></span></span><span style="display:flex;"><span>    std::generate(nums.begin(), nums.end(), []() { <span style="color:#8b008b;font-weight:bold">return</span> rand() % <span style="color:#b452cd">100</span>; });
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：随机生成的 5 个数
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -464,17 +464,17 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
-</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums1{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>};
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums2{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">6</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 检查两个范围内的元素是否相等
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">bool</span> isEqual = std::equal(nums1.begin(), nums1.end(), nums2.begin());
+</span></span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">bool</span> isEqual = std::equal(nums1.begin(), nums1.end(), nums2.begin());
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;Is equal: &#34;</span> &lt;&lt; (isEqual ? <span style="color:#cd5555">&#34;true&#34;</span> : <span style="color:#cd5555">&#34;false&#34;</span>) &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 查找第一个不相等的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> mismatchPair = std::mismatch(nums1.begin(), nums1.end(), nums2.begin());
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">auto</span> mismatchPair = std::mismatch(nums1.begin(), nums1.end(), nums2.begin());
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">if</span> (mismatchPair.first != nums1.end()) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; <span style="color:#cd5555">&#34;First mismatch: &#34;</span> &lt;&lt; *mismatchPair.first &lt;&lt; <span style="color:#cd5555">&#34; - &#34;</span> &lt;&lt; *mismatchPair.second &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>    } <span style="color:#8b008b;font-weight:bold">else</span> {
@@ -482,7 +482,7 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 按字典序比较两个范围内的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">bool</span> isLess = std::lexicographical_compare(nums1.begin(), nums1.end(), nums2.begin(), nums2.end());
+</span></span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">bool</span> isLess = std::lexicographical_compare(nums1.begin(), nums1.end(), nums2.begin(), nums2.end());
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;Is nums1 &lt; nums2: &#34;</span> &lt;&lt; (isLess ? <span style="color:#cd5555">&#34;true&#34;</span> : <span style="color:#cd5555">&#34;false&#34;</span>) &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#b452cd">0</span>;
@@ -498,26 +498,26 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
-</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">6</span>, <span style="color:#b452cd">3</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 移除所有等于 3 的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd = std::remove(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd = std::remove(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>);
 </span></span><span style="display:flex;"><span>    nums.erase(newEnd, nums.end());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 4 5 6
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 移除所有大于 3 的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd2 = std::remove_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; });
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd2 = std::remove_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; });
 </span></span><span style="display:flex;"><span>    nums.erase(newEnd2, nums.end());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 3
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -525,10 +525,10 @@
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums(nums.size());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 拷贝除了等于 2 的元素以外的所有元素到新的容器
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd3 = std::remove_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">2</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd3 = std::remove_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">2</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 3 0
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums.begin(), newEnd3); ++i) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums.begin(), newEnd3); ++i) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; newNums[i] &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -536,10 +536,10 @@
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums2(nums.size());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 拷贝除了小于等于 1 的元素以外的所有元素到新的容器
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd4 = std::remove_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; });
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">auto</span> newEnd4 = std::remove_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; });
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：3
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums2.begin(), newEnd4); ++i) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = <span style="color:#b452cd">0</span>; i &lt; std::distance(newNums2.begin(), newEnd4); ++i) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; newNums2[i] &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -557,24 +557,24 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
-</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有等于 3 的元素替换为 6
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">6</span>);
+</span></span></span><span style="display:flex;"><span>    std::replace(nums.begin(), nums.end(), <span style="color:#b452cd">3</span>, <span style="color:#b452cd">6</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 6 4 5
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有大于 3 的元素替换为 0
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; }, <span style="color:#b452cd">0</span>);
+</span></span></span><span style="display:flex;"><span>    std::replace_if(nums.begin(), nums.end(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &gt; <span style="color:#b452cd">3</span>; }, <span style="color:#b452cd">0</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 0 0 0
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -582,10 +582,10 @@
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums(nums.size());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有等于 0 的元素替换为 9，并拷贝到新的容器
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">0</span>, <span style="color:#b452cd">9</span>);
+</span></span></span><span style="display:flex;"><span>    std::replace_copy(nums.begin(), nums.end(), newNums.begin(), <span style="color:#b452cd">0</span>, <span style="color:#b452cd">9</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：1 2 9 9 9
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -593,10 +593,10 @@
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; newNums2(nums.size());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 将所有小于等于 1 的元素替换为 8，并拷贝到新的容器
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::replace_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; }, <span style="color:#b452cd">8</span>);
+</span></span></span><span style="display:flex;"><span>    std::replace_copy_if(nums.begin(), nums.end(), newNums2.begin(), [](<span style="color:#00688b;font-weight:bold">int</span> num) { <span style="color:#8b008b;font-weight:bold">return</span> num &lt;= <span style="color:#b452cd">1</span>; }, <span style="color:#b452cd">8</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：8 2 9 9 9
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums2) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : newNums2) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
@@ -613,32 +613,32 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;iostream&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;algorithm&gt;</span><span style="color:#1e889b">
 </span></span></span><span style="display:flex;"><span><span style="color:#1e889b">#include</span> <span style="color:#1e889b">&lt;vector&gt;</span><span style="color:#1e889b">
-</span></span></span><span style="display:flex;"><span><span style="color:#1e889b"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">int</span> a = <span style="color:#b452cd">1</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#00688b;font-weight:bold">int</span> b = <span style="color:#b452cd">2</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个变量的值
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::swap(a, b);
+</span></span></span><span style="display:flex;"><span>    std::swap(a, b);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;a: &#34;</span> &lt;&lt; a &lt;&lt; std::endl; <span style="color:#228b22">// 输出结果：2
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;b: &#34;</span> &lt;&lt; b &lt;&lt; std::endl; <span style="color:#228b22">// 输出结果：1
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;b: &#34;</span> &lt;&lt; b &lt;&lt; std::endl; <span style="color:#228b22">// 输出结果：1
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums1{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>, <span style="color:#b452cd">3</span>};
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums2{<span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">6</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个迭代器指向的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::iter_swap(nums1.begin(), nums2.begin());
+</span></span></span><span style="display:flex;"><span>    std::iter_swap(nums1.begin(), nums2.begin());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums1: 4 2 3
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums1: &#34;</span>;
+</span></span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums1: &#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums1) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums2: 1 5 6
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums2: &#34;</span>;
+</span></span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums2: &#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums2) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
@@ -648,17 +648,17 @@
 </span></span><span style="display:flex;"><span>    std::vector&lt;<span style="color:#00688b;font-weight:bold">int</span>&gt; nums4{<span style="color:#b452cd">4</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">6</span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 交换两个范围内的元素
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::swap_ranges(nums3.begin(), nums3.end(), nums4.begin());
+</span></span></span><span style="display:flex;"><span>    std::swap_ranges(nums3.begin(), nums3.end(), nums4.begin());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums3: 4 5 6
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums3: &#34;</span>;
+</span></span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums3: &#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums3) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    std::cout &lt;&lt; std::endl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 输出结果：nums4: 1 2 3
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums4: &#34;</span>;
+</span></span></span><span style="display:flex;"><span>    std::cout &lt;&lt; <span style="color:#cd5555">&#34;nums4: &#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> num : nums4) {
 </span></span><span style="display:flex;"><span>        std::cout &lt;&lt; num &lt;&lt; <span style="color:#cd5555">&#34; &#34;</span>;
 </span></span><span style="display:flex;"><span>    }

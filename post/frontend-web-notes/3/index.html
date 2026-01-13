@@ -501,13 +501,13 @@
 <p>语义化标签可以使用 JavaScript 和 CSS 来选择和操作，就像其他 HTML 元素一样。可以使用各种选择器和操作方法来选择和修改语义化标签。</p>
 <p>在 JavaScript 中，可以使用<code>querySelector</code>和<code>querySelectorAll</code>方法来选择语义化标签。这些方法通过传递选择器作为参数，返回匹配的元素。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 选择单个语义化标签
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> header = <span style="color:#658b00">document</span>.querySelector(<span style="color:#cd5555">&#34;header&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> header = <span style="color:#658b00">document</span>.querySelector(<span style="color:#cd5555">&#34;header&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 选择多个语义化标签
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> sections = <span style="color:#658b00">document</span>.querySelectorAll(<span style="color:#cd5555">&#34;section&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> sections = <span style="color:#658b00">document</span>.querySelectorAll(<span style="color:#cd5555">&#34;section&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 对选择的语义化标签进行操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>header.classList.add(<span style="color:#cd5555">&#34;highlight&#34;</span>);
+</span></span></span><span style="display:flex;"><span>header.classList.add(<span style="color:#cd5555">&#34;highlight&#34;</span>);
 </span></span><span style="display:flex;"><span>sections.forEach((section) =&gt; {
 </span></span><span style="display:flex;"><span>  section.style.backgroundColor = <span style="color:#cd5555">&#34;lightgray&#34;</span>;
 </span></span><span style="display:flex;"><span>});
@@ -533,71 +533,71 @@
 </span></span></code></pre></div><h3 id="web-存储">Web 存储</h3>
 <p>HTML5 引入了 Web 存储 API，包括本地存储（localStorage）和会话存储（sessionStorage）。这些 API 允许在客户端存储数据，以便离线使用或持久保存用户的数据。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 存储数据到本地存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;John&#34;</span>);
+</span></span></span><span style="display:flex;"><span>localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;John&#34;</span>);
 </span></span><span style="display:flex;"><span>localStorage.setItem(<span style="color:#cd5555">&#34;age&#34;</span>, <span style="color:#cd5555">&#34;25&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 获取本地存储中的数据
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> age = localStorage.getItem(<span style="color:#cd5555">&#34;age&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>console.log(username); <span style="color:#228b22">// 输出 &#34;John&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(age); <span style="color:#228b22">// 输出 &#34;25&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>console.log(age); <span style="color:#228b22">// 输出 &#34;25&#34;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 删除本地存储中的数据
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.removeItem(<span style="color:#cd5555">&#34;age&#34;</span>);
+</span></span></span><span style="display:flex;"><span>localStorage.removeItem(<span style="color:#cd5555">&#34;age&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 清空本地存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>localStorage.clear();
+</span></span></span><span style="display:flex;"><span>localStorage.clear();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 存储数据到会话存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.setItem(<span style="color:#cd5555">&#34;theme&#34;</span>, <span style="color:#cd5555">&#34;dark&#34;</span>);
+</span></span></span><span style="display:flex;"><span>sessionStorage.setItem(<span style="color:#cd5555">&#34;theme&#34;</span>, <span style="color:#cd5555">&#34;dark&#34;</span>);
 </span></span><span style="display:flex;"><span>sessionStorage.setItem(<span style="color:#cd5555">&#34;language&#34;</span>, <span style="color:#cd5555">&#34;en&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 获取会话存储中的数据
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> theme = sessionStorage.getItem(<span style="color:#cd5555">&#34;theme&#34;</span>);
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> theme = sessionStorage.getItem(<span style="color:#cd5555">&#34;theme&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> language = sessionStorage.getItem(<span style="color:#cd5555">&#34;language&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>console.log(theme); <span style="color:#228b22">// 输出 &#34;dark&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(language); <span style="color:#228b22">// 输出 &#34;en&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>console.log(language); <span style="color:#228b22">// 输出 &#34;en&#34;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 删除会话存储中的数据
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.removeItem(<span style="color:#cd5555">&#34;language&#34;</span>);
+</span></span></span><span style="display:flex;"><span>sessionStorage.removeItem(<span style="color:#cd5555">&#34;language&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 清空会话存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>sessionStorage.clear();
+</span></span></span><span style="display:flex;"><span>sessionStorage.clear();
 </span></span></code></pre></div><h4 id="web-存储和身份验证">Web 存储和身份验证</h4>
 <p>基于 JWT（JSON Web Token）的登录认证是一种常见的身份验证机制。JWT 是一种开放标准（RFC 7519），用于在网络应用间安全传递声明。它由三部分组成：头部（header）、载荷（payload）和签名（signature）。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 存储JWT到本地存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> saveJWT(jwt) {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> saveJWT(jwt) {
 </span></span><span style="display:flex;"><span>  localStorage.setItem(<span style="color:#cd5555">&#34;jwt&#34;</span>, jwt);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 验证JWT
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> verifyJWT() {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> verifyJWT() {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> jwt = localStorage.getItem(<span style="color:#cd5555">&#34;jwt&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span> (jwt) {
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 执行JWT验证的操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">true</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">true</span>;
 </span></span><span style="display:flex;"><span>  } <span style="color:#8b008b;font-weight:bold">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">false</span>;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 登录操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> login() {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> login() {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> username = <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;username&#34;</span>).value;
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> password = <span style="color:#658b00">document</span>.getElementById(<span style="color:#cd5555">&#34;password&#34;</span>).value;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 发送用户名和密码到服务器进行验证
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#228b22">// 如果验证成功，则获取并保存JWT到本地存储
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">const</span> jwt = <span style="color:#cd5555">&#34;example_jwt&#34;</span>;
+</span></span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 如果验证成功，则获取并保存JWT到本地存储
+</span></span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">const</span> jwt = <span style="color:#cd5555">&#34;example_jwt&#34;</span>;
 </span></span><span style="display:flex;"><span>  saveJWT(jwt);
 </span></span><span style="display:flex;"><span>  alert(<span style="color:#cd5555">&#34;登录成功！&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#228b22">// 执行登录成功后的操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 注销操作
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> logout() {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> logout() {
 </span></span><span style="display:flex;"><span>  localStorage.removeItem(<span style="color:#cd5555">&#34;jwt&#34;</span>);
 </span></span><span style="display:flex;"><span>  alert(<span style="color:#cd5555">&#34;已注销！&#34;</span>);
 </span></span><span style="display:flex;"><span>}

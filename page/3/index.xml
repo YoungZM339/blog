@@ -28,10 +28,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((response) =&amp;gt; response.json())
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .then((data) =&amp;gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理检索到的数据
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  })
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  })
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt;((error) =&amp;gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#228b22&#34;&gt;// 处理请求过程中发生的任何错误
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;slicebegl-endl-和-concatarr&#34;&gt;slice(begl, endl) 和 concat(arr)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;slice&lt;/code&gt;方法用于提取数组的一部分，并返回包含所选元素的新数组。它接受两个参数：&lt;code&gt;begl&lt;/code&gt;指定起始索引，&lt;code&gt;endl&lt;/code&gt;（可选）指定结束索引（不包含在内）。原始数组不会被修改。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;concat&lt;/code&gt;方法用于合并两个或多个数组，并返回一个新数组。它不会修改原始数组。以下是使用&lt;code&gt;slice&lt;/code&gt;和&lt;code&gt;concat&lt;/code&gt;的示例：&lt;/p&gt;
@@ -39,7 +39,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; slicedFruits = fruits.slice(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(slicedFruits); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; moreFruits = [&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;pineapple&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;mango&amp;#34;&lt;/span&gt;];
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; mergedArray = fruits.concat(moreFruits);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(mergedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;grape&amp;#39;, &amp;#39;kiwi&amp;#39;, &amp;#39;pineapple&amp;#39;, &amp;#39;mango&amp;#39;]
@@ -51,7 +51,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; isGreaterThanTwenty = (number) =&amp;gt; number &amp;gt; &lt;span style=&#34;color:#b452cd&#34;&gt;20&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(numbers.some(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：true
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(numbers.every(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(numbers.every(isGreaterThanTwenty)); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：false
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reducecb-start&#34;&gt;reduce(cb, start)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;reduce&lt;/code&gt;方法用于通过对数组的每个元素应用回调函数，将数组减少为单个值。回调函数接受四个参数：累加器、当前值、当前索引和数组本身。&lt;code&gt;reduce&lt;/code&gt;方法对每个元素执行回调函数，传递前一次迭代的累加值和当前元素，并返回最终的累加值。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;start&lt;/code&gt;参数是可选的初始值，用作累加器的初始值。如果提供了初始值，reduce 操作将从该初始值开始；否则，数组的第一个元素将作为初始值。&lt;/p&gt;
@@ -84,21 +84,21 @@
 &lt;p&gt;引用复制是一种简单的复制方法，它将原始变量的引用（内存地址）赋值给新变量。这意味着两个变量将引用相同的内存位置，当其中一个变量发生改变时，另一个变量也会受到影响。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;];
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = originalArray; &lt;span style=&#34;color:#228b22&#34;&gt;// 引用复制
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray.push(&lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, 3, 4]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，&lt;code&gt;originalArray&lt;/code&gt; 和 &lt;code&gt;copiedArray&lt;/code&gt; 引用相同的数组。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 时，&lt;code&gt;originalArray&lt;/code&gt; 也会受到影响，因为它们引用同一个数组对象。&lt;/p&gt;
 &lt;h3 id=&#34;浅复制shallow-copy&#34;&gt;浅复制（Shallow Copy）&lt;/h3&gt;
 &lt;p&gt;浅复制创建一个新的变量，但是只复制原始变量中的值和引用。这意味着对于引用类型的数据，新变量将引用原始变量中的相同对象。当修改原始变量中的引用类型数据时，新变量也会受到影响。但是，对于原始类型的数据，新变量将拥有自己的独立副本。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalObject = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt; };
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedObject = &lt;span style=&#34;color:#658b00&#34;&gt;Object&lt;/span&gt;.assign({}, originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 浅复制
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedObject.age = &lt;span style=&#34;color:#b452cd&#34;&gt;40&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 30 }
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 40 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(copiedObject); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：{ name: &amp;#39;John&amp;#39;, age: 40 }
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们使用 &lt;code&gt;Object.assign()&lt;/code&gt; 方法进行浅复制。当我们修改 &lt;code&gt;copiedObject&lt;/code&gt; 的 &lt;code&gt;age&lt;/code&gt; 属性时，&lt;code&gt;originalObject&lt;/code&gt; 不受影响，因为它们拥有各自的独立副本。但是，它们共享相同的 &lt;code&gt;name&lt;/code&gt; 属性。&lt;/p&gt;
 &lt;h3 id=&#34;深复制deep-copy&#34;&gt;深复制（Deep Copy）&lt;/h3&gt;
 &lt;p&gt;深复制是创建变量的完全独立副本，包括原始变量中的所有值和引用类型数据。这意味着当修改任何一个变量时，另一个变量都不会受到影响。&lt;/p&gt;
@@ -119,11 +119,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; originalArray = [&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;, [&lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;]];
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;let&lt;/span&gt; copiedArray = deepCopy(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 深复制
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;copiedArray[&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;][&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(originalArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [3, 4]]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [5, 4]]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(copiedArray); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出：[1, 2, [5, 4]]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面的示例中，我们定义了一个 &lt;code&gt;deepCopy&lt;/code&gt; 函数来实现深复制。当我们修改 &lt;code&gt;copiedArray&lt;/code&gt; 中嵌套数组的值时，&lt;code&gt;originalArray&lt;/code&gt; 不受影响，因为它们是独立的副本。&lt;/p&gt;
 &lt;p&gt;需要注意的是，深复制可能会导致性能上的损耗，特别是在处理大型或嵌套层级深的对象时。因此，在实际应用中，需要根据情况权衡使用深复制的必要性和性能考虑。&lt;/p&gt;
 - https://blog.youngzm.com/post/cs571-s23-notes/3/ - Copyright 2024@YoungZM</description>
@@ -142,17 +142,17 @@
 &lt;h3 id=&#34;显式类型转换explicit-type-conversion&#34;&gt;显式类型转换（Explicit Type Conversion）：&lt;/h3&gt;
 &lt;p&gt;使用内置函数进行类型转换：JavaScript 提供了一些内置函数，如&lt;code&gt;Number()&lt;/code&gt;、&lt;code&gt;String()&lt;/code&gt;、&lt;code&gt;Boolean()&lt;/code&gt;等，可以将其他类型转换为数字、字符串或布尔值。例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = &lt;span style=&#34;color:#658b00&#34;&gt;Number&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;42&amp;#34;&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将字符串转换为数字
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#658b00&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;123&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为字符串
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; bool = &lt;span style=&#34;color:#658b00&#34;&gt;Boolean&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为布尔值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#658b00&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;123&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为字符串
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; bool = &lt;span style=&#34;color:#658b00&#34;&gt;Boolean&lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;); &lt;span style=&#34;color:#228b22&#34;&gt;// 将数字转换为布尔值
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用一元加号（+）进行类型转换：一元加号可以将字符串转换为数字。例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = +&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;42&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 将字符串转换为数字
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;隐式类型转换implicit-type-conversion&#34;&gt;隐式类型转换（Implicit Type Conversion）：&lt;/h3&gt;
 &lt;p&gt;字符串与数字的隐式转换：在某些情况下，JavaScript 会自动进行字符串与数字之间的转换。例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; result = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt; + &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为字符串&amp;#34;34&amp;#34;，因为加号运算符在操作数中有一个字符串，所以将数字转换为字符串并进行字符串拼接
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; total = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt; - &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; total = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt; - &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为数字5，因为减号运算符只适用于数字，所以将字符串转换为数字进行运算
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;布尔值与其他类型的隐式转换：布尔值在需要转换为其他类型时，会被隐式地转换为相应的值。例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; num = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;true&lt;/span&gt; + &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为数字2，因为true会被转换为数字1
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; + &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;var&lt;/span&gt; str = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; + &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#228b22&#34;&gt;// 结果为字符串&amp;#34;falsehello&amp;#34;，因为false会被转换为字符串&amp;#34;false&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;foreach&#34;&gt;forEach&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;forEach&lt;/code&gt; 是 JavaScript 数组的一个方法，用于遍历数组并对每个元素执行指定的操作。它接受一个回调函数作为参数，该回调函数会在数组的每个元素上被调用一次。&lt;/p&gt;
 &lt;p&gt;使用示例：&lt;/p&gt;
@@ -235,7 +235,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;John&amp;#34;, &amp;#34;age&amp;#34;: 30, &amp;#34;isStudent&amp;#34;: false}&amp;#39;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonObject = JSON.parse(jsonString);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonObject.name); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#34;John&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; person = { name: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;John&amp;#34;&lt;/span&gt;, age: &lt;span style=&#34;color:#b452cd&#34;&gt;30&lt;/span&gt;, isStudent: &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt; };
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; jsonString2 = JSON.stringify(person);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(jsonString2); &lt;span style=&#34;color:#228b22&#34;&gt;// 输出: &amp;#39;{&amp;#34;name&amp;#34;:&amp;#34;John&amp;#34;,&amp;#34;age&amp;#34;:30,&amp;#34;isStudent&amp;#34;:false}&amp;#39;
@@ -260,7 +260,8 @@
 &lt;p&gt;近些日子不是很太平，又是一轮大潮席卷全国，蜷居在噪杂的寝室里常常有所事但也无所获。虽然在看到苗头的时候已经做了些心理和物质上的准备，可是现状还是引得心里发慌。不幸的是，视目前发展情况，短期内似乎是无法恢复正常了。“COVID夺走了我的青春”，真的不是闹着玩的。&lt;/p&gt;
 &lt;p&gt;一瞬间，还太多东西要讲，不如先点一个逗号，以后再慢慢讲吧。毕竟这段故事，还在纸上书写呢。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;“无边的海洋里漂流的小船，不知何时就会被狂风所倾覆；而小船上平凡的我们，也只能怀着渺茫的希望，跟随着舵手指引的航向前行吧。——[2019年信息学竞赛十二省联考]希望”&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;2022年10月22日04时15分写毕&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./book+room2.jpg&#34; alt=&#34;book+room2.jpg&#34;&gt;)&lt;/p&gt;- https://blog.youngzm.com/post/remember-those-days/ - Copyright 2024@YoungZM</description>
         </item>
@@ -375,7 +376,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;依据教育部《普通高中课程方案（实验）》、《河南省普通高中课程设置方案（试行）》和《河南省普通高中学业水平考试方案》等有关文件精神，依据各学科课程标准对必修内容的基本要求进行命题。从知识与技能，过程与方法，情感、态度与价值观等方面考查学生的学习情况，同时考查学生灵活应用知识分析解决实际问题的能力。各学科具体考试范围如下：&lt;br&gt;
 信息技术：《普通高中信息技术课程标准（实验）》中必修学分（4学分）规定的学习内容，即必修模块“信息技术基础”和一个选修模块。考生须从“选修1：算法与程序设计”、“选修2：多媒体技术应用”、“选修3：网络技术应用”和“选修4：数据管理技术”中任意选考一个模块。
-&lt;a href=&#34;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&#34;&gt;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;a href=&#34;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&#34;&gt;http://www.haedu.gov.cn/2019/11/05/1572917323941.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;粗略看了看学业水平考试考试说明，其实并没有我想象中的那么“低幼”，比如在操作题中：&lt;/p&gt;
 &lt;p&gt;“选修1：算法与程序设计”：需要学会利用Visual Basic编程，并掌握一些简单的算法（比如输出九九乘法表）和算法概念的相关知识。&lt;/p&gt;
 &lt;p&gt;“选修2：多媒体技术应用”：需要学会利用Photoshop和Flash完成图像或动画的编辑。&lt;/p&gt;
@@ -444,7 +446,8 @@ PDU:fragment 段；&lt;br&gt;
 作用：控制应用程序；&lt;br&gt;
 典型协议：telnet, ssh, http, ftp, smtp, rip, BGP, (未完待续)&lt;br&gt;
 备注：为应用程序提供网络服务；
-&lt;a href=&#34;https://www.runoob.com/tcpip/tcpip-intro.html&#34;&gt;https://www.runoob.com/tcpip/tcpip-intro.html&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;a href=&#34;https://www.runoob.com/tcpip/tcpip-intro.html&#34;&gt;https://www.runoob.com/tcpip/tcpip-intro.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;好吧，我输了，我是真的不会。&lt;/p&gt;
 &lt;p&gt;选修部分的填空题有两道，这是第二道，第一道我也写错了，但是我觉得实在是可惜：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;mailto:aaaaa@sina.cn&#34;&gt;aaaaa@sina.cn&lt;/a&gt;在Outlook上发送邮件，发信服务器应是：__收信服务器应是：__(填空题）&lt;/p&gt;
@@ -516,13 +519,15 @@ tie 1 邀请客人的通知:请 &lt;del&gt;。 2 旧时
 tie
 tiè 名 学习写字或绘画时临摹用的样
 本:碑~|习字~|画~|临 ~。
-另见 1295 页 tie;1296 页 tiě。&lt;/p&gt;&lt;/blockquote&gt;
+另见 1295 页 tie;1296 页 tiě。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;查阅词语列表，词典中仅有注明“帖子”而无“贴子”，这是否证明“帖子”是正确的而“贴子”从来就不存在呢？&lt;/p&gt;
 &lt;p&gt;但我们知道“百度贴吧”，其中的功能如“发表新贴”“精品贴”均是“贴”，丝毫未提“帖”这一字，而且不少中文网络社区都使用“贴子”而非“帖子”。这是否是因为百度方面一时“打错了字”，后来又随着贴吧的发展火遍整个中文互联网后创造的一个新词语呢？&lt;/p&gt;
 &lt;p&gt;我在网络搜索时发现了前百度产品产品委员会成员边江的知乎回答：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“说个小故事 1，这个“贴”和“帖”的区别，主要是当时希望能够扣住“贴吧”的品牌。所以最初使用了这贴字。2,  期间有过一段时间改到了“帖”(新来的同学觉得是个错别字)，后来被我要求又改回去了。这个“贴子”至此就成为了贴吧的一个特征。”
-&lt;a href=&#34;https://www.zhihu.com/question/19678782/answer/12925529&#34;&gt;应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;a href=&#34;https://www.zhihu.com/question/19678782/answer/12925529&#34;&gt;应该叫「帖子」还是叫「贴子」？ - pmbian的回答 - 知乎&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;这是否证明了我的观点？
 然而我又使用搜索引擎设置时间段功能搜索后却发现早在百度贴吧问世（2003年11月25日）以前，CSDN论坛就已经有“贴子”一词出现：
 &lt;img src=&#34;./2020-06-17%20012303.png&#34; alt=&#34;png&#34;&gt;
@@ -552,11 +557,13 @@ tiè 名 学习写字或绘画时临摹用的样
 &lt;p&gt;1.获取QQ群文件的下载直链
 2.使用现有的多线程下载工具进行多线程下载&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;当然，本思路也普遍适用于提升 仅限制单个线程下载速度的下载 的下载速度（经测试下载百度云盘文件用此方法开太多线程会导致404，不过少一些速度也很快）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;当然，本思路也普遍适用于提升 仅限制单个线程下载速度的下载 的下载速度（经测试下载百度云盘文件用此方法开太多线程会导致404，不过少一些速度也很快）&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;实现过程&#34;&gt;实现过程&lt;/h2&gt;
 &lt;p&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;我们这里仅用Windows 10操作系统，Chrome游览器和洛谷群群文件进行演示&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;经过一番搜索，我发现QQ群群文件是有页面版的，我们不妨登入页面：
 &lt;a href=&#34;http://qun.qzone.qq.com/group&#34;&gt;http://qun.qzone.qq.com/group&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当然，你也可以使用链接&lt;/p&gt;

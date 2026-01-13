@@ -831,14 +831,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
 </span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Cookie
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    Cookies.set(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    Cookies.set(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Cookie
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = Cookies.get(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">const</span> username = Cookies.get(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Cookie
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    Cookies.remove(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    Cookies.remove(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>  }, []);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>
@@ -852,14 +852,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
 </span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Session Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    sessionStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    sessionStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Session Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = sessionStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">const</span> username = sessionStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Session Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    sessionStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    sessionStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>  }, []);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>
@@ -873,14 +873,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> App() {
 </span></span><span style="display:flex;"><span>  useEffect(() =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 设置 Local Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    localStorage.setItem(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;john&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 读取 Local Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">const</span> username = localStorage.getItem(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>    console.log(username); <span style="color:#228b22">// &#34;john&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">// 删除 Local Storage
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    localStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
+</span></span></span><span style="display:flex;"><span>    localStorage.removeItem(<span style="color:#cd5555">&#34;username&#34;</span>);
 </span></span><span style="display:flex;"><span>  }, []);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> &lt;div&gt;...&lt;<span style="color:#a61717;background-color:#e3d2d2">/div&gt;;</span>

@@ -1240,14 +1240,14 @@
 </ul>
 <h3 id="1-原型链的构建">1. 原型链的构建</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#228b22">// 父对象
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> parent = { a: <span style="color:#b452cd">1</span> };
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> parent = { a: <span style="color:#b452cd">1</span> };
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 子对象，通过 __proto__ 继承父对象
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">const</span> child = { b: <span style="color:#b452cd">2</span> };
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> child = { b: <span style="color:#b452cd">2</span> };
 </span></span><span style="display:flex;"><span>child.__proto__ = parent; <span style="color:#228b22">// 或使用 Object.setPrototypeOf(child, parent)
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>console.log(child.a); <span style="color:#228b22">// 1（从 parent 继承）
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(child.b); <span style="color:#228b22">// 2（自身属性）
+</span></span></span><span style="display:flex;"><span>console.log(child.b); <span style="color:#228b22">// 2（自身属性）
 </span></span></span></code></pre></div><h4 id="原型链的终点">原型链的终点</h4>
 <p>所有原型链的终点是 <code>Object.prototype.__proto__</code>，即 <code>null</code>：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>console.log(<span style="color:#658b00">Object</span>.getPrototypeOf(<span style="color:#658b00">Object</span>.prototype)); <span style="color:#228b22">// null
@@ -1265,10 +1265,10 @@
 <p>构造函数用于创建实例，并通过 <code>new</code> 关键字初始化对象：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Person(name) {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.name = name; <span style="color:#228b22">// 实例属性
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 方法定义在原型上（节省内存）
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Person.prototype.sayHello = <span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span></span><span style="display:flex;"><span>Person.prototype.sayHello = <span style="color:#8b008b;font-weight:bold">function</span> () {
 </span></span><span style="display:flex;"><span>  console.log(<span style="color:#cd5555">`Hello, </span><span style="color:#cd5555">${</span><span style="color:#8b008b;font-weight:bold">this</span>.name<span style="color:#cd5555">}</span><span style="color:#cd5555">!`</span>);
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
@@ -1282,7 +1282,7 @@
 </ul>
 <h4 id="三者关系">三者关系：</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>john.__proto__ === Person.prototype; <span style="color:#228b22">// true
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Person.prototype.constructor === Person; <span style="color:#228b22">// true
+</span></span></span><span style="display:flex;"><span>Person.prototype.constructor === Person; <span style="color:#228b22">// true
 </span></span></span></code></pre></div><h3 id="3-原型链的完整结构">3. 原型链的完整结构</h3>
 <pre tabindex="0"><code>实例 (john)
   │
@@ -1329,12 +1329,12 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Dog(name) {
 </span></span><span style="display:flex;"><span>  Animal.call(<span style="color:#8b008b;font-weight:bold">this</span>, name); <span style="color:#228b22">// 继承属性
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 继承方法：设置原型链
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Dog.prototype = <span style="color:#658b00">Object</span>.create(Animal.prototype);
+</span></span></span><span style="display:flex;"><span>Dog.prototype = <span style="color:#658b00">Object</span>.create(Animal.prototype);
 </span></span><span style="display:flex;"><span>Dog.prototype.constructor = Dog; <span style="color:#228b22">// 修复构造函数指向
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> dog = <span style="color:#8b008b;font-weight:bold">new</span> Dog(<span style="color:#cd5555">&#34;Rex&#34;</span>);
 </span></span><span style="display:flex;"><span>dog.eat(); <span style="color:#228b22">// &#34;Rex is eating.&#34;
 </span></span></span></code></pre></div><h3 id="2-共享方法">2. 共享方法</h3>
@@ -1363,7 +1363,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 等价于：
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> Person(name) {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Person(name) {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.name = name;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>Person.prototype.sayHello = <span style="color:#8b008b;font-weight:bold">function</span>() { ... };
@@ -1384,13 +1384,13 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">const</span> key <span style="color:#8b008b;font-weight:bold">in</span> child) {
 </span></span><span style="display:flex;"><span>  console.log(key); <span style="color:#228b22">// &#34;b&#34;, &#34;a&#34;（包括原型链属性）
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 过滤自身属性：
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">const</span> key <span style="color:#8b008b;font-weight:bold">in</span> child) {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">const</span> key <span style="color:#8b008b;font-weight:bold">in</span> child) {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span> (child.hasOwnProperty(key)) {
 </span></span><span style="display:flex;"><span>    console.log(key); <span style="color:#228b22">// &#34;b&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
 <h2 id="八总结">八、总结</h2>
@@ -1442,7 +1442,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> john = <span style="color:#8b008b;font-weight:bold">new</span> Person(<span style="color:#cd5555">&#34;John&#34;</span>);
 </span></span><span style="display:flex;"><span>console.log(john.__proto__ === Person.prototype); <span style="color:#228b22">// true
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>console.log(Person.prototype.constructor === Person); <span style="color:#228b22">// true
+</span></span></span><span style="display:flex;"><span>console.log(Person.prototype.constructor === Person); <span style="color:#228b22">// true
 </span></span></span></code></pre></div></li>
 </ul>
 <h3 id="4-new">4. <strong><code>new</code> 操作符的作用</strong></h3>
@@ -1497,10 +1497,10 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Child(name, age) {
 </span></span><span style="display:flex;"><span>  Parent.call(<span style="color:#8b008b;font-weight:bold">this</span>, name); <span style="color:#228b22">// 继承属性
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">this</span>.age = age;
+</span></span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.age = age;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>Child.prototype = <span style="color:#658b00">Object</span>.create(Parent.prototype); <span style="color:#228b22">// 继承方法
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Child.prototype.constructor = Child; <span style="color:#228b22">// 修复构造函数
+</span></span></span><span style="display:flex;"><span>Child.prototype.constructor = Child; <span style="color:#228b22">// 修复构造函数
 </span></span></span></code></pre></div></li>
 </ul>
 <hr>
@@ -1521,7 +1521,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// 等价于：
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> Person(name) { <span style="color:#8b008b;font-weight:bold">this</span>.name = name; }
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> Person(name) { <span style="color:#8b008b;font-weight:bold">this</span>.name = name; }
 </span></span><span style="display:flex;"><span>Person.prototype.say = <span style="color:#8b008b;font-weight:bold">function</span>() { ... };
 </span></span></code></pre></div></li>
 </ul>
@@ -1541,7 +1541,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> Child <span style="color:#8b008b;font-weight:bold">extends</span> Parent {
 </span></span><span style="display:flex;"><span>  constructor(name, age) {
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">super</span>(name); <span style="color:#228b22">// 必须调用 super() 才能使用 this
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">this</span>.age = age;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">this</span>.age = age;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
@@ -1573,7 +1573,7 @@
 </span></span><span style="display:flex;"><span>child.b = <span style="color:#b452cd">2</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>console.log(<span style="color:#658b00">Object</span>.keys(child)); <span style="color:#228b22">// [&#34;b&#34;]
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">const</span> key <span style="color:#8b008b;font-weight:bold">in</span> child) {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">const</span> key <span style="color:#8b008b;font-weight:bold">in</span> child) {
 </span></span><span style="display:flex;"><span>  console.log(key);
 </span></span><span style="display:flex;"><span>} <span style="color:#228b22">// &#34;b&#34;, &#34;a&#34;
 </span></span></span></code></pre></div></li>
